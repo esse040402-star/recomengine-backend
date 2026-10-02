@@ -1,0 +1,100 @@
+{
+ "query": "스위치 없는데 동물의 숲 같은 게임 없어?",
+ "llm_raw_intent": {
+  "liked_games": [],
+  "genres": [
+   "Adventure",
+   "Puzzle",
+   "Simulation"
+  ],
+  "tags": [
+   "Singleplayer",
+   "Atmospheric",
+   "Exploration",
+   "Farming Sim",
+   "Crafting"
+  ],
+  "platforms": [
+   "pc",
+   "playstation",
+   "xbox",
+   "ios",
+   "android"
+  ],
+  "exclude_platforms": [
+   "switch"
+  ],
+  "prefer": {
+   "indie": true,
+   "cheap": true,
+   "recent": false,
+   "short": false,
+   "low_spec": false,
+   "coop": false
+  },
+  "max_hours": null,
+  "source": "ollama"
+ },
+ "old_results": [
+  {
+   "title": "Stardew Valley",
+   "score": 62,
+   "reason_source": "ollama",
+   "reason": "[Stardew Valley]는 농장에서 일하고 여유로운 시간을 보내는 것을 좋아하신다면 이상적인 선택입니다. 게임의 심플한 시뮬레이션 요소와 코지한 분위기가 당신의 취향과 잘 맞을 거예요."
+  },
+  {
+   "title": "Terraria",
+   "score": 50,
+   "reason_source": "ollama",
+   "reason": "[Terraria]의 탐험과 제작 요소가 동물의 숲의 자연 환경과 유사하며, 협동 모드를 통해 함께 즐길 수도 있어요."
+  },
+  {
+   "title": "Portal 2",
+   "score": 44,
+   "reason_source": "ollama",
+   "reason": "[Portal 2]는 협력이나 혼자 즐길 수 있는 추리 퍼즐 게임으로, 동물의 숲과 비슷한 분위기를 느낄 수 있어요."
+  },
+  {
+   "title": "Hollow Knight",
+   "score": 44,
+   "reason_source": "rule",
+   "reason": "[Hollow Knight]은(는) Atmospheric, Exploration, Singleplayer 요소가 있어 취향에 잘 맞아요."
+  },
+  {
+   "title": "Hades",
+   "score": 40,
+   "reason_source": "rule",
+   "reason": "[Hades]은(는) Singleplayer, Atmospheric, Indie 요소가 있어 취향에 잘 맞아요."
+  },
+  {
+   "title": "Celeste",
+   "score": 40,
+   "reason_source": "rule",
+   "reason": "[Celeste]은(는) Singleplayer, Atmospheric, Indie 요소가 있어 취향에 잘 맞아요."
+  },
+  {
+   "title": "Disco Elysium",
+   "score": 34,
+   "reason_source": "rule",
+   "reason": "[Disco Elysium]은(는) Atmospheric, Singleplayer, Adventure 요소가 있어 취향에 잘 맞아요."
+  },
+  {
+   "title": "Resident Evil Village",
+   "score": 34,
+   "reason_source": "rule",
+   "reason": "[Resident Evil Village]은(는) Atmospheric, Singleplayer, Adventure 요소가 있어 취향에 잘 맞아요."
+  },
+  {
+   "title": "Baldur's Gate 3",
+   "score": 34,
+   "reason_source": "rule",
+   "reason": "[Baldur's Gate 3]은(는) Singleplayer, Atmospheric, Adventure 요소가 있어 취향에 잘 맞아요."
+  },
+  {
+   "title": "Elden Ring",
+   "score": 32,
+   "reason_source": "rule",
+   "reason": "[Elden Ring]은(는) Atmospheric, Singleplayer, 할인 중 요소가 있어 취향에 잘 맞아요."
+  }
+ ]
+}

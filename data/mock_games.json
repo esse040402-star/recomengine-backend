@@ -1,0 +1,554 @@
+[
+ {
+  "title": "Elden Ring",
+  "rawg_id": 326243,
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "tags": [
+   "Souls-like",
+   "Open World",
+   "Difficult",
+   "Atmospheric",
+   "Singleplayer",
+   "Co-op"
+  ],
+  "platforms": [
+   "PC",
+   "PlayStation 5",
+   "Xbox One"
+  ],
+  "release_date": "2022-02-25",
+  "description": "(샘플) 광활한 오픈 월드를 탐험하는 고난도 액션 RPG",
+  "cover_url": null,
+  "playtime_hours": 60,
+  "source_data": {
+   "mock": true
+  },
+  "price_info": {
+   "store": "mock",
+   "currency": "KRW",
+   "initial": 64800,
+   "final": 51840,
+   "discount_percent": 20,
+   "final_formatted": "₩51,840"
+  },
+  "steam_app_id": 1245620
+ },
+ {
+  "title": "Stardew Valley",
+  "rawg_id": 93,
+  "genres": [
+   "Simulation",
+   "RPG",
+   "Indie"
+  ],
+  "tags": [
+   "Farming Sim",
+   "Relaxing",
+   "Cozy",
+   "Singleplayer",
+   "Co-op",
+   "Crafting"
+  ],
+  "platforms": [
+   "PC",
+   "Nintendo Switch",
+   "iOS",
+   "Android"
+  ],
+  "release_date": "2016-02-26",
+  "description": "(샘플) 농장을 가꾸며 느긋하게 즐기는 시뮬레이션",
+  "cover_url": null,
+  "playtime_hours": 50,
+  "source_data": {
+   "mock": true
+  },
+  "price_info": {
+   "store": "mock",
+   "currency": "KRW",
+   "initial": 18000,
+   "final": 16200,
+   "discount_percent": 10,
+   "final_formatted": "₩16,200"
+  }
+ },
+ {
+  "title": "Hades",
+  "rawg_id": 274755,
+  "genres": [
+   "Action",
+   "RPG",
+   "Indie"
+  ],
+  "tags": [
+   "Roguelike",
+   "Story Rich",
+   "Singleplayer",
+   "Atmospheric"
+  ],
+  "platforms": [
+   "PC",
+   "Nintendo Switch",
+   "PlayStation 5"
+  ],
+  "release_date": "2020-09-17",
+  "description": "(샘플) 지하 세계를 탈출하는 빠른 로그라이크 액션",
+  "cover_url": null,
+  "playtime_hours": 22,
+  "source_data": {
+   "mock": true
+  },
+  "price_info": {
+   "store": "mock",
+   "currency": "KRW",
+   "initial": 24000,
+   "final": 16800,
+   "discount_percent": 30,
+   "final_formatted": "₩16,800"
+  }
+ },
+ {
+  "title": "Portal 2",
+  "rawg_id": 4200,
+  "genres": [
+   "Puzzle",
+   "Adventure"
+  ],
+  "tags": [
+   "Co-op",
+   "Singleplayer",
+   "Story Rich",
+   "Atmospheric"
+  ],
+  "platforms": [
+   "PC",
+   "PlayStation 3"
+  ],
+  "release_date": "2011-04-19",
+  "description": "(샘플) 포털 건으로 푸는 퍼즐 어드벤처",
+  "cover_url": null,
+  "playtime_hours": 9,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Baba Is You",
+  "rawg_id": 302041,
+  "genres": [
+   "Puzzle",
+   "Indie"
+  ],
+  "tags": [
+   "Singleplayer",
+   "Relaxing"
+  ],
+  "platforms": [
+   "PC",
+   "Nintendo Switch",
+   "iOS"
+  ],
+  "release_date": "2019-03-13",
+  "description": "(샘플) 규칙을 바꿔 푸는 퍼즐",
+  "cover_url": null,
+  "playtime_hours": 12,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Slay the Spire",
+  "rawg_id": 20379,
+  "genres": [
+   "Strategy",
+   "Card & Board Game",
+   "Indie"
+  ],
+  "tags": [
+   "Roguelike",
+   "Turn-Based",
+   "Singleplayer"
+  ],
+  "platforms": [
+   "PC",
+   "Nintendo Switch",
+   "iOS",
+   "Android"
+  ],
+  "release_date": "2019-01-23",
+  "description": "(샘플) 덱을 쌓아 올라가는 카드 로그라이크",
+  "cover_url": null,
+  "playtime_hours": 20,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Hollow Knight",
+  "rawg_id": 9767,
+  "genres": [
+   "Action",
+   "Platformer",
+   "Indie"
+  ],
+  "tags": [
+   "Metroidvania",
+   "Atmospheric",
+   "Difficult",
+   "Exploration",
+   "Singleplayer"
+  ],
+  "platforms": [
+   "PC",
+   "Nintendo Switch",
+   "PlayStation 4"
+  ],
+  "release_date": "2017-02-24",
+  "description": "(샘플) 지하 왕국을 탐험하는 메트로배니아",
+  "cover_url": null,
+  "playtime_hours": 30,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Counter-Strike 2",
+  "rawg_id": null,
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "tags": [
+   "FPS",
+   "PvP",
+   "Competitive",
+   "Multiplayer",
+   "E-Sports"
+  ],
+  "platforms": [
+   "PC"
+  ],
+  "release_date": "2023-09-27",
+  "description": "(샘플) 5대5 전술 FPS",
+  "cover_url": null,
+  "playtime_hours": null,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Disco Elysium",
+  "rawg_id": 10615,
+  "genres": [
+   "RPG",
+   "Adventure"
+  ],
+  "tags": [
+   "Story Rich",
+   "Narrative",
+   "Atmospheric",
+   "Singleplayer"
+  ],
+  "platforms": [
+   "PC",
+   "PlayStation 5",
+   "Nintendo Switch"
+  ],
+  "release_date": "2019-10-15",
+  "description": "(샘플) 대사로 이끌어가는 추리 RPG",
+  "cover_url": null,
+  "playtime_hours": 25,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Sid Meier's Civilization VI",
+  "rawg_id": 3939,
+  "genres": [
+   "Strategy",
+   "Simulation"
+  ],
+  "tags": [
+   "Turn-Based",
+   "Multiplayer",
+   "Singleplayer"
+  ],
+  "platforms": [
+   "PC",
+   "Nintendo Switch",
+   "iOS"
+  ],
+  "release_date": "2016-10-21",
+  "description": "(샘플) 문명을 이끄는 턴제 전략",
+  "cover_url": null,
+  "playtime_hours": 60,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Terraria",
+  "rawg_id": 3272,
+  "genres": [
+   "Action",
+   "Adventure",
+   "Indie"
+  ],
+  "tags": [
+   "Sandbox",
+   "Crafting",
+   "Exploration",
+   "Co-op",
+   "Survival"
+  ],
+  "platforms": [
+   "PC",
+   "PlayStation 5",
+   "Xbox One",
+   "Nintendo Switch",
+   "iOS",
+   "Android"
+  ],
+  "release_date": "2011-05-16",
+  "description": "(샘플) 2D 샌드박스 탐험과 제작",
+  "cover_url": null,
+  "playtime_hours": 50,
+  "source_data": {
+   "mock": true
+  },
+  "price_info": {
+   "store": "mock",
+   "currency": "KRW",
+   "initial": 11000,
+   "final": 8250,
+   "discount_percent": 25,
+   "final_formatted": "₩8,250"
+  }
+ },
+ {
+  "title": "Resident Evil Village",
+  "rawg_id": 5262,
+  "genres": [
+   "Action",
+   "Adventure"
+  ],
+  "tags": [
+   "Horror",
+   "Atmospheric",
+   "Singleplayer"
+  ],
+  "platforms": [
+   "PC",
+   "PlayStation 5",
+   "Xbox One"
+  ],
+  "release_date": "2021-05-07",
+  "description": "(샘플) 서바이벌 호러 액션",
+  "cover_url": null,
+  "playtime_hours": 11,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Celeste",
+  "rawg_id": 20,
+  "genres": [
+   "Platformer",
+   "Indie"
+  ],
+  "tags": [
+   "Difficult",
+   "Story Rich",
+   "Singleplayer",
+   "Atmospheric"
+  ],
+  "platforms": [
+   "PC",
+   "Nintendo Switch",
+   "PlayStation 4"
+  ],
+  "release_date": "2018-01-25",
+  "description": "(샘플) 정교한 조작의 플랫포머",
+  "cover_url": null,
+  "playtime_hours": 8,
+  "source_data": {
+   "mock": true
+  },
+  "price_info": {
+   "store": "mock",
+   "currency": "KRW",
+   "initial": 23000,
+   "final": 11500,
+   "discount_percent": 50,
+   "final_formatted": "₩11,500"
+  }
+ },
+ {
+  "title": "Overcooked! 2",
+  "rawg_id": null,
+  "genres": [
+   "Casual",
+   "Simulation"
+  ],
+  "tags": [
+   "Co-op",
+   "Multiplayer",
+   "Cozy"
+  ],
+  "platforms": [
+   "PC",
+   "Nintendo Switch",
+   "PlayStation 4"
+  ],
+  "release_date": "2018-08-07",
+  "description": "(샘플) 정신없는 협동 요리 게임",
+  "cover_url": null,
+  "playtime_hours": 8,
+  "source_data": {
+   "mock": true
+  },
+  "price_info": {
+   "store": "mock",
+   "currency": "KRW",
+   "initial": 25000,
+   "final": 10000,
+   "discount_percent": 60,
+   "final_formatted": "₩10,000"
+  }
+ },
+ {
+  "title": "Animal Crossing: New Horizons",
+  "rawg_id": null,
+  "genres": [
+   "Simulation",
+   "Casual"
+  ],
+  "tags": [
+   "Cozy",
+   "Relaxing",
+   "Co-op",
+   "Multiplayer",
+   "Singleplayer"
+  ],
+  "platforms": [
+   "Nintendo Switch"
+  ],
+  "release_date": "2020-03-20",
+  "description": "(샘플) 무인도에서 느긋하게 사는 생활 시뮬레이션",
+  "cover_url": null,
+  "playtime_hours": 50,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Vampire Survivors",
+  "rawg_id": null,
+  "genres": [
+   "Action",
+   "Indie",
+   "Arcade"
+  ],
+  "tags": [
+   "Roguelite",
+   "Singleplayer",
+   "Pixel Graphics",
+   "Casual"
+  ],
+  "platforms": [
+   "PC",
+   "iOS",
+   "Android",
+   "Nintendo Switch"
+  ],
+  "release_date": "2022-10-20",
+  "description": "(샘플) 몰려오는 적을 자동 공격으로 버티는 단판 서바이버",
+  "cover_url": null,
+  "playtime_hours": 6,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Baldur's Gate 3",
+  "rawg_id": null,
+  "genres": [
+   "RPG",
+   "Strategy",
+   "Adventure"
+  ],
+  "tags": [
+   "Story Rich",
+   "Turn-Based",
+   "Co-op",
+   "Multiplayer",
+   "Singleplayer",
+   "Atmospheric"
+  ],
+  "platforms": [
+   "PC",
+   "PlayStation 5",
+   "Xbox Series S/X"
+  ],
+  "release_date": "2023-08-03",
+  "description": "(샘플) 메인 스토리만 약 60시간인 대작 RPG",
+  "cover_url": null,
+  "playtime_hours": 60,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "Sanabi",
+  "rawg_id": null,
+  "genres": [
+   "Action",
+   "Platformer",
+   "Indie"
+  ],
+  "tags": [
+   "Story Rich",
+   "Pixel Graphics",
+   "Singleplayer"
+  ],
+  "platforms": [
+   "PC"
+  ],
+  "release_date": null,
+  "description": "(샘플) 약 8시간짜리 짧은 액션 플랫포머",
+  "cover_url": null,
+  "playtime_hours": 8,
+  "source_data": {
+   "mock": true
+  }
+ },
+ {
+  "title": "(샘플) Cozy Garden - 출시 예정",
+  "rawg_id": null,
+  "genres": [
+   "Simulation",
+   "Casual"
+  ],
+  "tags": [
+   "Cozy",
+   "Relaxing",
+   "Farming Sim",
+   "Singleplayer"
+  ],
+  "platforms": [
+   "PC",
+   "Nintendo Switch"
+  ],
+  "release_date": "2027-03-01",
+  "description": "(샘플) 출시 예정 게임 데모용 가짜 데이터",
+  "cover_url": null,
+  "playtime_hours": null,
+  "source_data": {
+   "mock": true
+  }
+ }
+]
