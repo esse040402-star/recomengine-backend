@@ -103,7 +103,7 @@
 | POST | `/api/account/logout` | - | `{ok:true}` (쿠키 삭제) |
 | PUT | `/api/account/state` | `{state:{...}}` (1MB 이하) | `{ok:true}` (로그인 필요) |
 
-- **같은 주소에서 서빙해야 쿠키가 동작합니다.** `backend/frontend/index.html` 에 넣고 `http://localhost:8000` 으로 여세요. HTML 파일을 더블클릭해서 열면 계정 기능은 막혀 있습니다(프론트가 안내함).
+- **같은 주소에서 서빙해야 쿠키가 동작합니다.** `backend/frontend/index.html` 에 넣고 `http://localhost:8000` 으로 여세요. 프로토타입 HTML을 파일로 직접 열면(주소가 file:// 로 시작) 계정 기능이 꺼지고 "Steam_시작.bat로 실행" 안내가 나옵니다. 이 안내의 Steam_시작.bat 은 프론트 쪽 Node 실행 파일이고, 이 백엔드에서는 위 방법(http://localhost:8000)으로 열면 계정 기능이 동작합니다.
 - 로그인 8회 연속 실패하면 15분간 429 (프로세스 메모리 기준). 로그아웃은 쿠키를 지우는 방식이라, 쿠키가 유출됐다면 만료(`SESSION_DAYS`)까지 유효합니다.
 - `.env` 에 `SESSION_SECRET` 을 꼭 채우세요(없으면 재시작할 때마다 전원 로그아웃). HTTPS로 배포하면 `COOKIE_SECURE=true`.
 - 실제 Supabase 모드에서는 `SUPABASE_ANON_KEY` 도 필요하고, **`sql/002_user_states.sql`(새 테이블 1개)을 DB 담당자와 합의 후 실행**해야 합니다. 가입 때 이메일 인증 없이 바로 활성화됩니다(`email_confirm=true`).
