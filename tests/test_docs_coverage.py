@@ -42,7 +42,7 @@ def test_every_endpoint_uses_a_korean_doc():
         used.append(key)
     assert len(used) == len(set(used)), "같은 설명을 두 엔드포인트가 쓰고 있습니다"
     assert set(used) == set(docs.DOCS), f"어디서도 쓰지 않는 설명: {set(docs.DOCS) - set(used)}"
-    assert len(used) == 22
+    assert len(used) == 25
 
 
 def test_docs_are_korean_and_complete():
@@ -57,7 +57,7 @@ def test_docs_are_korean_and_complete():
 
 def test_tags_have_korean_descriptions():
     tag_names = [t["name"] for t in docs.OPENAPI_TAGS]
-    assert len(tag_names) == len(set(tag_names)) == 6
+    assert len(tag_names) == len(set(tag_names)) == 7
     for t in docs.OPENAPI_TAGS:
         assert HANGUL.search(t["name"]) and HANGUL.search(t["description"])
     declared = set()

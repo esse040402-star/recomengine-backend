@@ -57,9 +57,9 @@ def test_error_shape_is_error_key(client):
     unknown = client.post("/api/account/login", json={"email": "nobody@example.com", "password": "wrong-password"})
     assert unknown.json()["error"] == bad.json()["error"]  # 계정 존재 여부를 알려주지 않음
 
-    short = client.post("/api/account/signup", json={**SIGNUP, "email": "x@example.com", "password": "short"})
+    short = client.post("/api/account/signup", json={**SIGNUP, "email": "x@example.com", "password": "pw1234"})
     assert short.status_code == 422 and isinstance(short.json()["error"], str)
-    assert "short" not in short.text  # 입력한 비밀번호가 응답에 되돌아오면 안 됨
+    assert "pw1234" not in short.text  # 입력한 비밀번호가 응답에 되돌아오면 안 됨
 
     assert isinstance(client.get("/api/games/00000000-0000-0000-0000-000000000000").json()["error"], str)
 

@@ -23,7 +23,7 @@ def spec():
 
 def test_every_operation_has_korean_summary_and_description(spec):
     ops = [(p, m, o) for p, item in spec["paths"].items() for m, o in item.items()]
-    assert len(ops) == 22
+    assert len(ops) == 25
     for path, method, op in ops:
         assert HANGUL.search(op["summary"]), f"{method} {path}: 한국어 제목 없음"
         assert HANGUL.search(op["description"]), f"{method} {path}: 한국어 설명 없음"
@@ -31,7 +31,7 @@ def test_every_operation_has_korean_summary_and_description(spec):
 
 
 def test_tags_and_app_description(spec):
-    assert len(spec["tags"]) == 6 and all(HANGUL.search(t["description"]) for t in spec["tags"])
+    assert len(spec["tags"]) == 7 and all(HANGUL.search(t["description"]) for t in spec["tags"])
     assert HANGUL.search(spec["info"]["description"]) and "처음 써보는 순서" in spec["info"]["description"]
 
 

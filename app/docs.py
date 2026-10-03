@@ -8,6 +8,7 @@ SESSIONS = "sessions (취향 진단)"
 SURVEY = "survey (설문 생성 AI)"
 GAMES = "games (게임 목록)"
 AI = "ai (AI 검색·추천)"
+MARKET = "market (스팀 랭킹·뉴스)"
 
 OPENAPI_TAGS = [
     {"name": SYSTEM, "description": "서버와 AI(Ollama)가 정상인지 확인합니다."},
@@ -17,6 +18,8 @@ OPENAPI_TAGS = [
     {"name": GAMES, "description": "DB에 저장된 게임 목록·상세 조회, 그리고 RAWG/IGDB에서 게임 데이터를 가져오는 관리자 기능."},
     {"name": AI, "description": "자연어 검색, 비슷한 게임/대체제, 추천 이유, 백로그 처리반, 플레이타임 계산기, 리뷰 요약, 할인·출시예정 정렬. "
                                 "문장 이해·작성은 Ollama가 하고 점수·필터·일정 계산은 코드가 합니다. **Ollama가 꺼져 있어도 대부분 규칙 기반으로 동작합니다.**"},
+    {"name": MARKET, "description": "스팀 인기 순위, 게임 소식·신작·할인, 리뷰, 상세 정보를 실시간으로 가져옵니다. 키가 필요 없는 스팀 공개 주소를 쓰고, "
+                                    "스팀을 자주 부르지 않도록 서버가 몇 분~1시간 동안 결과를 보관합니다. DB에는 저장하지 않습니다."},
 ]
 
 APP_DESCRIPTION = """
@@ -97,12 +100,12 @@ DOCS: dict[str, dict] = {
 
 **응답 필드**
 - `ai` : Ollama가 켜져 있고 `.env`에 적은 모델이 설치되어 있으면 `true` (프론트가 AI 설문 생성을 시도할지 정하는 값)
-- `feeds` : 스팀 랭킹·뉴스 실시간 연동 여부 (아직 만들지 않아서 항상 `false`)
+- `feeds` : 스팀 랭킹·뉴스·리뷰 실시간 조회(`/api/market`, `/api/steam/*`) 사용 여부 (키가 필요 없어 항상 `true`). 프론트는 이 값이 `true` 일 때 '새로 불러오기' 버튼을 보여줍니다
 - `ollama` : `up`(Ollama 실행 중인지), `model`(`.env`에 설정한 모델), `model_ready`(그 모델이 설치됐는지)
 - `rawg` / `igdb` / `steam` : 해당 API 키가 `.env`에 들어 있는지
 - `mock_db` : `true` 면 Supabase 대신 **메모리 가짜 DB**로 동작 중 (서버를 끄면 데이터 삭제)
         """,
-        {"ai": False, "feeds": False, "ollama": {"up": False, "model": "qwen2.5:7b", "model_ready": False},
+        {"ai": False, "feeds": True, "ollama": {"up": False, "model": "qwen2.5:7b", "model_ready": False},
          "rawg": False, "igdb": False, "steam": False, "mock_db": True},
         ok_text="현재 서버 상태",
     ),
@@ -325,5 +328,51 @@ Swagger 오른쪽 위 `Authorize` 가 아니라, 이 항목의 `Try it out` 안�
 `cc` 는 국가 코드(기본 `kr` = 한국 원화)입니다.
         """,
         {"games_with_steam_id": 1, "updated": 1}, ok_text="갱신한 게임 수", errors=(403, 422),
+    ),
+    # ---------------- market
+    "market": spec(
+        "Market (스팀 인기 순위·소식·리뷰 집계)",
+        """
+프론트의 **랭킹·뉴스 화면**이 부르는 API입니다. `section` 으로 가져올 묶음을 고릅니다. 응답은 항상 `{section, updatedAt, data}` 형태이고 `updatedAt` 은 스팀에서 가져온 시각입니다.
+- `rankings` : 스팀 동시 접속 인기 순위 상위 10개. `players` 는 지금 접속자 수이고, 못 가져오면 `null`(화면에는 '집계 대기')
+- `news` : `data` 안에 `news`(공식 소식), `newReleases`(신작), `sales`(할인). `game` 을 주면 `news` 는 그 게임 것만, 안 주면 대표 게임 12개의 소식
+- `reviews` : 전체 언어 리뷰 집계(`positive`·`negative`·`total`·`description`). **`game` 필수**
+
+`game` 은 프론트 게임 id(예: `elden`)입니다. 가격은 최소 화폐 단위라 `2745000` = 27,450원입니다.
+스팀을 자주 부르지 않도록 결과를 10~30분 보관합니다. 스팀이 응답하지 않으면 502를 돌려줍니다.
+        """,
+        {"section": "rankings", "updatedAt": "2026-10-03T09:00:00+00:00",
+         "data": [{"rank": 1, "app": 730, "name": "Counter-Strike 2", "players": 1012345,
+                   "url": "https://store.steampowered.com/app/730/"}]},
+        ok_text="요청한 묶음의 최신 자료", errors=(404, 422, 502),
+    ),
+    "steam_reviews": spec(
+        "Steam Reviews (스팀 플레이어 리뷰 목록)",
+        """
+게임 상세 화면의 리뷰 목록입니다. 한 번에 12개씩 오고, 응답의 `cursor` 를 다음 요청의 `cursor` 로 넣으면 이어서 가져옵니다(`cursor` 가 `null` 이면 끝).
+- `sentiment` 추천/비추천, `language` 리뷰 언어, `sort` 최신순/도움순, `days` 작성 기간으로 거릅니다.
+- 리뷰 글은 600자까지만 보내고, 더 길면 `truncated: true` 입니다.
+결과는 5분간 보관합니다.
+        """,
+        {"items": [{"id": "236761964", "text": "정말 재미있어요", "truncated": False, "positive": True,
+                    "created": 1791012880, "updated": 1791012880, "language": "koreana", "hours": 165.7,
+                    "helpful": 3, "purchased": True, "receivedFree": False,
+                    "url": "https://steamcommunity.com/profiles/76561198000000000/recommended/1245620/"}],
+         "cursor": "AoJworCFgKEDcbaShwc=", "checkedAt": "2026-10-03T09:00:00+00:00"},
+        ok_text="리뷰 12개와 다음 페이지 표식", errors=(404, 422, 502),
+    ),
+    "steam_details": spec(
+        "Steam Details (스팀 가격·사양 갱신)",
+        """
+게임 상세 화면의 '가격·정보 갱신' 버튼이 부릅니다. 개발사·배급사·출시일·한국어 지원·지원 OS·최소/권장 사양·현재 가격을 스팀에서 가져옵니다.
+`price` 의 금액은 최소 화폐 단위입니다(`6480000` = 64,800원). 스크린샷은 보내지 않으며, 프론트가 가진 기존 값이 그대로 유지됩니다. 결과는 1시간 보관합니다.
+        """,
+        {"details": {"developers": ["FromSoftware, Inc."], "publishers": ["Bandai Namco Entertainment"],
+                     "releaseDate": "2022년 2월 24일", "korean": True, "languages": "영어*, 한국어",
+                     "os": {"windows": True, "mac": False, "linux": False},
+                     "minimum": [["운영 체제", "Windows 10"]], "recommended": [["운영 체제", "Windows 10/11"]],
+                     "price": {"price": 6480000, "originalPrice": 6480000, "discount": 0, "currency": "KRW"},
+                     "checkedAt": "2026-10-03T09:00:00+00:00"}},
+        ok_text="갱신된 게임 정보", errors=(404, 422, 502),
     ),
 }

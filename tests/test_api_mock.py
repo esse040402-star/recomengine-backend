@@ -17,7 +17,7 @@ def client():
 
 def test_status(client):
     body = client.get("/api/status").json()
-    assert body["mock_db"] is True and body["feeds"] is False
+    assert body["mock_db"] is True and body["feeds"] is True
 
 
 def test_games(client):

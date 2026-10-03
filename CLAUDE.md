@@ -15,8 +15,9 @@
 ## 기술 스택과 구조
 FastAPI · Supabase(Auth/DB) · Ollama(로컬 AI, 현재 `qwen2.5:7b`) · RAWG/IGDB(게임 데이터) · 스팀(리뷰/가격/라이브러리)
 - `app/main.py` 앱 조립, 오류 형식 `{"error": "한국어 메시지", "detail": ...}` (프론트가 `error` 를 그대로 화면에 표시)
-- `app/routers/` account · ai · games · sessions · survey · system  (API 22개)
-- `app/services/` ai_features(AI 기능 로직) · recommender(추천 점수) · game_clean(RAWG/IGDB 데이터 정리) · games_sync · ollama · rawg · igdb · steam · survey_ai · aliases …
+- `app/routers/` account · ai · games · market · sessions · survey · system  (API 25개)
+- `app/services/` ai_features(AI 기능 로직) · recommender(추천 점수) · game_clean(RAWG/IGDB 데이터 정리) · games_sync · ollama · rawg · igdb · steam · market(스팀 랭킹·뉴스 조립+캐시) · survey_ai · aliases …
+- `data/catalog_apps.json` 프론트 게임 id → 스팀 앱 번호 (프론트 HTML 에서 `python -m scripts.export_catalog` 로 생성)
 - `app/docs.py` Swagger 한국어 설명 · `app/static/swagger_ko.js` Swagger 영어 문구 번역
 - `app/mock_db.py` 가짜 DB(메모리) · `data/` 샘플 게임, 한국어 별칭표, 설문 문항 · `sql/` 팀원과 합의가 필요한 SQL
 - 원칙: **문장 이해·작성은 Ollama, 점수·필터·계산은 코드.** AI 출력은 항상 검증하고, 실패하면 규칙 기반으로 대체합니다.
@@ -35,12 +36,19 @@ python -m tests.test_ai_features           # 순수 로직 테스트 (이 외에
 
 ## 현재 상태 (자세한 내용은 HANDOFF.md)
 - 확인함: mock 모드의 진단 흐름, AI 기능, RAWG/IGDB 수집(실제 호출), 계정 API 일부
-- **아직 못 해본 것**: `python -m pytest`(API 테스트는 한 번도 실행 못 함), 실제 Supabase 연결, 스팀 연동 실호출, 심화 설문 생성 속도(50초 제한)
-- 미구현: 스팀 랭킹/뉴스 피드(`feeds` 는 항상 false), iTunes·구글 플레이·오픈크리틱 연동
+- 확인함(2026-10-03): `python -m pytest` 75개 통과(mock DB), RAWG·IGDB·스팀(리뷰/가격/라이브러리) 실호출, 실제 Supabase 읽기(`GET /api/games`)
+- **아직 못 해본 것**: 실제 Supabase 쓰기·로그인(Auth), 심화 설문 생성 속도(50초 제한)
+- 구현함(2026-10-03): 스팀 랭킹·뉴스·할인·리뷰·상세 (`/api/market`, `/api/steam/reviews`, `/api/steam/details`, `feeds` 는 true). 프론트 화면에서 직접 눌러 본 것은 아님
+- 미구현: iTunes·구글 플레이·오픈크리틱 연동
 
 ## 다음 작업 후보
-1. `python -m pytest` 실행 → 실패 원인 찾아 수정
-2. 실제 Supabase 연결을 **읽기 전용부터** 확인 (SQL 적용은 DB 담당과 합의 후)
-3. 심화 설문 속도 개선: `app/services/survey_ai.py` 에서 제목만 다시 쓰고 선택지는 원문 유지 (프론트 검증은 선택지 id·개수만 확인)
-4. 실제 게임 데이터를 넣은 뒤 추천 유사도 가중치 조정 (`ai_features.py` 의 `GENERIC_TAGS`, 가중치 상수)
-5. 문서에 적힌 추가 데이터 소스 연동
+1. 실제 Supabase 쓰기·로그인 확인 (읽기는 확인함. 쓰기·SQL 적용은 DB 담당과 합의 후)
+2. 심화 설문 속도 개선: `app/services/survey_ai.py` 에서 제목만 다시 쓰고 선택지는 원문 유지 (프론트 검증은 선택지 id·개수만 확인)
+3. 실제 게임 데이터를 넣은 뒤 추천 유사도 가중치 조정 (`ai_features.py` 의 `GENERIC_TAGS`, 가중치 상수)
+4. 문서에 적힌 추가 데이터 소스 연동
+
+## 설명 방식
+- 쉬운 한국어로 설명하고, 전문 용어는 처음 나올 때 한 줄로 풀어 쓰세요.
+- 파일을 고치거나 명령을 실행하기 전에 "무엇을, 왜" 하는지 한두 문장으로 먼저 알려 주세요.
+- 작업이 끝나면 바뀐 파일과 확인 방법(실행할 명령)을 요약하세요.
+- 큰 변경은 먼저 계획을 보여 주고 제가 동의한 뒤에 진행하세요.

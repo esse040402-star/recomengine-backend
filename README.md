@@ -47,7 +47,7 @@
 역할 분담: 문장 이해/작성은 Ollama, 점수·필터·일정 계산은 코드가 합니다. Ollama 출력은 항상 검증하고, 실패하면 규칙 기반으로 대체합니다.
 
 ## Swagger(/docs) 한국어 설명
-`http://localhost:8000/docs` 의 모든 API(22개)에 **제목 옆 한국어 설명(괄호)**, 상세 설명, 성공/실패 응답 예시를 붙였습니다.
+`http://localhost:8000/docs` 의 모든 API(25개)에 **제목 옆 한국어 설명(괄호)**, 상세 설명, 성공/실패 응답 예시를 붙였습니다.
 - 그룹(태그)마다 한국어 설명이 있고, 요청 입력칸에는 **바로 실행해 볼 수 있는 예시 값**과 항목별 설명이 들어 있습니다.
 - 각 항목은 `Try it out` 이 이미 눌려 있어서 `Execute` 만 누르면 됩니다.
 - 설명을 고치고 싶으면 **`app/docs.py` 한 파일만** 수정하세요. (입력 항목 설명은 `app/schemas.py`)
@@ -143,10 +143,22 @@ Ollama 설정은 위 'Ollama 사용법'을 참고하세요.
 `/docs` 에서 `POST /api/admin/games/sync` 에 `X-Admin-Token`(= .env 의 ADMIN_TOKEN)을 넣고
 `{"query": "elden ring", "limit": 5}` 처럼 호출하면 games 테이블에 저장됩니다.
 
+## 6. 스팀 랭킹·뉴스 (게임 id 대응표)
+프론트는 게임을 자기 id(`elden`, `portal` …)로 부르고, 스팀에 물어보려면 앱 번호가 필요합니다. 그 대응표는 `data/catalog_apps.json` 에 있고
+프론트 HTML 에서 뽑아 만듭니다. **프론트의 게임 목록이 바뀌면 다시 실행하세요** (HTML 자체는 저장소에 넣지 않습니다).
+```powershell
+python -m scripts.export_catalog "C:\경로\화면 프로토타입.html"
+```
+- 게임을 지정하지 않은 '전체 뉴스'는 대표 게임 12개(`news_games`)의 공식 소식을 보여줍니다.
+- 스팀 공개 주소만 쓰므로 별도 키가 필요 없고, 응답은 서버 메모리에 잠깐 보관됩니다(서버를 다시 켜면 비워짐).
+
 ## API 요약
 | 메서드 | 경로 | 설명 |
 |---|---|---|
-| GET | /api/status | 프론트가 부팅 때 호출 (ai: Ollama 켜짐+모델 설치됨, feeds) |
+| GET | /api/status | 프론트가 부팅 때 호출 (ai: Ollama 켜짐+모델 설치됨, feeds: 스팀 실시간 조회 사용 가능 = 항상 true) |
+| GET | /api/market?section=rankings\|news\|reviews[&game=id] | 스팀 인기 순위 · 소식/신작/할인 · 리뷰 집계 (결과를 10~30분 보관, DB 저장 없음) |
+| GET | /api/steam/reviews?game=id&sentiment&days&language&sort&cursor | 스팀 리뷰 목록 (12개씩, cursor 로 이어 받기) |
+| GET | /api/steam/details?game=id | 스팀 가격·사양·한국어 지원 갱신 |
 | GET/POST/PUT | /api/account/* | 회원가입·로그인·상태 저장 (위 표 참고) |
 | POST | /api/survey/generate | 심화 설문 28문항을 Ollama로 다듬기 (request, profileContext, blueprint 사용) |
 | GET | /api/games, /api/games/{id} | 게임 검색/상세 |

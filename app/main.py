@@ -12,7 +12,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app import docs
 from app.config import get_settings
-from app.routers import account, ai, games, sessions, survey, system
+from app.routers import account, ai, games, market, sessions, survey, system
 
 logging.basicConfig(level=logging.INFO)
 # httpx 는 요청 주소 전체를 INFO 로그로 남기는데, RAWG·스팀은 API 키를 주소(?key=...)에 넣어서
@@ -76,6 +76,7 @@ app.include_router(games.router)
 app.include_router(survey.router)
 app.include_router(sessions.router)
 app.include_router(ai.router)
+app.include_router(market.router)
 
 # 프로토타입 HTML은 /api/... 상대경로를 쓰므로 같은 서버에서 서빙하는 게 가장 간단하다.
 # backend/frontend/index.html 로 넣어두면 http://localhost:8000/ 에서 열린다.
