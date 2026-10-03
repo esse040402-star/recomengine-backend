@@ -3,3 +3,5 @@
 __pycache__/
 *.pyc
 frontend/index.html
+.env.*
+!.env.example
