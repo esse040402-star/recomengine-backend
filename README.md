@@ -1,7 +1,144 @@
 # RecomEngine 백엔드 (FastAPI + Supabase + Ollama + RAWG/IGDB)
 
+## 팀원용 빠른 확인 가이드 (받기 → 실행 → 확인)
+이 백엔드를 처음 받은 팀원이 **API 키도, 실제 DB도 없이** 제대로 동작하는지 확인하는 순서입니다 (약 10분).
+기본 설정(`USE_MOCK_DB=true`)은 **메모리 가짜 DB**를 쓰므로 팀의 Supabase에는 아무것도 쓰지 않고, 서버를 끄면 데이터가 사라집니다.
+
+**준비물**: Windows + VS Code(PowerShell 터미널), [Git](https://git-scm.com), Python 3.12 또는 3.13 권장
+(저장소 주소가 열리지 않으면 GitHub 초대를 요청하세요)
+
+### 1단계. 받기
+```powershell
+git clone https://github.com/esse040402-star/recomengine-backend.git
+cd recomengine-backend
+```
+
+### 2단계. 설치
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1          # 줄 맨 앞에 (.venv) 가 보이면 성공
+py -m pip install -r requirements.txt
+copy .env.example .env                # 그대로 두면 됩니다 (USE_MOCK_DB=true, 키 비어 있음)
+```
+- `Activate.ps1` 실행이 막히면 한 번만: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
+- 설치가 실패하면 Python 버전을 확인하세요 (`py --version`). 3.14 에서 안 되면 3.12/3.13 으로 `.venv` 를 다시 만드세요.
+
+### 3단계. 자동 테스트로 한 번에 확인
+```powershell
+python -m pytest
+```
+- **모두 `passed` 로 끝나면 정상**입니다 (현재 89개, 경고 1개는 무시해도 됩니다). 약 10초 걸립니다.
+- API 테스트는 항상 가짜 DB로 실행되고 외부 서비스도 가짜로 바꿔 쓰므로 키·인터넷·Ollama 가 필요 없습니다.
+
+### 4단계. 서버 켜기
+```powershell
+fastapi dev app/main.py
+```
+브라우저에서 http://localhost:8000/api/status 를 열어 아래처럼 나오는지 봅니다 (끄려면 터미널에서 `Ctrl+C`).
+
+| 항목 | 키 없이 받았을 때 정상 값 | 뜻 |
+|---|---|---|
+| `mock_db` | `true` | 가짜 DB로 동작 중 |
+| `feeds` | `true` | 스팀 랭킹·뉴스 조회 가능 (키 불필요, 인터넷만 있으면 됨) |
+| `ai`, `ollama.up` | `false` | Ollama 를 안 깔았으면 정상. 규칙 기반으로 대신 동작 |
+| `rawg`, `igdb`, `steam` | `false` | 해당 API 키를 안 넣었다는 뜻. 정상 |
+
+### 5단계. http://localhost:8000/docs 에서 눈으로 확인
+각 항목을 펼치면 `Try it out` 이 이미 눌려 있어서 `Execute` 만 누르면 됩니다.
+
+| 확인할 것 | 어떻게 | 정상이면 |
+|---|---|---|
+| 게임 목록 | `GET /api/games` (q 에 `elden` 입력해도 됨) | 샘플 게임 19개 |
+| 취향 진단 흐름 | 아래 'Swagger(/docs)에서 해볼 순서' 1~4번 | 점수·리포트·추천 10개가 나옴 |
+| 스팀 인기 순위 | `GET /api/market` → section=`rankings` | 순위 10개 (인터넷 필요) |
+| 게임 소식·할인 | `GET /api/market` → section=`news` | `news`, `newReleases`, `sales` 가 채워짐 |
+| 스팀 리뷰·정보 | `GET /api/steam/reviews`, `GET /api/steam/details` → game=`elden` | 리뷰 12개 / 개발사·가격 |
+| 회원가입·로그인 | `POST /api/account/signup` → `login` | 가짜 DB 안에서 동작 (서버를 끄면 사라짐) |
+| 오류 형식 | `GET /api/market` → game=`없는게임`, section=`news` | 404 와 `{"error": "한국어 메시지"}` |
+
+### 6단계 (선택). 프론트 화면까지 보기
+프론트 담당자에게 받은 프로토타입 HTML 로 화면을 이 서버에 붙입니다 (HTML 은 약 32MB 라 저장소에는 없습니다).
+```powershell
+python -m scripts.patch_frontend "C:\경로\화면 프로토타입.html"   # frontend/index.html 생성
+fastapi dev app/main.py                                          # → http://localhost:8000
+```
+- 반드시 **http://localhost:8000** 으로 여세요 (파일을 더블클릭하면 로그인 기능이 꺼집니다).
+- 게임 뉴스·랭킹은 처음에는 HTML 안에 저장된 자료(2026-09-30)가 보이고, **"새로 불러오기"** 를 누르면 스팀 최신 자료로 바뀝니다.
+- 순위·뉴스가 이상하면 프론트 게임 목록이 바뀐 것일 수 있습니다 → 아래 '6. 스팀 랭킹·뉴스' 의 대응표 갱신 명령 참고.
+
+### 7단계 (선택). 키가 있어야 하는 기능
+`.env` 를 열어 해당 줄만 채우고 서버를 다시 켭니다. **키는 개인 메시지로만 전달하고, `.env` 는 절대 깃허브·단체방에 올리지 마세요.**
+
+| 기능 | 필요한 설정 |
+|---|---|
+| 게임 데이터 수집 (RAWG/IGDB) | `RAWG_API_KEY`, `IGDB_CLIENT_ID`, `IGDB_CLIENT_SECRET`, 관리자 호출용 `ADMIN_TOKEN` |
+| 스팀 내 라이브러리 가져오기 | `STEAM_API_KEY` |
+| AI 설문·추천 문장 | Ollama 설치 + 모델 내려받기 (아래 'Ollama 사용법') |
+| 실제 DB 연결 | `USE_MOCK_DB=false` + `SUPABASE_*` 키. **DB 담당자와 합의 전에는 쓰기 작업 금지** (`sql/` 도 먼저 확인) |
+
+#### API 키 발급받는 법
+키는 모두 **무료**로 받을 수 있고, 받은 값은 `.env` 의 해당 줄에만 붙여 넣습니다 (따옴표·띄어쓰기 없이 `이름=값`). 저장한 뒤 **서버를 껐다 다시 켜야** 적용됩니다.
+> 사이트 화면은 바뀔 수 있으니, 아래와 다르면 각 사이트 안내를 따르세요.
+
+**① RAWG — `RAWG_API_KEY`** (게임 이름·장르·태그·표지 수집)
+1. https://rawg.io/apidocs 에서 **Get API Key** 를 누르고 가입(이메일)합니다.
+2. 로그인 후 같은 페이지에 나오는 키를 복사해 `RAWG_API_KEY=` 뒤에 붙입니다.
+- 무료는 **월 20,000회, 비상업용**입니다. 검색 1회 + 게임 하나당 2회를 쓰므로 수업 프로젝트에는 충분합니다.
+- 서비스 화면에 RAWG 출처 표시(링크)를 하라는 조건이 있습니다. 실제로 공개 배포할 때 확인하세요.
+
+**② IGDB — `IGDB_CLIENT_ID`, `IGDB_CLIENT_SECRET`** (출시일·평점 등 보강 정보)
+IGDB는 Twitch 계정으로 키를 받습니다.
+1. https://www.twitch.tv 에서 가입하고 **이메일 인증**을 마칩니다.
+2. Twitch 계정 설정에서 **2단계 인증(2FA)을 켭니다.** (꺼져 있으면 개발자 콘솔에서 앱을 만들 수 없습니다. 켠 뒤 콘솔 페이지를 새로고침하세요.)
+3. https://dev.twitch.tv/console 접속 → **Applications** 탭 → **Register Your Application**.
+4. 입력합니다.
+   - **Name**: 다른 사람과 겹치지 않는 이름 (예: `recomengine-본인이름`)
+   - **OAuth Redirect URLs**: `http://localhost` (이 프로젝트는 로그인 연동을 쓰지 않아 아무 주소나 괜찮습니다)
+   - **Category**: 목록에서 `Application Integration` 등 맞는 것을 고릅니다
+   - CAPTCHA를 풀고 **Create**
+5. 만들어진 앱의 **Manage** 를 눌러 **Client ID** 를 복사 → `IGDB_CLIENT_ID=`
+6. 같은 화면의 **New Secret** 을 눌러 나온 값을 복사 → `IGDB_CLIENT_SECRET=` (**다시 볼 수 없으니** 바로 복사해 두세요. 잃어버리면 New Secret 으로 새로 만들면 됩니다.)
+- 서버가 이 두 값으로 접근 토큰을 알아서 받아 갑니다. 토큰은 직접 만들 필요 없습니다.
+- 무료 사용 조건과 호출 한도는 IGDB 공식 문서(https://api-docs.igdb.com)에서 확인하세요.
+
+**③ Steam — `STEAM_API_KEY`** (내 스팀 라이브러리 가져오기에만 필요)
+1. 스팀에 로그인한 상태로 https://steamcommunity.com/dev/apikey 에 접속합니다.
+2. **Domain Name** 에는 `localhost` 처럼 적고(이 프로젝트는 도메인을 쓰지 않습니다), 약관에 동의한 뒤 **Register** 를 누릅니다.
+3. 나온 **Key** 를 복사해 `STEAM_API_KEY=` 뒤에 붙입니다.
+- 결제 이력이 거의 없는 **'제한된 계정'** 은 키 발급이 안 될 수 있습니다 (스팀 정책이라 직접 확인 필요).
+- **스팀 인기 순위·뉴스·할인·리뷰·가격은 이 키가 필요 없습니다.** 키는 '내 라이브러리' 조회에만 씁니다.
+- 라이브러리를 가져오려면 스팀 프로필의 **게임 세부 정보가 '공개'** 여야 하고, **SteamID64(17자리 숫자)** 가 필요합니다. 프로필 주소가 `/profiles/숫자` 형태면 그 숫자이고, 아니면 https://steamid.io 에서 프로필 주소를 넣어 `steamID64` 를 확인합니다.
+
+**④ 관리자 토큰 — `ADMIN_TOKEN`** (게임 수집 같은 관리자 API 보호용, 아무 문자열이나 직접 만듭니다)
+```powershell
+python -c "import secrets;print(secrets.token_urlsafe(32))"
+```
+나온 값을 `ADMIN_TOKEN=` 뒤에 붙입니다. 비워 두면 관리자 API 가 꺼집니다. `SESSION_SECRET` 도 같은 방법으로 만들어 채울 수 있습니다.
+
+**잘 들어갔는지 확인**
+| 확인 | 방법 | 정상이면 |
+|---|---|---|
+| 키가 읽혔는지 | http://localhost:8000/api/status | `rawg`, `igdb`, `steam` 이 `true` (**값이 들어 있는지만** 알려 줄 뿐, 키가 올바른지는 아래에서 확인) |
+| RAWG 키가 맞는지 | `/docs` → `POST /api/admin/games/sync`, 헤더 `X-Admin-Token` 에 `ADMIN_TOKEN` 값, 본문 `{"query": "elden ring", "limit": 3}` | 200 과 `saved` 에 게임 제목이 나옴. 키가 틀리면 502 + "API 키를 확인하세요" |
+| IGDB 키가 맞는지 | 위 동기화 직후 `GET /api/games` (q=`elden`) 결과의 `igdb_id` | 숫자가 채워져 있음. **`null` 이면 IGDB 키 문제**입니다 (RAWG 와 함께 쓸 때 IGDB 실패는 오류로 안 보이고 건너뛰어서, 서버 터미널에 `IGDB 보강 실패` 경고가 뜹니다) |
+| Steam 키가 맞는지 | `/docs` → `POST /api/ai/backlog`, 본문 `{"steam_id": "내 17자리 번호"}` | 내 게임 기반 결과(`candidates_considered` > 0). 키가 틀리면 502, 프로필·게임 목록이 비공개면 422(게임 목록 없음), 키를 안 넣었으면 503 |
+- ⚠️ **`USE_MOCK_DB=true`(기본값)일 때만** 위 게임 수집(동기화)을 마음대로 해 보세요. 가짜 DB(메모리)에만 저장되고 서버를 끄면 사라집니다. `false` 로 바꾸면 팀의 실제 DB 에 저장되니 DB 담당자와 먼저 상의하세요. (Steam 확인에 쓰는 `backlog` 는 DB 에 저장하지 않습니다.)
+- 키가 채팅·스크린샷·깃허브에 노출됐다면 **즉시 해당 사이트에서 키를 다시 발급(재생성)** 하세요. 이 서버는 오류 로그에 키가 찍히지 않게 처리해 두었지만, 직접 붙여 넣은 것까지는 막을 수 없습니다.
+
+### 자주 막히는 곳
+| 증상 | 해결 |
+|---|---|
+| `fastapi` 명령을 찾을 수 없음 | 가상환경이 꺼진 상태. `.\.venv\Scripts\Activate.ps1` 을 다시 실행 |
+| `ModuleNotFoundError: No module named 'app'` | `backend` 폴더(저장소 맨 위)에서 실행했는지 확인 |
+| 8000 번 포트가 이미 사용 중 | 이미 켜진 서버를 `Ctrl+C` 로 끄거나 `fastapi dev app/main.py --port 8001` |
+| `ai: false` 인데 문제인가요? | Ollama 를 안 쓰면 정상입니다. 규칙 기반으로 동작합니다 |
+| 스팀 순위·뉴스에서 502 | 인터넷 연결 또는 스팀 일시 장애. 잠시 후 다시 시도 (서버가 10~30분 결과를 보관합니다) |
+| 서버를 껐더니 데이터가 사라짐 | mock 모드의 정상 동작입니다 |
+
+---
+
 ## 0. Mock 모드로 먼저 돌려보기 (Supabase·프론트 없이)
-`.env` 에 `USE_MOCK_DB=true` 가 있으면 메모리 내 가짜 DB(샘플 게임 14개 포함)로 동작합니다.
+`.env` 에 `USE_MOCK_DB=true` 가 있으면 메모리 내 가짜 DB(샘플 게임 19개 포함)로 동작합니다.
 - 서버를 끄면 데이터가 사라집니다. 이 모드에서는 `supabase` 패키지가 설치되지 않아도 됩니다.
 - `fastapi dev app/main.py` 후 http://localhost:8000/docs 에서 API를 직접 눌러 테스트하세요.
 - 로그인 흉내: `Authorization: Bearer mock-<이름>` 헤더 (예: `Bearer mock-alice`)
