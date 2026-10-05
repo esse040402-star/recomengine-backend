@@ -1,0 +1,18 @@
+import E from '../services/preferenceEngine';
+import {generateSurvey} from '../services/recommendationService';
+export function chooseOption(question,answers,id){let selected=[...(answers[question.id]||[])];const option=question.options.find(o=>o.id===id);if(!option)return answers;if(question.max===1)selected=[id];else if(selected.includes(id))selected=selected.filter(x=>x!==id);else if(option.prefs?.none)selected=[id];else{selected=selected.filter(x=>!question.options.find(o=>o.id===x)?.prefs?.none);if(selected.length>=question.max)return answers;selected.push(id);}return {...answers,[question.id]:selected};}
+export function surveyActions(c){const patch=c.patch;
+ const start=(kind,reset=false,track=c.state.track)=>{if(!track){c.showDialog('profile-track');return;}if(kind==='deep'&&!c.state.drafts.deep&&!reset){c.goto('deep-intro');return;}const d=reset?null:c.state.drafts[kind];patch({track,drafts:{...c.state.drafts,[kind]:d||{answers:{},index:0,startedAt:new Date().toISOString(),...(kind==='quick'?{schema:2}:{}),...(kind==='preference'?{track,questions:E.profileQuestions(track)}:{})}}});c.goto('survey/'+kind);};
+ return {
+ 'track':({value})=>start('quick',true,value), 'profile-track':({value})=>{c.closeDialog();start('preference',true,value);},
+ 'start':({kind})=>start(kind),'resume':({kind})=>c.goto('survey/'+kind),
+ 'answer':({kind,id})=>{const d=c.state.drafts[kind],q=c.questions(kind)[d.index];patch({drafts:{...c.state.drafts,[kind]:{...d,answers:chooseOption(q,d.answers,id)}}});},
+ 'previous':({kind})=>{const d=c.state.drafts[kind];patch({drafts:{...c.state.drafts,[kind]:{...d,index:Math.max(0,d.index-1)}}});c.setUI({surveyDirection:-1});},
+ 'next':({kind})=>{const d=c.state.drafts[kind],qs=c.questions(kind);if(!d.answers[qs[d.index].id]?.length)return;if(d.index<qs.length-1){patch({drafts:{...c.state.drafts,[kind]:{...d,index:d.index+1}}});c.setUI({surveyDirection:1});window.scrollTo(0,0);return;}if(!E.validAnswers(qs,d.answers)){c.toast('답변하지 않은 질문을 확인해주세요.');return;}const drafts={...c.state.drafts};delete drafts[kind];patch({[kind]:{completed:true,answers:structuredClone(d.answers),questions:qs,track:d.track||c.state.track,source:d.source,...(kind==='quick'?{schema:2}:{}),completedAt:new Date().toISOString()},drafts,filters:{},bannerDismissed:false});c.goto(kind==='quick'?'result':'report');c.toast(kind==='quick'?'첫 추천이 준비됐어요.':'분석 결과를 추천과 내 취향 랭킹에 반영했어요.');},
+ 'pause':()=>{c.goto('home');c.toast('답변을 저장했어요. 이어서 진행할 수 있습니다.');},
+ 'retake':({kind})=>c.showDialog('retake',{kind}),
+ 'confirm-retake':({kind})=>{c.closeDialog();if(kind==='deep'){const drafts={...c.state.drafts};delete drafts.deep;patch({drafts});c.goto('deep-intro');}else start(kind,true);},
+ 'generate':async()=>{if(!c.state.quick?.completed){c.goto('home');return;}c.setUI({generationBusy:true});const generated=await generateSurvey(c.state);patch({drafts:{...c.state.drafts,deep:{...generated,answers:{},index:0}}});c.setUI({generationBusy:false});c.goto('survey/deep');},
+ 'confirm-restart':()=>{patch({track:null,quick:null,deep:null,preference:null,drafts:{},filters:{},bannerDismissed:false});c.setUI({guidedChat:null});c.closeDialog();c.goto('welcome');c.toast('첫 7문항부터 다시 시작할 수 있어요.');}
+ };
+}

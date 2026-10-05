@@ -1,0 +1,18 @@
+import * as v0 from '../pages/WelcomePage.jsx';
+import * as v1 from '../pages/HomePage.jsx';
+import * as v2 from '../pages/ResultPage.jsx';
+import * as v3 from '../pages/DeepIntroPage.jsx';
+import * as v4 from '../pages/SurveyPage.jsx';
+import * as v5 from '../pages/ExplorePage.jsx';
+import * as v6 from '../pages/RankingsPage.jsx';
+import * as v7 from '../pages/NewsPage.jsx';
+import * as v8 from '../pages/SavedPage.jsx';
+import * as v9 from '../pages/ProfilePage.jsx';
+import * as v10 from '../pages/ReportPage.jsx';
+import * as v11 from '../pages/GameDetailPage.jsx';
+import * as v12 from '../components/game/GameCard.jsx';
+import * as v13 from '../components/game/Reviews.jsx';
+import * as v14 from '../components/recommendation/RecommendationChat.jsx';
+import * as v15 from '../components/game/HeroSlide.jsx';
+import * as v16 from '../components/common/DialogContents.jsx';
+export const views={...v0,...v1,...v2,...v3,...v4,...v5,...v6,...v7,...v8,...v9,...v10,...v11,...v12,...v13,...v14,...v15,...v16};
