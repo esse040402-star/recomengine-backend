@@ -1,0 +1,28 @@
+import React from 'react';
+import { ActionButton, GameImage, Field, FieldArea, Form, Select, Anchor } from '../components/common/Elements.jsx';
+export function profile(ctx) {
+  const p = ctx.state.profile,
+    r = ctx.report();
+  return <><div className={"head"}><h1>{"개인 페이지"}</h1></div><section className={"profile-cover"} style={ctx.style("--avatar-color:" + ctx.esc(p.color))}>{p.banner !== 'brand' && ctx.game(p.banner) ? <GameImage src={ctx.gameImage(p.banner, 'hero')} alt={ctx.esc(ctx.game(p.banner).title) + " 프로필 배경"} /> : ''}<div className={"profile-identity"}><div className={"avatar"}>{ctx.icon(p.avatar)}</div><div><h2>{ctx.esc(p.name)}</h2><p>{ctx.esc(p.bio)}</p></div></div>{ctx.btn(<>{ctx.icon('PenLine')}{'프로필 꾸미기'}</>, 'edit-profile', 'btn ghost cover-edit')}</section><div className={"profile-stats"}><span><b>{ctx.state.saved.length}</b>{"찜한 게임"}</span><span><b>{ctx.state.reviews.length}</b>{"작성한 평가"}</span><span><b>{r.count}</b>{"완료한 문항"}</span></div><div className={"tabs"} role={"tablist"} aria-label={"개인 페이지 내용"}>{React.Children.toArray([['saved', '찜한 게임'], ['play-profile', '플레이 성향 프로필'], ['history', '내 활동'], ['settings', '설정']].map(([t, label], itemIndex) => ctx.btn(label, 'profile-tab', 'tab', `data-value="${t}" role="tab" aria-selected="${ctx.profileTab === t}"`)))}</div>{ctx.profileTab === 'saved' ? ctx.savedGames() : ctx.profileTab === 'settings' ? <>{accountSettings(ctx)}{profileSettings(ctx)}</> : ctx.profileTab === 'history' ? activityPanel(ctx) : playerProfileHub(ctx)}</>;
+}
+export function playerProfileHub(ctx) {
+  const r = ctx.report(),
+    done = ctx.state.preference?.completed,
+    pending = ctx.draft('preference');
+  return <section className={"panel player-profile-hub"}><div className={"section-head"}><div><h2>{"플레이 성향 프로필"}</h2><p>{done ? '내 답변과 피드백이 추천 게임에 연결됩니다.' : '더 정교한 설문으로 나의 플레이 성향을 발견하세요.'}</p></div><span className={"chip"}>{pending ? '작성 중 · 30문항' : done ? '프로필 완성' : '30문항'}</span></div>{done ? ctx.axisBars(r) : <p className={"note"}>{"플레이 방식·몰입·선호 조건을 하나의 프로필로 정리합니다. 기존 30문항으로 진행하며, 대화형 추천 설문과 구분해 보관합니다."}</p>}<div className={"row"}><>{pending ? ctx.btn('프로필 이어서 만들기', 'resume', 'btn primary', 'data-kind="preference"') : done ? ctx.routeBtn(<>{'내 플레이 성향 프로필 보기'}{ctx.icon('ArrowRight')}</>, 'report', 'btn primary') : ctx.btn('내 플레이 성향 프로필 만들기', 'start', 'btn primary', 'data-kind="preference"')}{done ? ctx.btn('프로필 다시 만들기', 'retake', 'btn ghost', 'data-kind="preference"') : ''}</></div></section>;
+}
+export function activityPanel(ctx) {
+  const played = Object.entries(ctx.state.feedback || {}).filter(([, v]) => v.played).map(([id], itemIndex) => ctx.game(id)).filter(Boolean);
+  return <><section className={"section activity-section"}><div className={"activity-heading"}><h2>{"플레이한 게임"}</h2><p>{"게임 상세에서 ‘이미 플레이함’으로 표시한 게임입니다."}</p></div>{played.length ? <div className={"games-grid"}>{React.Children.toArray(played.map((g, itemIndex) => ctx.card(g, {
+          reason: false
+        })))}</div> : <div className={"panel activity-empty"}>{"아직 기록한 게임이 없습니다."}</div>}</section><section className={"section activity-section"}><div className={"activity-heading"}><h2>{"내 코멘트와 평점"}</h2><p>{"직접 남긴 평가를 한곳에서 확인하세요."}</p></div><div className={"activity-reviews"}>{ctx.state.reviews.length ? React.Children.toArray(ctx.state.reviews.map((r, itemIndex) => <article className={"panel"} key={itemIndex}><h3><>{ctx.esc(ctx.game(r.game)?.title || '게임')}{" · "}{r.rating}{"/5"}</></h3><p>{ctx.esc(r.text)}</p>{ctx.btn('게임 평가 보기', 'detail', 'text-btn', `data-id="${r.game}"`)}</article>)) : <div className={"panel activity-empty"}>{"아직 작성한 평가가 없습니다."}</div>}</div></section></>;
+}
+export function profileSettings(ctx) {
+  return <><section className={"settings-panel panel"}><div className={"settings-row"}><div><h2>{"화면 모드"}</h2><p>{"나에게 편안한 화면으로."}</p></div><div className={"mode-toggle"}>{React.Children.toArray([['light', 'Sun', '화이트'], ['dark', 'Moon', '다크']].map(([v, i, t], itemIndex) => ctx.btn(<>{ctx.icon(i)}{t}</>, 'mode', '', `data-value="${v}" aria-pressed="${ctx.state.mode === v}"`)))}</div></div><div className={"settings-row"}><div><h2>{"게임 포인트 색상"}</h2><p>{"기본 브랜드 컬러 위에 작은 취향을 더해요."}</p></div>{ctx.btn(<>{'색상 설정'}{ctx.icon('Waves')}</>, 'customize', 'btn')}</div><div className={"settings-row"}><div><h2>{"추천 조건"}</h2><p>{"사용 기기와 피하고 싶은 요소를 조정하세요."}</p></div>{ctx.btn(<>{'조건 변경'}{ctx.icon('SlidersHorizontal')}</>, 'filters', 'btn')}</div></section><section className={"prototype-settings"}><div><h3>{"프로토타입 테스트"}</h3><p>{"첫 화면 확인용 기능입니다. 설문을 초기화하고 7문항부터 다시 시작합니다."}</p></div>{ctx.btn(<>{ctx.icon('RotateCcw')}{'처음부터 다시 시작'}</>, 'restart-onboarding', 'btn ghost')}</section></>;
+}
+export function accountSettings(ctx) {
+  return <section className={"panel account-panel"}><div><h2>{ctx.accountUser ? ctx.esc(ctx.accountUser.name) + '님의 계정' : '게스트로 이용 중이에요'}</h2><p>{ctx.accountUser ? ctx.esc(ctx.accountUser.email) : '계정을 만들면 설문·찜·피드백을 이 서버에 저장할 수 있어요.'}</p><span id={"account-save-status"} role={"status"} /></div>{ctx.accountUser ? ctx.btn('로그아웃', 'account-logout', 'btn') : accountLinks(ctx)}</section>;
+}
+export function accountLinks(ctx) {
+  return <div className={"account-links"}>{ctx.btn('로그인', 'account-login', 'text-btn')}<span aria-hidden={"true"}>{"/"}</span>{ctx.btn('회원가입', 'account-signup', 'text-btn')}</div>;
+}

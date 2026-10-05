@@ -1,0 +1,5 @@
+import React from 'react';
+import { ActionButton, GameImage, Field, FieldArea, Form, Select, Anchor } from '../../components/common/Elements.jsx';
+export function heroSlide(ctx, g) {
+  return <article className={"hero hero-slide"} data-game-id={g.id} aria-label={ctx.esc(g.title)}><GameImage className={"hero-art"} src={ctx.gameImage(g.id, 'hero')} alt={ctx.esc(g.title) + " 배경"} /><div className={"hero-copy"}><div className={"hero-label"}><>{ctx.icon('Sparkles')}{"지금 나에게 맞는 게임"}</></div><h2>{ctx.esc(g.title)}</h2><p>{ctx.esc(g.line.length > 90 ? g.line.slice(0, 90) + '…' : g.line)}</p><div className={"row"}><>{ctx.btn(<>{'게임 상세보기'}{ctx.icon('ArrowRight')}</>, 'detail', 'btn white', `data-id="${g.id}"`)}{ctx.btn(<>{ctx.icon(ctx.state.saved.includes(g.id) ? 'BookmarkCheck' : 'Bookmark')}{ctx.state.saved.includes(g.id) ? '찜한 게임' : '찜하기'}</>, 'save', 'btn ghost', `data-id="${g.id}" aria-pressed="${ctx.state.saved.includes(g.id)}"`)}</></div></div><div className={"hero-bottom"}><div className={"hero-reason"}><>{ctx.icon('Fingerprint')}{ctx.esc(g.explanation || g.reasons.join(' · '))}</></div></div></article>;
+}

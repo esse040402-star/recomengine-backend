@@ -1,0 +1,7 @@
+import React from 'react';
+import { ActionButton, GameImage, Field, FieldArea, Form, Select, Anchor } from '../components/common/Elements.jsx';
+export function deepIntro(ctx) {
+  const qs = ctx.draft('deep'),
+    quickContext = ctx.E.quickContext(ctx.state.track, ctx.E.seedAnswers(ctx.state));
+  return <div className={"panel intro-panel"}><div className={"big-icon"}>{ctx.icon('Sparkles')}</div><h1>{"같은 질문 대신,"}<br /><span className={"gradient-text"}>{"내 취향에서 이어지는 질문."}</span></h1><p><>{ctx.esc(quickContext.purpose || '앞서 선택한 취향')}{"부터 플레이 환경까지."}</><br />{"첫 답변을 바탕으로 더 자세히 알아볼게요."}</p><div className={"intro-points"}><div className={"intro-point"}><b>{"28"}</b>{"맞춤 질문"}</div><div className={"intro-point"}><b>{ctx.icon('Fingerprint')}</b>{"추천 정교화"}</div><div className={"intro-point"}><b>{ctx.icon('BookmarkCheck')}</b>{"중간 저장"}</div></div><div className={"note"}>{ctx.apiReady ? 'AI가 첫 7문항의 응답을 받아 질문을 생성합니다. 이름과 프로필 소개는 보내지 않습니다.' : '현재는 첫 답변에 따라 구성한 기본 맞춤 질문으로 진행합니다. 중간에 나가도 이어서 답할 수 있어요.'}</div><div className={"row"}><>{qs ? ctx.btn(<>{'이어서 답하기'}{ctx.icon('ArrowRight')}</>, 'resume', 'btn primary', 'data-kind="deep"') : ctx.btn(ctx.generationBusy ? <><span className={"spinner"} />{" 질문 준비 중"}</> : <>{'맞춤 질문으로 시작'}{ctx.icon('ArrowRight')}</>, 'generate', 'btn primary', ctx.generationBusy ? 'disabled aria-busy="true"' : '')}{ctx.routeBtn('나중에 · 메인으로', 'home', 'btn ghost')}</></div></div>;
+}

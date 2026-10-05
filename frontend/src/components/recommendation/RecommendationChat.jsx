@@ -1,0 +1,21 @@
+import React from 'react';
+import { ActionButton, GameImage, Field, FieldArea, Form, Select, Anchor } from '../../components/common/Elements.jsx';
+export function recommendationChat(ctx) {
+  const greeting = ctx.chatGreetings[0];
+  return <section className={"recommend-chat"} aria-labelledby={"chat-heading"}><div className={"chat-heading"}><span className={"chat-mark"}>{ctx.icon('Sparkles')}</span><h1 id={"chat-heading"}><>{ctx.esc(greeting[0])}{" "}</><span className={"gradient-text"}>{ctx.esc(greeting[1])}</span></h1></div><div id={"guided-chat"} className={"guided-chat"}>{guidedChatBody(ctx)}</div><Form className={"chat-composer"} id={"recommendation-form"}><label className={"sr-only"} htmlFor={"recommendation-input"}>{"원하는 게임 조건"}</label><Field id={"recommendation-input"} maxLength={"300"} autoComplete={"off"} placeholder={"예: 혼자 편하게 즐길 무료 게임을 찾고 있어요"} /><ActionButton type={"submit"} className={"chat-send"} aria-label={"게임 추천 받기"}>{ctx.icon('ArrowRight')}</ActionButton></Form><div className={"chat-suggestions"}><span className={"chat-method"} title={"AI 연결 시 응답 기반 질문을 생성하며, 연결이 없으면 저장된 규칙으로 추천합니다."}>{"사용자 응답 기반 AI 추천"}</span></div><div id={"recommendation-thread"} className={"recommendation-thread"} aria-live={"polite"}>{ctx.renderRecommendationTurns()}</div></section>;
+}
+export function guidedChatBody(ctx) {
+  const c = ctx.guidedChat;
+  if (!c) return <div className={"chat-paths"} role={"group"} aria-label={"추천 방식 선택"}><>{ctx.btn(<>{ctx.icon('Fingerprint')}{'내 플레이 성향 반영해서 추천받기'}</>, 'guided-mode', 'btn', 'data-value="profile"')}{ctx.btn(<>{ctx.icon('Sparkles')}{'데이터 반영 없이 추천받기'}</>, 'guided-mode', 'btn', 'data-value="fresh"')}</></div>;
+  if (c.paused) return <div className={"chat-paths"}><h2>{"작성하던 추천 설문이 있어요."}</h2><>{ctx.btn('이어서 답하기', 'guided-resume', 'btn primary')}{ctx.btn('새로 시작', 'guided-reset', 'btn ghost')}</></div>;
+  if (c.stage === 'track') return <div className={"chat-paths"}><h2>{"게임이 익숙하신가요?"}</h2><>{ctx.btn('게이머예요', 'guided-track', 'btn', 'data-value="gamer"')}{ctx.btn('비게이머예요', 'guided-track', 'btn', 'data-value="nongamer"')}</></div>;
+  if (c.stage === 'generating') return <div className={"note"} role={"status"}><span className={"spinner"} />{" 답변에서 이어지는 맞춤 질문을 준비하고 있어요."}</div>;
+  if (c.stage === 'result') {
+    const r = ctx.E.report(c.session);
+    return <><div className={"section-head"}><h2>{"이번 대화의 추천 게임"}</h2>{ctx.btn('새 추천 시작', 'guided-reset', 'text-btn')}</div><p className={"note"}>{c.mode === 'fresh' ? '이번 7문항과 후속 설문만 반영했습니다. 기존 프로필·피드백은 사용하지 않았어요.' : '저장된 프로필과 이번 후속 답변을 함께 반영했습니다.'}</p><>{r.recommendations.length ? <div className={"guided-results"}>{React.Children.toArray(r.recommendations.slice(0, 5).map((g, itemIndex) => ctx.card(g)))}</div> : <p className={"note"}>{"현재 기기·불호 조건을 충족한다고 확인된 게임이 부족합니다. 조건을 바꿔 다시 시작해주세요."}</p>}{ctx.btn('이번 답변을 추천에 반영', 'guided-save', 'btn primary')}</></>;
+  }
+  const qs = c.stage === 'quick' ? ctx.E.quickQuestions(c.session.track) : c.questions,
+    q = qs[c.index],
+    answers = c.answers[q.id] || [];
+  return <div className={"guided-question"}><div className={"section-head"}><span className={"chip"}><>{c.stage === 'quick' ? '기본 취향' : '맞춤 설문'}{" "}{c.index + 1}{" / "}{qs.length}</></span>{ctx.btn('나중에 이어서', 'guided-pause', 'text-btn')}</div><p className={"guided-source"}>{c.stage === 'deep' ? c.source === 'openai' ? 'AI가 응답을 바탕으로 생성한 질문' : 'AI 미연결 · 응답 기반 맞춤 질문' : c.mode === 'fresh' ? '기존 프로필을 사용하지 않는 새로운 추천입니다.' : ''}</p><h2 tabIndex={"-1"} id={"guided-title"}>{ctx.esc(q.title)}</h2>{q.max > 1 ? <p>{"여러 개 선택할 수 있어요."}</p> : ''}<div className={"options"}>{React.Children.toArray(q.options.map((o, itemIndex) => ctx.btn(<><span className={"option-index"}>{answers.includes(o.id) ? ctx.icon('Check') : Number(o.id) + 1}</span><span className={"option-text"}>{ctx.esc(o.label)}</span></>, 'guided-answer', 'option', `data-value="${o.id}" aria-pressed="${answers.includes(o.id)}"`)))}</div><div className={"row"}><>{ctx.btn('이전', 'guided-prev', 'btn ghost', c.index === 0 ? 'disabled' : '')}{ctx.btn(c.index === qs.length - 1 ? c.stage === 'quick' ? '맞춤 질문 생성' : '게임 5개 추천받기' : '다음', 'guided-next', 'btn primary', answers.length ? '' : 'disabled')}{ctx.btn('새로 시작', 'guided-reset', 'text-btn')}</></div></div>;
+}
