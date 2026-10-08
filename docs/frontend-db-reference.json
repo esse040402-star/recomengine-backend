@@ -1,0 +1,4284 @@
+{
+  "notice": "DB 입력용 완성 시드가 아닌 프론트 참조입니다. DEEP은 답변에 따라 바뀌므로 run별 문항 스냅샷을 보존하세요. clientQuestionKey/clientOptionKey는 DB PK가 아닙니다.",
+  "schemaVersion": 3,
+  "axes": [
+    "조작·피지컬",
+    "전략·문제 해결",
+    "탐색·수집",
+    "감성·몰입",
+    "휴식·힐링",
+    "경쟁·성취"
+  ],
+  "games": [
+    {
+      "clientGameKey": "elden",
+      "steamAppId": 1245620,
+      "title": "ELDEN RING"
+    },
+    {
+      "clientGameKey": "cyber",
+      "steamAppId": 1091500,
+      "title": "Cyberpunk 2077"
+    },
+    {
+      "clientGameKey": "stardew",
+      "steamAppId": 413150,
+      "title": "Stardew Valley"
+    },
+    {
+      "clientGameKey": "baldur",
+      "steamAppId": 1086940,
+      "title": "Baldur's Gate 3"
+    },
+    {
+      "clientGameKey": "baba",
+      "steamAppId": 736260,
+      "title": "Baba Is You"
+    },
+    {
+      "clientGameKey": "portal",
+      "steamAppId": 620,
+      "title": "Portal 2"
+    },
+    {
+      "clientGameKey": "terraria",
+      "steamAppId": 105600,
+      "title": "Terraria"
+    },
+    {
+      "clientGameKey": "hades",
+      "steamAppId": 1145360,
+      "title": "Hades"
+    },
+    {
+      "clientGameKey": "dorfromantik",
+      "steamAppId": 1455840,
+      "title": "Dorfromantik"
+    },
+    {
+      "clientGameKey": "unpacking",
+      "steamAppId": 1135690,
+      "title": "Unpacking 언패킹"
+    },
+    {
+      "clientGameKey": "slay",
+      "steamAppId": 646570,
+      "title": "Slay the Spire"
+    },
+    {
+      "clientGameKey": "celeste",
+      "steamAppId": 504230,
+      "title": "Celeste"
+    },
+    {
+      "clientGameKey": "cs2",
+      "steamAppId": 730,
+      "title": "Counter-Strike 2"
+    },
+    {
+      "clientGameKey": "dota",
+      "steamAppId": 570,
+      "title": "Dota 2"
+    },
+    {
+      "clientGameKey": "apex",
+      "steamAppId": 1172470,
+      "title": "Apex 레전드™"
+    },
+    {
+      "clientGameKey": "steam-292030",
+      "steamAppId": 292030,
+      "title": "The Witcher 3: Wild Hunt — Remastered"
+    },
+    {
+      "clientGameKey": "steam-570940",
+      "steamAppId": 570940,
+      "title": "DARK SOULS™: REMASTERED"
+    },
+    {
+      "clientGameKey": "steam-374320",
+      "steamAppId": 374320,
+      "title": "DARK SOULS™ III"
+    },
+    {
+      "clientGameKey": "steam-814380",
+      "steamAppId": 814380,
+      "title": "Sekiro™: Shadows Die Twice - GOTY Edition"
+    },
+    {
+      "clientGameKey": "steam-1174180",
+      "steamAppId": 1174180,
+      "title": "Red Dead Redemption 2"
+    },
+    {
+      "clientGameKey": "steam-271590",
+      "steamAppId": 271590,
+      "title": "Grand Theft Auto V 레거시"
+    },
+    {
+      "clientGameKey": "steam-990080",
+      "steamAppId": 990080,
+      "title": "호그와트 레거시"
+    },
+    {
+      "clientGameKey": "steam-1151640",
+      "steamAppId": 1151640,
+      "title": "Horizon Zero Dawn™ Complete Edition"
+    },
+    {
+      "clientGameKey": "steam-1240440",
+      "steamAppId": 1240440,
+      "title": "Halo Infinite"
+    },
+    {
+      "clientGameKey": "steam-553850",
+      "steamAppId": 553850,
+      "title": "HELLDIVERS™ 2"
+    },
+    {
+      "clientGameKey": "steam-578080",
+      "steamAppId": 578080,
+      "title": "PUBG: BATTLEGROUNDS"
+    },
+    {
+      "clientGameKey": "steam-359550",
+      "steamAppId": 359550,
+      "title": "톰 클랜시의 레인보우식스 시즈"
+    },
+    {
+      "clientGameKey": "steam-440",
+      "steamAppId": 440,
+      "title": "Team Fortress 2"
+    },
+    {
+      "clientGameKey": "steam-230410",
+      "steamAppId": 230410,
+      "title": "Warframe"
+    },
+    {
+      "clientGameKey": "steam-1085660",
+      "steamAppId": 1085660,
+      "title": "데스티니 가디언즈"
+    },
+    {
+      "clientGameKey": "steam-252490",
+      "steamAppId": 252490,
+      "title": "Rust"
+    },
+    {
+      "clientGameKey": "steam-346110",
+      "steamAppId": 346110,
+      "title": "ARK: Survival Evolved"
+    },
+    {
+      "clientGameKey": "steam-2399830",
+      "steamAppId": 2399830,
+      "title": "ARK: Survival Ascended"
+    },
+    {
+      "clientGameKey": "steam-1623730",
+      "steamAppId": 1623730,
+      "title": "Palworld / 팰월드"
+    },
+    {
+      "clientGameKey": "steam-892970",
+      "steamAppId": 892970,
+      "title": "Valheim"
+    },
+    {
+      "clientGameKey": "steam-275850",
+      "steamAppId": 275850,
+      "title": "No Man's Sky"
+    },
+    {
+      "clientGameKey": "steam-261550",
+      "steamAppId": 261550,
+      "title": "Mount & Blade II: Bannerlord"
+    },
+    {
+      "clientGameKey": "steam-108600",
+      "steamAppId": 108600,
+      "title": "Project Zomboid"
+    },
+    {
+      "clientGameKey": "steam-1145350",
+      "steamAppId": 1145350,
+      "title": "Hades II"
+    },
+    {
+      "clientGameKey": "steam-367520",
+      "steamAppId": 367520,
+      "title": "Hollow Knight"
+    },
+    {
+      "clientGameKey": "steam-1030300",
+      "steamAppId": 1030300,
+      "title": "Hollow Knight: Silksong"
+    },
+    {
+      "clientGameKey": "steam-588650",
+      "steamAppId": 588650,
+      "title": "Dead Cells"
+    },
+    {
+      "clientGameKey": "steam-1868140",
+      "steamAppId": 1868140,
+      "title": "데이브 더 다이버"
+    },
+    {
+      "clientGameKey": "steam-250900",
+      "steamAppId": 250900,
+      "title": "The Binding of Isaac: Rebirth"
+    },
+    {
+      "clientGameKey": "steam-2379780",
+      "steamAppId": 2379780,
+      "title": "Balatro"
+    },
+    {
+      "clientGameKey": "steam-1794680",
+      "steamAppId": 1794680,
+      "title": "Vampire Survivors"
+    },
+    {
+      "clientGameKey": "steam-1942280",
+      "steamAppId": 1942280,
+      "title": "Brotato"
+    },
+    {
+      "clientGameKey": "steam-632360",
+      "steamAppId": 632360,
+      "title": "Risk of Rain 2"
+    },
+    {
+      "clientGameKey": "steam-322500",
+      "steamAppId": 322500,
+      "title": "SUPERHOT"
+    },
+    {
+      "clientGameKey": "steam-268910",
+      "steamAppId": 268910,
+      "title": "Cuphead"
+    },
+    {
+      "clientGameKey": "steam-1057090",
+      "steamAppId": 1057090,
+      "title": "Ori and the Will of the Wisps"
+    },
+    {
+      "clientGameKey": "steam-387290",
+      "steamAppId": 387290,
+      "title": "Ori and the Blind Forest: Definitive Edition"
+    },
+    {
+      "clientGameKey": "steam-1150690",
+      "steamAppId": 1150690,
+      "title": "OMORI"
+    },
+    {
+      "clientGameKey": "steam-356570",
+      "steamAppId": 356570,
+      "title": "Party Hard"
+    },
+    {
+      "clientGameKey": "steam-1158310",
+      "steamAppId": 1158310,
+      "title": "Crusader Kings III"
+    },
+    {
+      "clientGameKey": "steam-294100",
+      "steamAppId": 294100,
+      "title": "RimWorld"
+    },
+    {
+      "clientGameKey": "steam-427520",
+      "steamAppId": 427520,
+      "title": "Factorio"
+    },
+    {
+      "clientGameKey": "steam-526870",
+      "steamAppId": 526870,
+      "title": "Satisfactory"
+    },
+    {
+      "clientGameKey": "steam-1084160",
+      "steamAppId": 1084160,
+      "title": "Jagged Alliance 3"
+    },
+    {
+      "clientGameKey": "steam-289070",
+      "steamAppId": 289070,
+      "title": "Sid Meier’s Civilization® VI"
+    },
+    {
+      "clientGameKey": "steam-8930",
+      "steamAppId": 8930,
+      "title": "Sid Meier's Civilization® V"
+    },
+    {
+      "clientGameKey": "steam-1244460",
+      "steamAppId": 1244460,
+      "title": "쥬라기 월드 에볼루션 2"
+    },
+    {
+      "clientGameKey": "steam-255710",
+      "steamAppId": 255710,
+      "title": "Cities: Skylines"
+    },
+    {
+      "clientGameKey": "steam-949230",
+      "steamAppId": 949230,
+      "title": "Cities: Skylines II"
+    },
+    {
+      "clientGameKey": "steam-219150",
+      "steamAppId": 219150,
+      "title": "Hotline Miami"
+    },
+    {
+      "clientGameKey": "steam-391540",
+      "steamAppId": 391540,
+      "title": "Undertale"
+    },
+    {
+      "clientGameKey": "steam-400",
+      "steamAppId": 400,
+      "title": "Portal"
+    },
+    {
+      "clientGameKey": "steam-4000",
+      "steamAppId": 4000,
+      "title": "Garry's Mod"
+    },
+    {
+      "clientGameKey": "steam-22380",
+      "steamAppId": 22380,
+      "title": "Fallout: New Vegas"
+    },
+    {
+      "clientGameKey": "steam-377160",
+      "steamAppId": 377160,
+      "title": "Fallout 4"
+    },
+    {
+      "clientGameKey": "steam-489830",
+      "steamAppId": 489830,
+      "title": "The Elder Scrolls V: Skyrim Special Edition"
+    },
+    {
+      "clientGameKey": "steam-524220",
+      "steamAppId": 524220,
+      "title": "NieR:Automata™"
+    },
+    {
+      "clientGameKey": "steam-582010",
+      "steamAppId": 582010,
+      "title": "Monster Hunter: World"
+    },
+    {
+      "clientGameKey": "steam-2246340",
+      "steamAppId": 2246340,
+      "title": "Monster Hunter Wilds"
+    },
+    {
+      "clientGameKey": "steam-1446780",
+      "steamAppId": 1446780,
+      "title": "MONSTER HUNTER RISE"
+    },
+    {
+      "clientGameKey": "steam-582160",
+      "steamAppId": 582160,
+      "title": "어쌔신 크리드 오리진"
+    },
+    {
+      "clientGameKey": "steam-812140",
+      "steamAppId": 812140,
+      "title": "Assassin's Creed® Odyssey"
+    },
+    {
+      "clientGameKey": "steam-1172380",
+      "steamAppId": 1172380,
+      "title": "스타워즈 제다이: 오더의 몰락™"
+    },
+    {
+      "clientGameKey": "steam-1593500",
+      "steamAppId": 1593500,
+      "title": "God of War"
+    },
+    {
+      "clientGameKey": "steam-1659040",
+      "steamAppId": 1659040,
+      "title": "HITMAN World of Assassination"
+    },
+    {
+      "clientGameKey": "steam-1817190",
+      "steamAppId": 1817190,
+      "title": "Marvel’s Spider-Man: Miles Morales"
+    },
+    {
+      "clientGameKey": "steam-1817070",
+      "steamAppId": 1817070,
+      "title": "Marvel’s Spider-Man Remastered"
+    },
+    {
+      "clientGameKey": "steam-1063730",
+      "steamAppId": 1063730,
+      "title": "New World: Aeternum"
+    },
+    {
+      "clientGameKey": "steam-1466860",
+      "steamAppId": 1466860,
+      "title": "Age of Empires IV: Anniversary Edition"
+    },
+    {
+      "clientGameKey": "steam-1938090",
+      "steamAppId": 1938090,
+      "title": "콜 오브 듀티®"
+    },
+    {
+      "clientGameKey": "steam-1203630",
+      "steamAppId": 1203630,
+      "title": "로도스도 전기 - 디드리트 인 원더 라비린스"
+    },
+    {
+      "clientGameKey": "steam-1290000",
+      "steamAppId": 1290000,
+      "title": "PowerWash Simulator"
+    },
+    {
+      "clientGameKey": "steam-648800",
+      "steamAppId": 648800,
+      "title": "Raft"
+    },
+    {
+      "clientGameKey": "steam-47890",
+      "steamAppId": 47890,
+      "title": "The Sims™ 3"
+    },
+    {
+      "clientGameKey": "steam-1222670",
+      "steamAppId": 1222670,
+      "title": "The Sims™ 4"
+    },
+    {
+      "clientGameKey": "steam-1401590",
+      "steamAppId": 1401590,
+      "title": "Disney Dreamlight Valley"
+    },
+    {
+      "clientGameKey": "steam-1151340",
+      "steamAppId": 1151340,
+      "title": "Fallout 76"
+    },
+    {
+      "clientGameKey": "steam-240720",
+      "steamAppId": 240720,
+      "title": "Getting Over It with Bennett Foddy"
+    },
+    {
+      "clientGameKey": "steam-3431040",
+      "steamAppId": 3431040,
+      "title": "That's not my Neighbor"
+    },
+    {
+      "clientGameKey": "steam-1055540",
+      "steamAppId": 1055540,
+      "title": "A Short Hike"
+    },
+    {
+      "clientGameKey": "steam-42700",
+      "steamAppId": 42700,
+      "title": "Call of Duty®: Black Ops"
+    },
+    {
+      "clientGameKey": "steam-291550",
+      "steamAppId": 291550,
+      "title": "Brawlhalla"
+    },
+    {
+      "clientGameKey": "steam-945360",
+      "steamAppId": 945360,
+      "title": "Among Us"
+    },
+    {
+      "clientGameKey": "steam-1222700",
+      "steamAppId": 1222700,
+      "title": "A Way Out"
+    },
+    {
+      "clientGameKey": "steam-381210",
+      "steamAppId": 381210,
+      "title": "Dead by Daylight"
+    },
+    {
+      "clientGameKey": "steam-1599600",
+      "steamAppId": 1599600,
+      "title": "플레이트업!"
+    },
+    {
+      "clientGameKey": "steam-221100",
+      "steamAppId": 221100,
+      "title": "DayZ"
+    },
+    {
+      "clientGameKey": "steam-322330",
+      "steamAppId": 322330,
+      "title": "Don't Starve Together"
+    },
+    {
+      "clientGameKey": "steam-242760",
+      "steamAppId": 242760,
+      "title": "The Forest"
+    },
+    {
+      "clientGameKey": "steam-1326470",
+      "steamAppId": 1326470,
+      "title": "Sons Of The Forest"
+    },
+    {
+      "clientGameKey": "steam-550",
+      "steamAppId": 550,
+      "title": "Left 4 Dead 2"
+    },
+    {
+      "clientGameKey": "steam-220",
+      "steamAppId": 220,
+      "title": "Half-Life 2"
+    },
+    {
+      "clientGameKey": "steam-1867240",
+      "steamAppId": 1867240,
+      "title": "WARDOGS"
+    },
+    {
+      "clientGameKey": "steam-1422450",
+      "steamAppId": 1422450,
+      "title": "Deadlock"
+    },
+    {
+      "clientGameKey": "steam-2868840",
+      "steamAppId": 2868840,
+      "title": "Slay the Spire 2"
+    },
+    {
+      "clientGameKey": "steam-4126040",
+      "steamAppId": 4126040,
+      "title": "애니모"
+    },
+    {
+      "clientGameKey": "steam-2767030",
+      "steamAppId": 2767030,
+      "title": "마블 라이벌즈"
+    },
+    {
+      "clientGameKey": "steam-236390",
+      "steamAppId": 236390,
+      "title": "War Thunder"
+    },
+    {
+      "clientGameKey": "steam-322170",
+      "steamAppId": 322170,
+      "title": "Geometry Dash"
+    },
+    {
+      "clientGameKey": "steam-2507950",
+      "steamAppId": 2507950,
+      "title": "Delta Force"
+    },
+    {
+      "clientGameKey": "steam-1973530",
+      "steamAppId": 1973530,
+      "title": "Limbus Company"
+    },
+    {
+      "clientGameKey": "steam-3240220",
+      "steamAppId": 3240220,
+      "title": "Grand Theft Auto V 인핸스드"
+    },
+    {
+      "clientGameKey": "steam-1142710",
+      "steamAppId": 1142710,
+      "title": "토탈워: 워해머 3"
+    },
+    {
+      "clientGameKey": "steam-4001890",
+      "steamAppId": 4001890,
+      "title": "낚시 방법"
+    },
+    {
+      "clientGameKey": "steam-2807960",
+      "steamAppId": 2807960,
+      "title": "Battlefield™ 6"
+    },
+    {
+      "clientGameKey": "steam-3493540",
+      "steamAppId": 3493540,
+      "title": "Transport Fever 3"
+    },
+    {
+      "clientGameKey": "steam-5235150",
+      "steamAppId": 5235150,
+      "title": "초록 모자 대전"
+    },
+    {
+      "clientGameKey": "steam-2429930",
+      "steamAppId": 2429930,
+      "title": "전력망"
+    },
+    {
+      "clientGameKey": "steam-4869180",
+      "steamAppId": 4869180,
+      "title": "GoatCart"
+    },
+    {
+      "clientGameKey": "steam-5187710",
+      "steamAppId": 5187710,
+      "title": "Lost Liminal:Prologue"
+    },
+    {
+      "clientGameKey": "steam-4020370",
+      "steamAppId": 4020370,
+      "title": "Boxcutter"
+    },
+    {
+      "clientGameKey": "steam-4376740",
+      "steamAppId": 4376740,
+      "title": "Fruit Fetish"
+    },
+    {
+      "clientGameKey": "steam-4301910",
+      "steamAppId": 4301910,
+      "title": "The War Disorder Hexa"
+    },
+    {
+      "clientGameKey": "steam-5051720",
+      "steamAppId": 5051720,
+      "title": "CRAFTLANDER"
+    },
+    {
+      "clientGameKey": "steam-4612540",
+      "steamAppId": 4612540,
+      "title": "君は本当に家に帰りたいと思った事があるか"
+    },
+    {
+      "clientGameKey": "steam-5179030",
+      "steamAppId": 5179030,
+      "title": "The Long Graze"
+    },
+    {
+      "clientGameKey": "steam-3582120",
+      "steamAppId": 3582120,
+      "title": "코헨 1939"
+    },
+    {
+      "clientGameKey": "steam-1488490",
+      "steamAppId": 1488490,
+      "title": "니발리스 나이트 Nivalis Nights"
+    },
+    {
+      "clientGameKey": "steam-1687950",
+      "steamAppId": 1687950,
+      "title": "페르소나 5 더 로열"
+    },
+    {
+      "clientGameKey": "steam-2161700",
+      "steamAppId": 2161700,
+      "title": "페르소나3 리로드"
+    },
+    {
+      "clientGameKey": "steam-2531310",
+      "steamAppId": 2531310,
+      "title": "The Last of Us™ Part II Remastered"
+    },
+    {
+      "clientGameKey": "steam-1771300",
+      "steamAppId": 1771300,
+      "title": "Kingdom Come: Deliverance II"
+    }
+  ],
+  "surveys": [
+    {
+      "surveyType": "QUICK",
+      "track": "GAMER",
+      "templateVersion": 3,
+      "adaptiveExample": false,
+      "questions": [
+        {
+          "clientQuestionKey": "q1",
+          "seq": 1,
+          "fieldKey": "platform",
+          "title": "주력 플레이 플랫폼",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "PC (Steam / Epic Games 등)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "콘솔 (PS / Nintendo Switch / Xbox)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "모바일 (iOS / Android)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "UMPC (Steam Deck / ROG Ally 등)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "상관 없음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q2",
+          "seq": 2,
+          "fieldKey": "session",
+          "title": "플레이 호흡 및 세션 구조",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[초단판 숏폼 (5~15분)] — 10분 내외로 빠르게 한 판 끝내고 끌 수 있는 숏폼 세션 (클래시 로얄, 칼바람, 브롤스타즈 등)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[중형 세션 (20~40분)] — 한 판당 30분 안팎으로 매칭/진행되는 중형 세션 (LoL 협곡, 배틀그라운드, 오버워치, 잇 테이크 투 등)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[장시간 롱폼 (1시간 이상)] — 한 번 잡으면 1시간 이상 진득하게 몰입하는 세션 (오픈월드, 스토리지향 RPG, 4X 전략 등)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "\"세션 길이 상관없음 / 상황 따라 다 좋아함\"",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q3",
+          "seq": 3,
+          "fieldKey": "purpose",
+          "title": "핵심 재미 드라이버",
+          "maxSelect": 5,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[손맛/전투] 피지컬, 타격감, 실시간 전투, 액션 쾌감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[전략/두뇌] 빌드 연구, 수싸움, 턴제, 시뮬레이션, 퍼즐",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[서사/몰입] 스토리, 세계관, 연출, 캐릭터 중심",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[탐험/자유도] 오픈월드, 수집, 다회차 요소, 높은 자유도",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "[경영/빌딩] 하우징, 경영 시뮬레이션, 정돈, 아늑한 성취감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "5",
+              "label": "상관 없음",
+              "isNone": true
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q4",
+          "seq": 4,
+          "fieldKey": "social",
+          "title": "멀티플레이 및 스트레스 수용도",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "순수 싱글 플레이 (Solo Only) — 타인의 개입 없이 혼자 몰입",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "PvE / 협동 플레이 (Co-op) — 다른 유저/친구와 협력하여 목표 달성",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "PvP / 경쟁 플레이 (Ranked / Competitive) — 랭크전, 승패 및 실력 겨루기",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q5",
+          "seq": 5,
+          "fieldKey": "mechanics",
+          "title": "메카닉 요구도 및 조작 방식",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "실시간 피지컬 조작 (3D 자유 시점, 피하기/스킬 연계, 반응속도 중시)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "턴제 / Command / 커서 조작 (포인트 앤 클릭, 덱빌딩 카드, 커맨드 선택)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "조작 방식 무관",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q6",
+          "seq": 6,
+          "fieldKey": "avoid",
+          "title": "이탈 요인 (Anti-Match Trigger / 복수 선택)",
+          "maxSelect": 5,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "🚫 3D 시점 멀미 및 눈의 피로",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "🚫 과도한 무한 반복 파밍 / 노가다 요구 (Grinding)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "🚫 P2W 및 과도한 BM(가챠/현질) 유도",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "🚫 진입장벽이 과도한 뇌지컬 공부 / 머리 아픈 퍼즐 (공부 피로)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "🚫 1:1 / 대전 승패에서 오는 억까 및 스트레스",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "5",
+              "label": "🟢 특별히 피하는 요소 없음",
+              "isNone": true
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q7",
+          "seq": 7,
+          "fieldKey": "visual",
+          "title": "비주얼 아트 스타일",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "고퀄리티 실사 3D Graphics",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "서브컬처 / 2D 애니메이션 풍",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "도트 / 픽셀 아트 / 레트로 감성",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "캐주얼 / 동화풍 Graphics",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "아트 스타일 무관",
+              "isNone": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surveyType": "PROFILE",
+      "track": "GAMER",
+      "templateVersion": 3,
+      "adaptiveExample": false,
+      "questions": [
+        {
+          "clientQuestionKey": "p1",
+          "seq": 1,
+          "fieldKey": "platform",
+          "title": "주로 즐겨 하시는 게임 플랫폼은 무엇인가요?",
+          "maxSelect": 4,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "PC (Steam, Epic, Riot 등)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "스마트폰 / 태블릿 (iOS, Android)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "콘솔 (PlayStation, Nintendo Switch, Xbox 등)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "휴대용 UMPC / 기타 (Steam Deck, ROG Ally, VR 등)",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p2",
+          "seq": 2,
+          "fieldKey": "weekly_time",
+          "title": "일주일에 게임을 플레이하는 평균 시간은 어느 정도인가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "라이트 게이머 (주 1~3시간 이하)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "미들 게이머 (주 4~10시간)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "하드 게이머 (주 11~20시간)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "헤비 게이머 (주 20시간 이상)",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p3",
+          "seq": 3,
+          "fieldKey": "genre",
+          "title": "가장 선호하는 메인 장르를 고른다면?",
+          "maxSelect": 2,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "RPG / 어드벤처",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "액션 / 소울라이크",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "FPS / TPS / 슈팅",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "전략 / 시뮬레이션",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "로그라이크 / 퍼즐",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "5",
+              "label": "경영 / 힐링",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p4",
+          "seq": 4,
+          "fieldKey": "mechanics",
+          "title": "선호하는 게임 난이도와 조작 숙련도는 어느 정도인가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "쉬움 / 스토리 중심",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "보통 / 적당한 긴장감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "어려움 / 하드코어",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "상관없음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p5",
+          "seq": 5,
+          "fieldKey": "visual",
+          "title": "선호하는 비주얼 / 그래픽 스타일은 무엇인가요?",
+          "maxSelect": 2,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "AAA급 3D 고사양",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "도트 / 픽셀 아트",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "카툰 렌더링 / 애니",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "독창적 인디 아트",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "상관없음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p6",
+          "seq": 6,
+          "fieldKey": "조작 & 피지컬",
+          "title": "전투 시스템에서 피지컬(손가락 반응속도)의 요구치는 어느 정도가 적당한가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[극강 피지컬] 0.1초 찰나의 패링, 회피, 캔슬을 꽂아 넣는 하드코어 조작",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[정교한 숙련도] 딜사이클 콤보를 손가락 꼬이지 않고 정확하게 이어나가는 조작",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[중간 수준] 피지컬보다는 스킬 쿨타임과 범위 위주로 눌러주는 적당한 조작",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[뇌지컬/턴제] 피지컬 조작 요소가 아예 없고 전략/생각만 쓰는 방식",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p7",
+          "seq": 7,
+          "fieldKey": "전투 피드백",
+          "title": "전투 시 도파민이 가장 크게 터지는 연출은 무엇인가요?",
+          "maxSelect": 2,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[대규모 싹쓸이] 적 무리가 한 번에 쓸려 나가는 핵앤슬래시 쾌감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[묵직한 타격감] 피가 튀거나 뼈가 부서지는 리얼한 타격 연출",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[물리 파괴] 지형물이 무너지거나 구조물이 파괴되는 정교한 물리 엔진",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[화려한 이펙트] 화려한 스킬 애니메이션과 이펙트가 끊임없이 터지는 연출",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p8",
+          "seq": 8,
+          "fieldKey": "시점 및 카메라",
+          "title": "플레이할 때 가장 선호하고 눈과 손이 편안한 카메라 시점은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[1인칭 / FPS] 캐릭터의 눈이 되어 깊게 몰입하는 시점",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[3인칭 / TPS] 캐릭터 등 뒤에서 시야를 넓게 확보하는 숄더뷰/백뷰",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[탑뷰 / 쿼터뷰] 위에서 아래로 내려다보는 대중적인 시점",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[2D 사이드스크롤] 옆에서 바라보는 메트로배니아/플랫포머 시점",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p9",
+          "seq": 9,
+          "fieldKey": "전략 수싸움",
+          "title": "게임에서 머리를 써서 문제를 해결할 때 즐겁다고 느끼는 요소는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[턴제/경영] 몇 수 앞 동선과 자원 유입/지출을 계산하는 전략",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[사전 빌드 연구] 전투 전 스킬 트리, 속성, 아이템 시너지를 맞추는 세팅",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[임기응변] 시시각각 변하는 전황에 따라 순발력 있게 판을 짜는 자율 판단",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[직관적 전투] 복잡한 계산이나 세팅 없이 직관적으로 때려잡는 방식",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p10",
+          "seq": 10,
+          "fieldKey": "스탯 & 성장 체감",
+          "title": "내 캐릭터가 '종결급으로 강해졌다'고 체감할 때 가장 기분 좋은 순간은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[폭딜 쾌감] 억 단위 데미지 텍스트가 뜨며 보스 피통이 순식간에 녹을 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[양학/무쌍] 초반에 나를 괴롭히던 필드 보스를 손쉽게 학살할 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[DPS 최적화] 스탯 수치와 무기 빌드가 극한의 효율을 달성했을 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[간지/룩딸] 종결 장비를 맞춰 캐릭터 외형에서 압도적인 오라가 풍길 때",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p11",
+          "seq": 11,
+          "fieldKey": "역할군 취향",
+          "title": "파티/팀 플레이 시 본능적으로 끌리는 나의 롤(Role)은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[탱커/선봉장] 최전방에서 적의 공격을 온몸으로 막아내며 판을 까는 역할",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[메인 딜러] 압도적인 화력으로 적을 썰어버리는 핵심 에이스",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[힐러/서포터] 후방에서 아군을 살리고 버프를 넣어주는 헌신적 역할",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[특수/유틸] 은밀하게 침투하여 변수를 창출하는 스페셜리스트",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p12",
+          "seq": 12,
+          "fieldKey": "경쟁 (PvP)",
+          "title": "타인과의 경쟁(PvP)에서 도파민을 느끼는 순간은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[1v1 피지컬] 오롯이 내 실력과 수싸움으로 상대를 1대1로 압도했을 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[팀 플레이 승리] 팀원들과 보이스 챗으로 브리핑하고 합을 맞춰 승리했을 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[랭킹/티어 달성] 서버 순위표나 랭킹 티어를 다이아/마스터까지 올릴 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[PvP 안 함] 경쟁 스트레스 없이 혼자 하거나 협동(PvE)만 하는 게 좋음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p13",
+          "seq": 13,
+          "fieldKey": "협동 (PvE)",
+          "title": "멀티플레이 협동(Co-op) 콘텐츠에서 기대하는 가치는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[고난도 레이드] 정교하게 패턴을 수행해 고난도 보스를 공략할 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[대규모 길드전] 길드/클랜 소속으로 대규모 영토전/공성전에 참여하는 귀속감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[소소한 힐링 협동] 필드에서 초보를 도와주거나 물자를 공유하는 온기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[솔로 플레이] 타인과 얽히고 싶지 않음. 싱글 플레이(솔플)가 최고",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p14",
+          "seq": 14,
+          "fieldKey": "탐험 스타일",
+          "title": "오픈월드나 넓은 맵을 탐험할 때 당신의 플레이 스타일은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[자유 탐험] 정해진 퀘스트를 무시하고 눈에 보이는 곳으로 무작정 가봄",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[기믹/숏컷 파괴] 벽 뚫기, 버그성 기믹, 숨겨진 숏컷을 찾아내는 플레이",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[숨은 요소 탐색] 지도에 없는 비밀 던전이나 숨은 NPC 퀘스트를 발굴함",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[최적 동선] 동선 낭비 없이 제작진이 안내하는 깔끔한 동선을 따라감",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p15",
+          "seq": 15,
+          "fieldKey": "자기표현 & 커스텀",
+          "title": "게임 안에서 내 취향을 가장 깊게 반영하고 싶은 파트는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[커스터마이징] 캐릭터 얼굴 슬라이더, 헤어, 체형을 디테일하게 조절",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[룩딸/패션] 스킨, 염색, 코스튬으로 멋지고 개성 있는 외형 완성",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[하우징/건축] 내 영지/기지를 직접 건축하고 가구를 배치하는 공간 조성",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[독창적 빌드] 외형보단 남들과 차별화된 나만의 스킬/무기 빌드 구성",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p16",
+          "seq": 16,
+          "fieldKey": "사운드 영향력",
+          "title": "게임을 할 때 오디오(Sound Track)가 주는 영향력은 어느 정도인가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[몰입의 핵심] 웅장한 OST와 타격감 넘치는 효과음이 몰입의 50% 이상",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[감성/힐링] 잔잔하고 감성적인 배경음악(BGM)으로 힐링하는 기분",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[서브 라이트] 소리는 작게 틀고, 디스코드 수다나 방송을 함께 들음",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[오디오 미사용] 소리는 끄거나 상관없이 오직 메커니즘에만 집중",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p17",
+          "seq": 17,
+          "fieldKey": "아트 비주얼",
+          "title": "가장 선호하는 그래픽 비주얼 스타일은 무엇인가요?",
+          "maxSelect": 2,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[AAA급 실사] 극적인 쉐이더 연출과 고화질 3D 그래픽",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[픽셀/도트] 레트로하고 디테일한 도트 아트 스타일",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[서브컬처/카툰] 애니메이션 느낌의 카툰 렌더링 스타일",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[인디/아티스틱] 독창적인 색감과 몽환적인 감성의 인디 아트",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p18",
+          "seq": 18,
+          "fieldKey": "난이도 저항성",
+          "title": "게임을 하다 강력한 벽(어려운 난이도)을 만났을 때 당신의 반응은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[소울라이크] 수십 번 죽어가며 보스 패턴을 암기해 깰 때의 극상 성취감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[로그라이크/하드코어] 한 번의 실수가 캐릭터 사망으로 이어지는 극단적 긴장감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[변칙 편법] 공략집 없이 나만의 신기한 편법이나 변칙 빌드로 뚫어냄",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[쉬운 난이도] 스트레스 금물! 난이도 조정이 가능하거나 쉬운 게 좋음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p19",
+          "seq": 19,
+          "fieldKey": "수집 & 올클리어",
+          "title": "메인 스토리 외에 당신을 움직이게 만드는 '달성욕'의 원천은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[맵 100% 탐색] 지도 탐색률 100%, 숨겨진 상자 전수 조사",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[도감 완작] 몬스터, 아이템, 인물 도감 완벽 수집 및 서브 퀘스트 올클리어",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[업적/트로피] 스팀/콘솔 과제(업적 올클리어) 완수로 플래티넘 획득",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[다중 엔딩] 진엔딩을 포함한 모든 분기 엔딩 전부 확인하기",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p20",
+          "seq": 20,
+          "fieldKey": "세계관 배경",
+          "title": "당신의 가슴을 가장 뛰게 만드는 세계관 배경은?",
+          "maxSelect": 2,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[하이 판타지] 검, 마법, 드래곤이 살아 숨 쉬는 정통 판타지",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[SF/사이버펑크] 디스토피아, 사이보그, 인공지능, 네온사인",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[아포칼립스] 문명이 멸망한 후 황폐해진 세상에서의 생존",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[다크 판타지] 어둡고 기괴한 분위기의 크툴루, 오컬트",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "[밀리터리/현대] 실제 역사 고증이나 현대 밀리터리 리얼리티",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p21",
+          "seq": 21,
+          "fieldKey": "서사 전달 방식",
+          "title": "스토리를 감상할 때 가장 호평하게 되는 전달 기법은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[시네마틱] 화려한 컷씬과 풀 성우 연기로 영화처럼 전달되는 방식",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[선택지 분기] 내 선택에 따라 인물의 생사가 갈리고 엔딩이 바뀌는 방식",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[프롬 스타일/스토리텔링] 아이템 설명, 지형을 통해 유저가 비하인드를 추론",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[스토리 스킵] 스토리는 스킵! 빠르게 본 플레이에 진입하는 게 좋음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p22",
+          "seq": 22,
+          "fieldKey": "플레이 세션",
+          "title": "한 번 게임을 켰을 때 가장 몰입하기 좋아하는 세션 호흡은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[하드코어 롱세션] 한 번 앉으면 3~5시간 이상 미친 듯이 푹 파고듦",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[숏세션/치고빠지기] 한 판당 10~20분 내외로 깔끔하게 끝나는 호흡",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[듀얼 세션] 메인 일을 하면서 서브 모니터로 가볍게 돌려놓음",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[일일 루틴] 엔딩 없이 매일 출석해 일일 미션을 깨며 진득하게 즐김",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p23",
+          "seq": 23,
+          "fieldKey": "집중도 (멀티태스킹)",
+          "title": "게임을 하는 와중 당신의 플레이 집중 상태는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[풀 몰입] 불 끄고 헤드셋 끼고 화면에 100% 진심으로 몰입",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[방치/자동] 자동 전투/방치 기능을 틀어두고 업무/웹서핑 병행",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[멀티태스킹] 방송(유튜브/트위치)이나 팟캐스트를 옆에 틀어두고 함",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p24",
+          "seq": 24,
+          "fieldKey": "성장 페이스",
+          "title": "캐릭터나 계정이 강해지는 성장 피드백의 속도는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[폭풍 성장] 몇 시간 만에 장비가 바뀌고 강해지는 게 확 체감됨",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[진득한 파밍] 몇 주~몇 달 동안 정성 들여 파츠를 완비해 나감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[성장 요소 없음] 성장 수치 없이 처음부터 동일 조건에서 실력 승부",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p25",
+          "seq": 25,
+          "fieldKey": "시각적 피로도",
+          "title": "장시간 플레이 시 눈의 피로감을 유발해 피하게 되는 연출은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[멀미 유발] 화면 흔들림, 섬광탄 효과, 시야각(FOV)이 좁은 화면",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[낮은 시인성] UI 크기가 너무 작거나 폰트 시인성이 떨어지는 화면",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[어두운 톤] 어둡고 칙칙해 적 구분이 잘 안되는 답답한 화면",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p26",
+          "seq": 26,
+          "fieldKey": "이탈 요소 (피로도)",
+          "title": "잘 만든 게임이라도 당장 삭제하게 만드는 절대적 피로 요소는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[억지 플레이타임] 동선 낭비가 심하고 맵만 의미 없이 넓혀둔 구성",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[불편한 UI] 복잡하고 빽빽하며 조작하기 불편한 인터페이스",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[억까/스트레스] 말도 안 되는 억지 실패 요소가 너무 많은 난이도",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[성장 막힘/노가다] 반복 작업(노가다)이 너무 많고 성장이 막히는 구간",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p27",
+          "seq": 27,
+          "fieldKey": "타인 비교 & 자랑",
+          "title": "게임 내에서 나의 성과나 아이템을 타인에게 노출할 때의 심리는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[과성/랭킹 뽐내기] 희귀 칭호, 장비, 랭킹을 뽐내며 으스대고 싶음",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[기여 인정] 동료들에게 인정받거나 클리어에 크게 기여했을 때의 쾌감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[자기만족] 남의 시선은 상관없고 오직 나 혼자만의 만족이 중요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p28",
+          "seq": 28,
+          "fieldKey": "거부감 소재",
+          "title": "게임 시스템이나 분위기 중 가장 거부감이 들어 손이 안 가는 요소는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[타이트한 피지컬 압박] 전멸 기믹이나 타이트한 딜컷 압박",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[과한 서브컬처] 너무 오글거리는 대사나 지나친 캐릭터 성상품화",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[무한 사냥] 스토리/세계관 없이 무한 반복 사냥만 시키는 텅 빈 구성",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p29",
+          "seq": 29,
+          "fieldKey": "게임을 하는 목적",
+          "title": "당신이 게임을 켜고 플레이하는 최종 근본 목적은 무엇인가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[도피와 몰입] 현실을 잊고 완전히 새로운 세계관에 빠져드는 것",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[성취감] 어려운 역경과 도전 과제를 하나씩 깨부수며 얻는 성취감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[발산과 힐링] 지친 일상 속에서 스트레스를 날려버리는 시원함",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[소통과 공유] 친한 사람들과 함께 어울려 웃고 떠드는 소통",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p30",
+          "seq": 30,
+          "fieldKey": "사후컨텐츠/다회차",
+          "title": "메인 스토리를 끝낸 후, 회차 플레이 및 사후 컨텐츠를 즐기는 스타일은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "2회차/고난도 도전과 함께 도감·수집 요소를 100% 달성한다",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "최고 난이도 다회차나 엔딩 후 열리는 최상위 레이드/PvP에 집중한다",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "회차를 넘어가며 다른 선택지나 멀티 엔딩을 확인한 뒤 깔끔하게 종료한다",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "메인 엔딩을 보면 미련 없이 만족하고 다음 게임으로 넘어간다",
+              "isNone": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surveyType": "DEEP",
+      "track": "GAMER",
+      "templateVersion": 3,
+      "adaptiveExample": true,
+      "questions": [
+        {
+          "clientQuestionKey": "d01",
+          "seq": 1,
+          "fieldKey": "mechanics_complexity",
+          "title": "여러 입력을 이어 쓰는 조작은 어느 정도가 좋나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "한두 번의 입력으로 충분하게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "몇 가지 동작을 차근차근 익히게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "연습할수록 정교해지는 조작",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d02",
+          "seq": 2,
+          "fieldKey": "combat_feedback_pref",
+          "title": "액션의 손맛에서 가장 중요한 것은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "묵직하고 즉각적인 반응",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "화려한 움직임과 효과",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "부드럽고 편안한 반응",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d03",
+          "seq": 3,
+          "fieldKey": "camera_perspective",
+          "title": "화면을 바라보는 시점은 어떤 쪽이 편한가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "내 눈으로 보는 1인칭",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "인물을 뒤에서 보는 3인칭",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "위에서 한눈에 보는 화면",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "옆에서 보는 평면 화면",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d04",
+          "seq": 4,
+          "fieldKey": "death_penalty_tolerance",
+          "title": "실패했을 때 어디까지 감수할 수 있나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "바로 다시, 손해 없이",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "작은 손해를 안고 재도전",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "진행을 잃더라도 긴장감 있게",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d05",
+          "seq": 5,
+          "fieldKey": "strategic_depth",
+          "title": "문제를 푸는 과정에서 더 끌리는 것은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "직관으로 바로 해결",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "주어진 단서를 차근차근 조합",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "여러 수 앞까지 계획",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d06",
+          "seq": 6,
+          "fieldKey": "progression_type",
+          "title": "어떤 변화가 성장처럼 느껴지나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "할 수 있는 행동이 늘어남",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "모은 것과 만든 공간이 쌓임",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "내 판단과 실력이 좋아짐",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "이야기의 다음 장이 열림",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d07",
+          "seq": 7,
+          "fieldKey": "build_optimization",
+          "title": "능력과 장비를 조합하는 데 얼마나 몰입하나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "추천 구성을 바로 쓰고 싶어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "몇 가지를 비교해 고를래요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "최적의 조합을 직접 찾을래요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d08",
+          "seq": 8,
+          "fieldKey": "resource_management",
+          "title": "한정된 자원을 관리하는 재미는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "관리 없이 편하게 즐기고 싶어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "간단한 선택 정도는 좋아요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "꼼꼼히 계산할수록 재미있어요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d09",
+          "seq": 9,
+          "fieldKey": "pvp_orientation",
+          "title": "실력을 다른 사람과 비교하는 장치가 필요할까요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "비교 없이 내 속도로",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "친구끼리 가볍게 비교",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "전체 순위에 도전",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d10",
+          "seq": 10,
+          "fieldKey": "coop_preference",
+          "title": "함께한다면 어떤 협동을 원하나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "역할을 나눠 목표를 공략",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "가끔 도와주고 자유롭게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "혼자만의 공간이 좋아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d11",
+          "seq": 11,
+          "fieldKey": "social_interaction",
+          "title": "다른 유저와 어느 정도 소통하고 싶나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "목소리로 활발히 소통",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "짧은 채팅이나 표시만",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "소통 없이 몰입",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d12",
+          "seq": 12,
+          "fieldKey": "exploration_type",
+          "title": "새로운 지역에서 가장 먼저 하는 행동은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "눈에 띄는 곳으로 자유롭게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "숨은 단서와 비밀을 찾기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "안내를 따라 목적지로",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d13",
+          "seq": 13,
+          "fieldKey": "narrative_delivery",
+          "title": "어떤 방식으로 이야기를 따라가고 싶나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "영화 같은 장면을 감상",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "내 선택으로 결말을 바꾸기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "풍경과 물건에서 이야기 발견",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "이야기보다 바로 플레이",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d14",
+          "seq": 14,
+          "fieldKey": "customization_level",
+          "title": "내 취향을 반영하고 싶은 곳은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "캐릭터의 외형과 의상",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "집·마을·나만의 공간",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "기능과 능력의 조합",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "꾸미지 않아도 괜찮아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d15",
+          "seq": 15,
+          "fieldKey": "audio_sensitivity",
+          "title": "플레이할 때 소리는 어떤 역할인가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "분위기를 채우는 풍부한 음악",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "잔잔한 자연음과 음악",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "반응을 알려주는 효과음만",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "소리 없이 조용하게",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d16",
+          "seq": 16,
+          "fieldKey": "repetitive_task_tolerance",
+          "title": "같은 행동을 반복해 보상을 얻는 건 어떤가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "반복이 많으면 금방 지쳐요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "작은 변화가 있으면 괜찮아요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "꾸준히 쌓이는 과정이 좋아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d17",
+          "seq": 17,
+          "fieldKey": "session_length",
+          "title": "도중에 플레이를 멈춰야 한다면?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "언제든 바로 멈출 수 있어야 해요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "한 구간 정도는 마칠 수 있어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "한참 몰입한 뒤 끝내도 좋아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d18",
+          "seq": 18,
+          "fieldKey": "churn_triggers",
+          "title": "재미있어도 그만두게 되는 가장 큰 이유는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "끝없이 반복해야 할 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "설명과 규칙이 너무 복잡할 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "실패를 강요하는 높은 난이도",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "승패로 다른 사람과 부딪힐 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "특별히 떠오르는 이유는 없어요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d19",
+          "seq": 19,
+          "fieldKey": "visual_fatigue",
+          "title": "화면에서 가장 줄이고 싶은 요소는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "빠른 카메라 이동과 흔들림",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "번쩍이는 강한 효과",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "작고 복잡한 글씨",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "특별히 불편하지 않아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d20",
+          "seq": 20,
+          "fieldKey": "reward_preference",
+          "title": "어떤 보상이 다음 플레이를 부르나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "어려운 목표를 넘었다는 성취",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "새로운 곳과 수집품",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "인물의 다음 이야기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "마음이 편안해진 느낌",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d21",
+          "seq": 21,
+          "fieldKey": "play_routine",
+          "title": "평소 플레이 시간을 어떻게 정하나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "잠깐 빈 시간에 가볍게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "하루의 마무리로 꾸준히",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "여유 있는 날 길게 몰입",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d22",
+          "seq": 22,
+          "fieldKey": "focus_style",
+          "title": "플레이 중 다른 일을 함께 하나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "한 가지에 집중하고 싶어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "음악이나 영상을 함께 틀어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "가끔 확인하며 다른 일도 해요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d23",
+          "seq": 23,
+          "fieldKey": "completion_style",
+          "title": "목표나 엔딩에 도달한 뒤에는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "남은 요소를 모두 찾아보기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "다른 방식으로 다시 도전",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "여운을 즐기고 새 작품으로",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d24",
+          "seq": 24,
+          "fieldKey": "learning_style",
+          "title": "새로운 시스템은 어떻게 배우고 싶나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "한 단계씩 따라 하는 안내",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "직접 해보며 발견",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "원리를 읽고 이해",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d25",
+          "seq": 25,
+          "fieldKey": "adaptive_comfort",
+          "title": "고른 취향 안에서도 꼭 지키고 싶은 기준은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "조작이 익숙해질 시간",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "짧은 시간에도 느끼는 성취",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "충분히 둘러볼 자유",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "편안하고 부담 없는 진행",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d26",
+          "seq": 26,
+          "fieldKey": "adaptive_motivation",
+          "title": "‘새로운 즐거움’을(를) 고른 당신, 더 끌리는 경험은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "작은 공간을 예쁘게 꾸미기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "새로운 풍경을 천천히 발견",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "작은 목표를 차곡차곡 완성",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d27",
+          "seq": 27,
+          "fieldKey": "adaptive_pace",
+          "title": "충분히 몰입하고 싶다고 했어요. 무엇이 흐름을 이어주나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "다음이 궁금한 이야기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "계속 발견하는 새로운 장소",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "깊어지는 전략과 실력",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d28",
+          "seq": 28,
+          "fieldKey": "adaptive_social",
+          "title": "내 페이스로 즐긴다면, 다른 사람의 흔적은 어떤가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "다른 사람과 완전히 분리",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "작품이나 기록만 둘러보기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "원할 때만 함께하기",
+              "isNone": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surveyType": "QUICK",
+      "track": "NONGAMER",
+      "templateVersion": 3,
+      "adaptiveExample": false,
+      "questions": [
+        {
+          "clientQuestionKey": "q1",
+          "seq": 1,
+          "fieldKey": "platform",
+          "title": "보유 기기 및 환경",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "스마트폰 / 태블릿",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "일반 사무용 컴퓨터 / 노트북 (사양 낮은 가벼운 게임)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "고사양 PC 또는 전용 게임기 (PS5, 닌텐도 스위치, 고성능 PC 등)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "상관없음 (필요하다면 기기 구매/이용 의향 있음)",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q2",
+          "seq": 2,
+          "fieldKey": "session",
+          "title": "플레이 호흡 및 진행 구조",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[초단판 숏폼 (5~15분)] — 손가락 몇 번 튕기거나 가볍게 한 두 판 하고 바로 끌 수 있는 게임",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[중형 세션 (20~40분)] — 한 판을 할 때 30분 안팎으로 집중해서 플레이하는 게임",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[장시간 몰입 (1시간 이상)] — 영화 한 편 보듯 진득하게 세상을 탐험하고 스토리를 이어가는 게임",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "\"상황 따라 다 좋음 / 시간 제약 없음\"",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q3",
+          "seq": 3,
+          "fieldKey": "purpose",
+          "title": "핵심 플레이 동기",
+          "maxSelect": 4,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[액션/통쾌함] 손끝으로 전해지는 흥미진진한 움직임과 긴장감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[서사/영화] 영화나 드라마처럼 흥미진진한 이야기 속에 몰입하기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[탐험/자유] 광활하고 신비로운 세계를 자유롭게 구경하고 누비기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[성장/성취] 무언가를 차근차근 모으고, 가꾸고, 발전시키는 아늑한 재미",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "\"특별히 선호하는 것 없음 / 재미만 있다면 다 OK\"",
+              "isNone": true
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q4",
+          "seq": 4,
+          "fieldKey": "social",
+          "title": "타인 노출 및 경쟁 스트레스",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "\"남 눈치 보거나 약속 잡는 거 싫음, 무조건 100% 혼자 할래요\" (순수 싱글)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "\"경쟁은 싫지만, 다른 사람과 협동하거나 시끌벅적 구경하는 건 괜찮아요\" (PvE/가벼운 멀티)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "\"다른 유저와 실력을 겨루거나 승패를 가르는 플레이도 좋아요\" (PvP/경쟁)",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q5",
+          "seq": 5,
+          "fieldKey": "mechanics",
+          "title": "조작 방식 및 피지컬 부담",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "\"3D 화면 속 캐릭터를 직접 자유롭게 움직이며 누비기\" (직관 이동)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "\"마우스나 손가락으로 화면의 물건/버튼을 콕콕 집어 편하게 조작하기\" (포인트&클릭)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "\"조작 방식은 상관없으나, 손이 너무 바쁘거나 반응속도를 강요하지만 않으면 됨\"",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q6",
+          "seq": 6,
+          "fieldKey": "avoid",
+          "title": "절대 불호 소거 필터",
+          "maxSelect": 4,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "🚫 [공부/추리 피로] \"공부하듯 복잡한 시스템을 외우거나, 머리 싸매고 퀴즈/퍼즐을 풀어야 하는 게임\" (단순 스토리 대화는 제외!)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "🚫 [피지컬/재시작 피로] \"조작이 너무 어렵거나, 자꾸 죽어서 처음부터 다시 해야 하는 게임\"",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "🚫 [과금/광고 피로] \"중간에 자꾸 현금 결제를 유도하거나 광고가 튀어나오는 게임\"",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "🚫 [3D 멀미 피로] \"화면이 획획 돌아가서 어지럽거나 눈이 피로한 게임\"",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "🟢 \"특별히 피하고 싶은 거 없음 / 다 괜찮음\"",
+              "isNone": true
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "q7",
+          "seq": 7,
+          "fieldKey": "visual",
+          "title": "비주얼 그래픽 감성",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "\"실제 영화나 현실처럼 그래픽이 화려하고 입체적인 3D 화면\"",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "\"웹툰이나 애니메이션처럼 깔끔하고 감성적인 그림체 화면\"",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "\"귀엽고 아기자기한 레트로/도트 화면\"",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "\"화면 스타일은 상관없음\"",
+              "isNone": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surveyType": "PROFILE",
+      "track": "NONGAMER",
+      "templateVersion": 3,
+      "adaptiveExample": false,
+      "questions": [
+        {
+          "clientQuestionKey": "p1",
+          "seq": 1,
+          "fieldKey": "platform",
+          "title": "게임을 즐긴다면 어떤 기기를 사용할 때 가장 편하실 것 같나요?",
+          "maxSelect": 4,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "스마트폰 / 태블릿",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "PC / 노트북",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "콘솔 (닌텐도 스위치 등)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "상관없음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p2",
+          "seq": 2,
+          "fieldKey": "session",
+          "title": "하루 중 게임에 투자할 수 있는 여유 시간은 어느 정도인가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "출퇴근길 10~15분",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "퇴근 후 30분~1시간",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "주말에 2시간 이상",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p3",
+          "seq": 3,
+          "fieldKey": "social",
+          "title": "스트레스를 풀거나 쉴 때, 주로 어떤 스타일을 선호하시나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "혼자 조용히 (#싱글)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "친구와 수다 (#협동)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "경쟁 해보기 (#경쟁)",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "잘 모르겠음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p4",
+          "seq": 4,
+          "fieldKey": "mechanics",
+          "title": "게임을 할 때 몸과 머리를 어떻게 쓰고 싶으신가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "손가락 하나로 터치만",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "천천히 생각하며 고르기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "실시간으로 직접 움직이기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "잘 모르겠음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p5",
+          "seq": 5,
+          "fieldKey": "visual",
+          "title": "어떤 스타일의 그림이 마음에 드시나요?",
+          "maxSelect": 2,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "아기자기한 귀여움",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "영화 같은 입체감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "감성적인 일러스트",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "잘 모르겠음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p6",
+          "seq": 6,
+          "fieldKey": "청각적 휴식",
+          "title": "일상에서 휴식을 취할 때 귀를 즐겁게 해주는 소리는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[자연/힐링음] 빗소리, 장작 타는 소리, 잔잔한 카페 BGM",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[톡톡 터지는 효과음] 터지거나 틱틱 거리는 경쾌한 터치 효과음",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[클래식/영화 OST] 웅장하고 감동적인 영화 음악 및 오케스트라",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[무음 선호] 소리가 전혀 없이 조용한 상태 선호",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p7",
+          "seq": 7,
+          "fieldKey": "성취 방식",
+          "title": "무언가를 완료했을 때 가장 기분 좋은 성취감의 종류는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[정리정돈] 어질러진 공간을 테트리스처럼 깔끔하게 정리했을 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[타운/공간 완성] 오랫동안 공들여 만든 공간/마을이 완성되었을 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[퍼즐 해결] 어려운 퀴즈나 퍼즐을 내 힘으로 풀어냈을 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[자원 창고 채우기] 재료를 차곡차곡 모아 창고가 그득히 채워질 때",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p8",
+          "seq": 8,
+          "fieldKey": "터치 감각",
+          "title": "스마트폰을 사용할 때 손끝에서 느껴지는 가장 기분 좋은 터치 방식은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[경쾌한 연타] 화면을 톡톡 연타하거나 튕겨내는 가벼운 터치",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[드래그/슬라이드] 손가락으로 쓱쓱 선을 긋거나 옮기는 느낌",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[방치/자동] 버튼 하나 꾹 누르거나 알아서 진행되는 자동 방식",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[시청형] 직접 조작하기보다는 보고만 있는 감상 방식",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p9",
+          "seq": 9,
+          "fieldKey": "정리 쾌감",
+          "title": "정돈되지 않은 물건들을 보면 어떤 생각이 드시나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[규칙 정렬] 규칙대로 차곡차곡 정리해 딱 맞아떨어지는 쾌감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[꾸미기/배치] 보기 좋고 예쁘게 배치를 바꾸는 레이아웃 재미",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[파괴/해소] 정리보단 싹 다 부수거나 치워버리는 사이다 같은 해소감",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[무관심] 별로 신경 쓰이지 않음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p10",
+          "seq": 10,
+          "fieldKey": "스토리 취향",
+          "title": "콘텐츠를 볼 때 감동을 주는 서사/스토리 스타일은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[동화/힐링] 동화나 애니메이션처럼 따뜻하고 몽환적인 이야기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[선택형 드라마] 내 선택에 따라 결말이 달라지는 몰입감 높은 드라마",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[미스터리/추리] 사건의 진상을 하나씩 밝혀나가는 추리물",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[가벼운 일상] 복잡한 이야기 없이 직관적이고 상쾌한 내용",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p11",
+          "seq": 11,
+          "fieldKey": "속도감",
+          "title": "어떤 일이나 활동을 진행할 때 선호하는 템포는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[느긋한 템포] 내 마음대로 천천히 조율할 수 있는 느긋함",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[리드미컬 템포] 적당히 지루하지 않게 율동감 있게 흘러가는 속도",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[스피디 템포] 정신없이 빠르게 전개되어 몰입감을 주는 속도",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p12",
+          "seq": 12,
+          "fieldKey": "공간 조성",
+          "title": "나만의 가상 공간이 주어진다면 어떤 스타일로 꾸미고 싶나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[감성 카페/방] 아기자기하고 따뜻한 원목 가구 느낌의 공간",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[자연 농장/마을] 대자연이 어우러진 평화로운 시골 마을",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[모던/사이버] 네온사인과 미래 느낌이 물씬 나는 현대적 공간",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[기능성 배치] 꾸미는 것보다 효율적인 기능 배치가 우선",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p13",
+          "seq": 13,
+          "fieldKey": "두뇌 자극",
+          "title": "머리를 써야 할 때 당신이 좋아하는 방식은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[관찰 퍼즐] 틀린 그림 찾기, 숨은그림찾기 스타일",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[상식/단어] 십자말풀이, 단어 맞추기 스타일",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[3-Match 퍼즐] 숫자 조합이나 3개씩 맞춰 터뜨리는 퍼즐",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[단순 반복] 머리 쓰는 일 없이 단순 반복 동작으로 머리 비우기",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p14",
+          "seq": 14,
+          "fieldKey": "애착 대상",
+          "title": "마음을 힐링해 주는 가장 매력적인 캐릭터 테마는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[귀여운 동물] 말랑말랑한 고양이, 강아지, 곰 캐릭터",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[미니 인형] 아기자기한 사람 형태의 미니 캐릭터",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[신비한 정령] 판타지 속 신비로운 정령이나 상상 속 생물",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[정갈한 디자인] 캐릭터보다는 깔끔한 오브젝트나 풍경",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p15",
+          "seq": 15,
+          "fieldKey": "상호작용 깊이",
+          "title": "스마트폰 앱을 켰을 때 기대하는 조작의 깊이는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[방치형] 조작할 필요 없이 보고만 있어도 알아서 자라는 방식",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[체크인형] 하루 한두 번 들어와 클릭 몇 번만 해주는 방식",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[직접 조작형] 내가 직접 손으로 터치하며 즉각 피드백을 보는 방식",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p16",
+          "seq": 16,
+          "fieldKey": "시각적 아트",
+          "title": "눈이 편안하고 마음에 드는 아트 스타일은?",
+          "maxSelect": 2,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[파스텔 수채화] 손으로 그린 듯한 파스텔 톤 동화책 스타일",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[도트/픽셀] 아기자기한 점으로 표현된 레트로 도트 스타일",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[2D 일러스트] 깔끔하고 세련된 캐주얼 일러스트",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[실사 3D] 실제 사진처럼 정교한 3D 그래픽",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p17",
+          "seq": 17,
+          "fieldKey": "경쟁 및 승부",
+          "title": "남과의 경쟁이나 순위 싸움에 대한 느낌은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[경쟁 싫음] 겨루는 건 스트레스! 혼자 느긋하게 즐기는 게 최고",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[친선 소소한 내기] 친한 사람끼리 소소하게 이기고 지는 재미",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[리더보드/순위] 순위표가 있어서 높은 점수를 얻으면 뿌듯함",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p18",
+          "seq": 18,
+          "fieldKey": "실패 저항성",
+          "title": "하다가 '실패'나 '게임 오버'가 될 때 받는 스트레스는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[실패 없음 선호] 한 번이라도 실패해서 다시 하는 건 피곤함",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[무한 재도전/힌트] 틀려도 힌트를 주거나 바로 재도전 가능하면 OK",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[도전 의식] 약간의 실패가 있어야 오히려 승부욕이 생김",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p19",
+          "seq": 19,
+          "fieldKey": "관계 형성과 협동",
+          "title": "타인과 함께 앱을 이용할 때 원하는 형태는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[소소한 안부/선물] 서로 마을에 놀러 가 하트/선물만 주고받기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[대화 및 협동] 서로 소통하고 협동해 같이 과제 해결하기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[완전한 개인] 다른 사람과 전혀 얽히지 않는 나만의 개인 공간",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p20",
+          "seq": 20,
+          "fieldKey": "플레이 호흡",
+          "title": "이 콘텐츠를 이용하는 가장 주된 타임 슬롯은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[짬짬이 5분] 출퇴근 지하철, 버스 안에서 5~10분 짧게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[잠들기 전 20분] 침대 위에서 20~30분 편안하게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[주말 1시간+] 주말이나 쉬는 날 1시간 이상 집중해서",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p21",
+          "seq": 21,
+          "fieldKey": "감성 테마",
+          "title": "끌리는 계절이나 분위기의 테마는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[따뜻한 숲속] 햇살이 드는 봄/여름 숲속 테마",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[감성적 겨울/비] 비 오는 날 창가, 커피 감성의 가을/겨울",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[몽환적 우주/밤] 신비로운 밤하늘과 별빛 우주 테마",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[활기찬 축제] 왁자지껄하고 활기찬 도시/축제 공간",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p22",
+          "seq": 22,
+          "fieldKey": "자원 수집",
+          "title": "모으는 재미를 주는 아이템 중 가장 흐뭇한 것은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[의상/스킨] 예쁜 옷, 액세서리, 캐릭터 스킨",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[가구/인테리어] 귀여운 가구 및 공간 소품",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[도감 카드] 다양한 종류의 동물, 식물 수집 카드",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "[재화/골드] 골드, 보석 같은 자원 수치 증가",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p23",
+          "seq": 23,
+          "fieldKey": "스트레스 해소",
+          "title": "스트레스가 심할 때 선호하는 해소 방식은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[와르르 파괴] 화면의 뭔가를 와르르 깨부수거나 터뜨리기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[멍때리기/감상] 조용한 음악을 들으며 조작 없이 멍하니 바라보기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[소소한 케어] 귀여운 것들을 만져주고 가꾸며 미소 짓기",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p24",
+          "seq": 24,
+          "fieldKey": "복잡도 저항",
+          "title": "앱을 켰을 때 아이콘이나 버튼이 너무 많으면 어떤 생각이 드시나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[심플 선호] 복잡해 보이면 어지럽고 바로 끄고 싶음",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[기능 탐색] 하나씩 눌러보며 기능을 익히는 재미가 있음",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[튜토리얼 의존] 친절한 가이드만 있다면 복잡해도 상관없음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p25",
+          "seq": 25,
+          "fieldKey": "자랑 & 공유",
+          "title": "내가 멋지게 완성한 것을 인스타그램 등 SNS에 공유하고 싶나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[SNS 자랑] 예쁜 내 공간이나 캐릭터를 남들에게 보여주고 싶음",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[자기만족] 남들에게 보여주기보단 나 혼자 보며 만족함",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[친한 지인 공유] 친한 친구 몇 명에게만 메신저로 자랑하고 싶음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p26",
+          "seq": 26,
+          "fieldKey": "텍스트 읽기",
+          "title": "대화창이나 글꼴 텍스트가 길게 나올 때의 성향은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[스킵 선호] 글이 길면 빠르게 다 넘겨버림",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[천천히 감상] 그림책 읽듯 대사를 천천히 감상함",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[핵심 요약] 핵심 요약만 간단하게 보여주는 게 좋음",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p27",
+          "seq": 27,
+          "fieldKey": "동기 부여",
+          "title": "매일 이 앱을 다시 켜게 만드는 가장 큰 이유는 무엇일까요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[출석 보상] 출석 도장이나 매일 주는 소소한 보상을 챙기기 위해",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[성장 궁금함] 어제 키우던 동물/식물이 얼마나 자랐나 보려고",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[일상 피난처] 스트레스받을 때 잠시 머리를 비우는 피난처로 사용",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p28",
+          "seq": 28,
+          "fieldKey": "거부감 소재",
+          "title": "분위기나 연출 중 가장 피하고 싶은 요소는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[공포/기괴] 징그럽거나 어둡고 무서운 유령/괴물 연출",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[눈 피로/번쩍임] 화면이 너무 번쩍거리거나 정신없는 조명 연출",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[타임 리밋] 시간 제한으로 초조하게 만드는 압박",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p29",
+          "seq": 29,
+          "fieldKey": "최종 목적",
+          "title": "이 앱을 통해 가장 얻고 싶은 일상 속 가치는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "[마음의 평온] 지친 일상 속 마음의 평온과 힐링",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "[소확행] 짧은 시간 안에 느껴지는 소소하고 확실한 행복",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "[시간 때우기] 지루한 짬 시간을 알차고 즐겁게 때우는 재미",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "p30",
+          "seq": 30,
+          "fieldKey": "사후컨텐츠/다회차",
+          "title": "게임의 메인 스토리가 끝난 후 당신의 행동에 가장 가까운 것은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "못 모은 수집품이나 달성하지 못한 요소들을 끝까지 찾아 다 채운다",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "처음부터 다시 시작해서 안 가본 길이나 다른 선택을 해본다",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "충분한 여운을 즐긴 후 만족스럽게 게임을 종료한다",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "비슷한 분위기나 완전히 다른 새로운 게임을 찾아 바로 넘어간다",
+              "isNone": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surveyType": "DEEP",
+      "track": "NONGAMER",
+      "templateVersion": 3,
+      "adaptiveExample": true,
+      "questions": [
+        {
+          "clientQuestionKey": "d01",
+          "seq": 1,
+          "fieldKey": "mechanics_complexity",
+          "title": "손으로 조작한다면 어떤 방식이 편할까요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "한두 번의 입력으로 충분하게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "몇 가지 동작을 차근차근 익히게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "연습할수록 정교해지는 조작",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d02",
+          "seq": 2,
+          "fieldKey": "combat_feedback_pref",
+          "title": "내 행동에 화면이 반응한다면 어떤 느낌이 좋나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "묵직하고 즉각적인 반응",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "화려한 움직임과 효과",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "부드럽고 편안한 반응",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d03",
+          "seq": 3,
+          "fieldKey": "camera_perspective",
+          "title": "화면 속 공간을 어떻게 보고 싶나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "내 눈으로 보는 1인칭",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "인물을 뒤에서 보는 3인칭",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "위에서 한눈에 보는 화면",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "옆에서 보는 평면 화면",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d04",
+          "seq": 4,
+          "fieldKey": "death_penalty_tolerance",
+          "title": "실수했을 때 어떤 다음 단계가 좋나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "바로 다시, 손해 없이",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "작은 손해를 안고 재도전",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "진행을 잃더라도 긴장감 있게",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d05",
+          "seq": 5,
+          "fieldKey": "strategic_depth",
+          "title": "문제 하나를 만난다면 어떻게 풀고 싶나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "직관으로 바로 해결",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "주어진 단서를 차근차근 조합",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "여러 수 앞까지 계획",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d06",
+          "seq": 6,
+          "fieldKey": "progression_type",
+          "title": "무엇이 달라지면 계속하고 싶을까요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "할 수 있는 행동이 늘어남",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "모은 것과 만든 공간이 쌓임",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "내 판단과 실력이 좋아짐",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "이야기의 다음 장이 열림",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d07",
+          "seq": 7,
+          "fieldKey": "build_optimization",
+          "title": "여러 도구를 조합하는 과정은 어떤가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "추천 구성을 바로 쓰고 싶어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "몇 가지를 비교해 고를래요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "최적의 조합을 직접 찾을래요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d08",
+          "seq": 8,
+          "fieldKey": "resource_management",
+          "title": "돈이나 재료를 아껴 쓰며 계획하는 건 어떤가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "관리 없이 편하게 즐기고 싶어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "간단한 선택 정도는 좋아요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "꼼꼼히 계산할수록 재미있어요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d09",
+          "seq": 9,
+          "fieldKey": "pvp_orientation",
+          "title": "점수나 순위가 보인다면 어떤가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "비교 없이 내 속도로",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "친구끼리 가볍게 비교",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "전체 순위에 도전",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d10",
+          "seq": 10,
+          "fieldKey": "coop_preference",
+          "title": "누군가와 같이한다면 어떤 방식이 좋나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "역할을 나눠 목표를 공략",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "가끔 도와주고 자유롭게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "혼자만의 공간이 좋아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d11",
+          "seq": 11,
+          "fieldKey": "social_interaction",
+          "title": "활동 중 다른 사람과 대화한다면?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "목소리로 활발히 소통",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "짧은 채팅이나 표시만",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "소통 없이 몰입",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d12",
+          "seq": 12,
+          "fieldKey": "exploration_type",
+          "title": "처음 보는 공간을 만나면 무엇부터 하나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "눈에 띄는 곳으로 자유롭게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "숨은 단서와 비밀을 찾기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "안내를 따라 목적지로",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d13",
+          "seq": 13,
+          "fieldKey": "narrative_delivery",
+          "title": "이야기를 즐긴다면 어떤 방식이 좋나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "영화 같은 장면을 감상",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "내 선택으로 결말을 바꾸기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "풍경과 물건에서 이야기 발견",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "이야기보다 바로 플레이",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d14",
+          "seq": 14,
+          "fieldKey": "customization_level",
+          "title": "나만의 모습을 만든다면 어디를 꾸밀까요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "캐릭터의 외형과 의상",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "집·마을·나만의 공간",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "기능과 능력의 조합",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "꾸미지 않아도 괜찮아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d15",
+          "seq": 15,
+          "fieldKey": "audio_sensitivity",
+          "title": "화면과 함께 어떤 소리가 좋나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "분위기를 채우는 풍부한 음악",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "잔잔한 자연음과 음악",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "반응을 알려주는 효과음만",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "소리 없이 조용하게",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d16",
+          "seq": 16,
+          "fieldKey": "repetitive_task_tolerance",
+          "title": "비슷한 활동을 반복해서 쌓아가는 건 어떤가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "반복이 많으면 금방 지쳐요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "작은 변화가 있으면 괜찮아요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "꾸준히 쌓이는 과정이 좋아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d17",
+          "seq": 17,
+          "fieldKey": "session_length",
+          "title": "하던 일을 잠깐 멈춰야 한다면 어떤가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "언제든 바로 멈출 수 있어야 해요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "한 구간 정도는 마칠 수 있어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "한참 몰입한 뒤 끝내도 좋아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d18",
+          "seq": 18,
+          "fieldKey": "churn_triggers",
+          "title": "마음에 들어도 계속하기 힘든 이유는?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "끝없이 반복해야 할 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "설명과 규칙이 너무 복잡할 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "실패를 강요하는 높은 난이도",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "승패로 다른 사람과 부딪힐 때",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "4",
+              "label": "특별히 떠오르는 이유는 없어요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d19",
+          "seq": 19,
+          "fieldKey": "visual_fatigue",
+          "title": "화면을 오래 볼 때 무엇이 불편한가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "빠른 카메라 이동과 흔들림",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "번쩍이는 강한 효과",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "작고 복잡한 글씨",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "특별히 불편하지 않아요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d20",
+          "seq": 20,
+          "fieldKey": "reward_preference",
+          "title": "어떤 결과를 얻으면 다시 하고 싶나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "어려운 목표를 넘었다는 성취",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "새로운 곳과 수집품",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "인물의 다음 이야기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "마음이 편안해진 느낌",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d21",
+          "seq": 21,
+          "fieldKey": "play_routine",
+          "title": "새로운 취미를 일상에 넣는다면?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "잠깐 빈 시간에 가볍게",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "하루의 마무리로 꾸준히",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "여유 있는 날 길게 몰입",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d22",
+          "seq": 22,
+          "fieldKey": "focus_style",
+          "title": "화면을 볼 때 어떤 환경이 편한가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "한 가지에 집중하고 싶어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "음악이나 영상을 함께 틀어요",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "가끔 확인하며 다른 일도 해요",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d23",
+          "seq": 23,
+          "fieldKey": "completion_style",
+          "title": "한 가지를 끝낸 뒤엔 무엇을 하고 싶나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "남은 요소를 모두 찾아보기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "다른 방식으로 다시 도전",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "여운을 즐기고 새 작품으로",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d24",
+          "seq": 24,
+          "fieldKey": "learning_style",
+          "title": "처음 시작할 때 어떤 안내가 좋나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "한 단계씩 따라 하는 안내",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "직접 해보며 발견",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "원리를 읽고 이해",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d25",
+          "seq": 25,
+          "fieldKey": "adaptive_comfort",
+          "title": "고른 취향 안에서도 꼭 지키고 싶은 기준은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "조작이 익숙해질 시간",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "짧은 시간에도 느끼는 성취",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "충분히 둘러볼 자유",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "3",
+              "label": "편안하고 부담 없는 진행",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d26",
+          "seq": 26,
+          "fieldKey": "adaptive_motivation",
+          "title": "‘새로운 즐거움’을(를) 고른 당신, 더 끌리는 경험은?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "작은 공간을 예쁘게 꾸미기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "새로운 풍경을 천천히 발견",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "작은 목표를 차곡차곡 완성",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d27",
+          "seq": 27,
+          "fieldKey": "adaptive_pace",
+          "title": "충분히 몰입하고 싶다고 했어요. 무엇이 흐름을 이어주나요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "다음이 궁금한 이야기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "계속 발견하는 새로운 장소",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "깊어지는 전략과 실력",
+              "isNone": false
+            }
+          ]
+        },
+        {
+          "clientQuestionKey": "d28",
+          "seq": 28,
+          "fieldKey": "adaptive_social",
+          "title": "내 페이스로 즐긴다면, 다른 사람의 흔적은 어떤가요?",
+          "maxSelect": 1,
+          "options": [
+            {
+              "clientOptionKey": "0",
+              "label": "다른 사람과 완전히 분리",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "1",
+              "label": "작품이나 기록만 둘러보기",
+              "isNone": false
+            },
+            {
+              "clientOptionKey": "2",
+              "label": "원할 때만 함께하기",
+              "isNone": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

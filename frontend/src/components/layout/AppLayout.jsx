@@ -7,7 +7,7 @@ export default function AppLayout({
 }) {
   const c = useView(),
     main = useRef(null),
-    onboarding = !c.state.quick?.completed && !c.accountUser;
+    onboarding = c.forceOnboarding || (!c.state.quick?.completed && !c.accountUser);
   useEffect(() => {
     document.documentElement.dataset.mode = c.state.mode;
     document.documentElement.dataset.theme = c.state.mode;
@@ -28,6 +28,9 @@ export default function AppLayout({
       easing: 'ease-out'
     });
   }, [c.route]);
+  useEffect(() => {
+    if(c.accountUser && c.auth.status==='error') c.toast('계정 저장에 실패했어요. 개인 페이지 설정에서 다시 저장할 수 있습니다.');
+  },[c.auth.status]);
   useEffect(() => {
     if (!c.toastKey) return;
     const timer = setTimeout(() => c.setUI({

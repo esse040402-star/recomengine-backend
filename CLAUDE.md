@@ -10,7 +10,7 @@
 - 외부 API 오류는 `app/services/safe_errors.py` 의 `describe()`/`status_hint()` 로만 로그/응답에 남기세요 (요청 주소에 `?key=` 가 들어 있음).
 - `git commit`, `git push` 는 **제가 확인한 뒤에만** 하세요. 커밋 전에 `git status` 로 `.env`·`.venv` 가 없는지 보여 주세요.
 - `sql/` 폴더의 SQL 은 팀원(DB 담당)의 스키마를 바꿉니다. 실행하지 말고 제안만 하세요. `USE_MOCK_DB=false`(실제 DB) 쓰기 작업도 먼저 물어보세요.
-- 프론트 프로토타입 HTML(약 32MB)은 저장소에 넣지 마세요. `frontend/index.html` 은 자동 생성 파일이라 `.gitignore` 대상입니다.
+- 프론트 프로토타입 HTML(약 32MB)은 저장소에 넣지 마세요. 2026-10-08 수정부터 `frontend/index.html`은 작은 React 진입 파일로 추적합니다. 생성 산출물은 `frontend/dist/`이며 git에 넣지 않습니다. 실행은 `frontend/README.md`를 참고하세요.
 
 ## 기술 스택과 구조
 FastAPI · Supabase(Auth/DB) · Ollama(로컬 AI, 현재 `qwen2.5:7b`) · RAWG/IGDB(게임 데이터) · 스팀(리뷰/가격/라이브러리)
