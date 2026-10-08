@@ -15,7 +15,7 @@ router = APIRouter(prefix="/api/survey", tags=[docs.SURVEY])
 async def generate(body: SurveyGenerateIn):
     """프론트의 심화 설문(28문항)을 Ollama로 자연스럽게 다시 써서 돌려준다.
     프론트는 body.blueprint 에 E.publicBlueprint(track, answers) 결과를 함께 보내야 한다
-    (scripts/patch_frontend.py 가 새 프로토타입의 두 호출 지점에 이 한 줄을 넣어 준다)."""
+    (React 프론트의 frontend/src/services/recommendationService.js 가 이미 보낸다)."""
     if not body.blueprint:
         raise HTTPException(422, "blueprint가 필요합니다. 프론트에서 E.publicBlueprint() 결과를 함께 보내세요.")
     if len(body.blueprint) != 28:

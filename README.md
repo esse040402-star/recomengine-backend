@@ -1,4 +1,4 @@
-> **2026-10-08 프론트 연결 수정본:** React 실행은 [frontend/README.md](frontend/README.md)를 먼저 참고하세요. 아래의 기존 HTML 패치 방식 대신 React 소스를 Vite로 실행하거나 `npm run build` 후 FastAPI로 제공합니다. 변경 내용과 DB 준비 자료는 [docs/DB연결_변경내역.md](docs/DB연결_변경내역.md)에 정리했습니다. 기존 API 경로는 유지합니다.
+> **프론트는 React(Vite) 프로젝트입니다 (2026-10-08~).** 화면까지 보려면 아래 **'6단계'** 를 따르세요. 예전 단일 HTML 프로토타입을 서버에 붙이던 방식(`scripts/patch_frontend.py`)은 더 이상 쓰지 않습니다. React 프론트 자체의 실행·테스트는 [frontend/README.md](frontend/README.md), 변경 내용과 DB 준비 자료는 [docs/DB연결_변경내역.md](docs/DB연결_변경내역.md)에 있습니다. 서버 API 경로는 기존 그대로입니다.
 
 # RecomEngine 백엔드 (FastAPI + Supabase + Ollama + RAWG/IGDB)
 
@@ -29,7 +29,7 @@ copy .env.example .env                # 그대로 두면 됩니다 (USE_MOCK_DB=
 ```powershell
 python -m pytest
 ```
-- **모두 `passed` 로 끝나면 정상**입니다 (현재 89개, 경고 1개는 무시해도 됩니다). 약 10초 걸립니다.
+- **모두 `passed` 로 끝나면 정상**입니다 (현재 90개, 경고 1개는 무시해도 됩니다). 약 10초 걸립니다.
 - API 테스트는 항상 가짜 DB로 실행되고 외부 서비스도 가짜로 바꿔 쓰므로 키·인터넷·Ollama 가 필요 없습니다.
 
 ### 4단계. 서버 켜기
@@ -59,13 +59,19 @@ fastapi dev app/main.py
 | 오류 형식 | `GET /api/market` → game=`없는게임`, section=`news` | 404 와 `{"error": "한국어 메시지"}` |
 
 ### 6단계 (선택). 프론트 화면까지 보기
-프론트 담당자에게 받은 프로토타입 HTML 로 화면을 이 서버에 붙입니다 (HTML 은 약 32MB 라 저장소에는 없습니다).
+저장소에 들어 있는 React 프론트(`frontend/`)를 빌드해서 이 서버로 함께 띄웁니다. **Node.js 20 이상**이 필요합니다 (`node -v` 로 확인).
 ```powershell
-python -m scripts.patch_frontend "C:\경로\화면 프로토타입.html"   # frontend/index.html 생성
-fastapi dev app/main.py                                          # → http://localhost:8000
+cd frontend
+npm ci                      # 처음 한 번 (package-lock.json 기준으로 설치)
+npm run build               # frontend/dist 생성 (약 1초)
+cd ..
+$env:USE_MOCK_DB="true"     # 실제 DB 대신 가짜 DB (처음엔 꼭 이렇게)
+fastapi dev app/main.py     # → http://localhost:8000
 ```
-- 반드시 **http://localhost:8000** 으로 여세요 (파일을 더블클릭하면 로그인 기능이 꺼집니다).
-- 게임 뉴스·랭킹은 처음에는 HTML 안에 저장된 자료(2026-09-30)가 보이고, **"새로 불러오기"** 를 누르면 스팀 최신 자료로 바뀝니다.
+- 반드시 **http://localhost:8000** 으로 여세요. 로그인은 쿠키 방식이라 서버와 같은 주소여야 합니다. `frontend/dist` 가 없으면 서버는 API 만 제공하고 화면(`/`)은 나오지 않습니다.
+- 프론트 코드를 고치며 볼 때는 터미널 2개로 서버(위)와 `cd frontend; npm run dev` 를 함께 켜고 **http://localhost:5173** 으로 엽니다 (Vite 가 `/api` 를 8000번 서버로 넘겨 줍니다).
+- 게임 뉴스·랭킹은 처음에는 프론트에 저장된 자료(2026-09-30)가 보이고, **"새로 불러오기"** 를 누르면 스팀 최신 자료로 바뀝니다.
+- 스팀 **인기 순위**(`/api/market?section=rankings`)는 스팀의 차트 주소가 오류(500)를 내면 서버도 502 를 돌려주고, 화면은 저장된 자료를 그대로 보여 줍니다 (2026-10-09 확인, 스팀 쪽 문제). 뉴스·리뷰·상세는 영향이 없습니다.
 - 순위·뉴스가 이상하면 프론트 게임 목록이 바뀐 것일 수 있습니다 → 아래 '6. 스팀 랭킹·뉴스' 의 대응표 갱신 명령 참고.
 
 ### 7단계 (선택). 키가 있어야 하는 기능
@@ -223,14 +229,14 @@ python -c "import secrets;print(secrets.token_urlsafe(32))"
 
 > 유사도는 장르·태그 겹침으로 계산해서, 샘플 데이터(19개)에서는 "동물의 숲 같은 게임"에 Overcooked! 2가 Stardew Valley보다 위에 나올 수 있습니다. RAWG 실데이터를 넣은 뒤 다시 확인하고 `GENERIC_TAGS`, 가중치 상수를 조정하세요 (`app/services/ai_features.py`).
 
-## 새 프로토타입(화면_프로토타입_진) 대응 사항
-이전 프로토타입과 비교해서 달라진 부분과, 그에 맞춰 백엔드를 바꾼 내용입니다.
+## 프론트(프로토타입) 대응 사항
+프론트가 서버에 요구하는 것과, 그에 맞춰 백엔드를 바꾼 내용입니다. (React 프론트 기준으로 정리 · 예전 HTML 프로토타입 때의 설명이 일부 남아 있습니다)
 
 | 프로토타입에서 달라진 점 | 백엔드 대응 |
 |---|---|
 | 회원가입/로그인/로그아웃, 계정에 화면 상태 저장 (`/api/account/*`) | `app/routers/account.py` 추가. Supabase Auth로 가입/로그인, 로그인 상태는 서명된 HttpOnly 쿠키 |
 | 실패 응답의 `{"error": "..."}` 를 그대로 화면에 표시 | 모든 오류를 `{"error": 한국어 메시지, "detail": ...}` 형식으로 통일 (FastAPI 기본은 `detail`만 줌) |
-| `/api/survey/generate` 에 `request`(사용자가 쓴 문장), `profileContext` 추가, 호출 지점이 2곳으로 증가 | 요청 스키마에 반영하고 프롬프트의 참고 자료(데이터)로만 사용. `scripts/patch_frontend.py` 가 두 호출 지점을 패치 |
+| `/api/survey/generate` 에 `blueprint`(28문항 원본), `request`(사용자가 쓴 문장), `profileContext` 를 보냄 | 요청 스키마에 반영하고 프롬프트의 참고 자료(데이터)로만 사용. React 프론트는 `blueprint` 를 이미 보냅니다. AI 가 바꾼 제목이 **다른 문항의 원래 제목과 겹치면 쓰지 않고 원문을 유지**합니다 (겹치면 프론트 검증이 28문항 전체를 버리기 때문, `survey_ai.sanitize`) |
 | 기본 7문항의 선택지/최대 선택 수 변경, `lowSpec`, 불호 `monetization` 추가 | 추천 계산에 `lowSpec`(가산점), `monetization`(보수적 태그 제외) 반영 |
 
 ### 계정 API 규격 (프론트가 호출하는 형태 그대로)
@@ -242,17 +248,13 @@ python -c "import secrets;print(secrets.token_urlsafe(32))"
 | POST | `/api/account/logout` | - | `{ok:true}` (쿠키 삭제) |
 | PUT | `/api/account/state` | `{state:{...}}` (1MB 이하) | `{ok:true}` (로그인 필요) |
 
-- **같은 주소에서 서빙해야 쿠키가 동작합니다.** `backend/frontend/index.html` 에 넣고 `http://localhost:8000` 으로 여세요. 프로토타입 HTML을 파일로 직접 열면(주소가 file:// 로 시작) 계정 기능이 꺼지고 "Steam_시작.bat로 실행" 안내가 나옵니다. 이 안내의 Steam_시작.bat 은 프론트 쪽 Node 실행 파일이고, 이 백엔드에서는 위 방법(http://localhost:8000)으로 열면 계정 기능이 동작합니다.
+- **같은 주소에서 서빙해야 쿠키가 동작합니다.** `frontend/` 를 빌드(`npm run build`)한 뒤 `http://localhost:8000` 으로 여세요 (위 '6단계'). 개발 중에는 Vite(`http://localhost:5173`)가 `/api` 를 8000번으로 넘겨 주므로 같은 방식으로 동작합니다. 프론트 `VITE_API_BASE_URL` 로 다른 주소의 서버를 가리키려면 `.env` 의 `CORS_ORIGINS` 에 프론트 주소(예: `http://localhost:5173`)를 추가해야 합니다.
 - 로그인 8회 연속 실패하면 15분간 429 (프로세스 메모리 기준). 로그아웃은 쿠키를 지우는 방식이라, 쿠키가 유출됐다면 만료(`SESSION_DAYS`)까지 유효합니다.
 - `.env` 에 `SESSION_SECRET` 을 꼭 채우세요(없으면 재시작할 때마다 전원 로그아웃). HTTPS로 배포하면 `COOKIE_SECURE=true`.
 - 실제 Supabase 모드에서는 `SUPABASE_ANON_KEY` 도 필요하고, **`sql/002_user_states.sql`(새 테이블 1개)을 DB 담당자와 합의 후 실행**해야 합니다. 가입 때 이메일 인증 없이 바로 활성화됩니다(`email_confirm=true`).
-- 이미 프론트 쪽에 Node 서버(`Steam_시작.bat`)로 계정 API를 만들어 두었다면 겹치니, 어느 쪽을 쓸지 먼저 정하세요.
-
 ### 프론트 담당자에게 전달할 것
-1. `/api/survey/generate` 요청 body 에 `blueprint: E.publicBlueprint(track, answers)` 한 줄 추가 (호출 2곳). 직접 고치지 않으면 `python -m scripts.patch_frontend "<html 경로>"` 로 자동 패치할 수 있습니다.
-2. 아래 두 선택지를 고르면 프론트의 `recommend()` 가 거의 항상 빈 결과를 낼 수 있습니다(코드와 카탈로그 데이터를 읽어서 확인한 내용이고, 화면에서 실행해 보지는 않았습니다).
-   - 비게이머 Q1 "일반 사무용 컴퓨터/노트북" → `lowSpec` 을 요구하지만 카탈로그 137개 중 `lowSpec: true` 인 게임이 0개
-   - 불호 "P2W/과금 피로" → `monetization` 이 `riskCoverage` 에 있어야 통과하는데 0개
+프론트가 서버에 맞추는 데 필요한 수정은 이미 반영돼 있습니다(`blueprint` 전송, 계정 API 경로 등). 남은 확인·수정 요청은 **[docs/프론트엔드_수정_요청서_20261009.md](docs/프론트엔드_수정_요청서_20261009.md)** 에 정리했습니다. 가장 중요한 것은 아래입니다.
+- 저사양·과금 피로 등 **제외 요소를 고르면 추천이 0건**이 됩니다. 카탈로그에 `lowSpec: true` 게임이 0개이고, `riskCoverage` 에 `monetization` 이 있는 게임이 0개이며, 그 밖의 제외 요소도 Steam 파생 게임 121개가 모두 빠져 큐레이션 15개만 남습니다 (코드와 데이터로 계산한 값).
 
 ## 1. 설치 (VS Code 터미널, backend 폴더에서)
 ```powershell
@@ -267,10 +269,9 @@ copy .env.example .env        # 열어서 키를 채우세요
 1. Supabase SQL Editor에서 `sql/001_constraints.sql` 실행
 2. 설문 문항 넣기: `python -m scripts.seed_survey_questions`
 
-## 3. 프론트 연결 (프론트 담당자와 합의 후)
-```powershell
-python -m scripts.patch_frontend "C:\경로\화면_프로토타입_진.html"   # backend/frontend/index.html 생성 (blueprint 2곳 패치)
-```
+## 3. 프론트 연결
+React 프론트는 저장소의 `frontend/` 에 있습니다. 빌드하고 서버와 함께 띄우는 방법은 위 **'6단계'** 와 [frontend/README.md](frontend/README.md) 를 보세요.
+(`scripts/patch_frontend.py` 는 예전 단일 HTML 프로토타입용이라 더 이상 쓰지 않습니다.)
 
 ## 4. 실행
 ```powershell
@@ -284,10 +285,11 @@ Ollama 설정은 위 'Ollama 사용법'을 참고하세요.
 
 ## 6. 스팀 랭킹·뉴스 (게임 id 대응표)
 프론트는 게임을 자기 id(`elden`, `portal` …)로 부르고, 스팀에 물어보려면 앱 번호가 필요합니다. 그 대응표는 `data/catalog_apps.json` 에 있고
-프론트 HTML 에서 뽑아 만듭니다. **프론트의 게임 목록이 바뀌면 다시 실행하세요** (HTML 자체는 저장소에 넣지 않습니다).
+프론트의 `frontend/src/data/generated/catalog.json`(게임 목록)과 `marketSnapshot.json`(저장된 뉴스)에서 뽑아 만듭니다. **프론트의 게임 목록이 바뀌면 다시 실행하세요.**
 ```powershell
-python -m scripts.export_catalog "C:\경로\화면 프로토타입.html"
+python -m scripts.export_catalog
 ```
+다른 위치의 프론트 데이터 폴더를 쓰려면 `python -m scripts.export_catalog "C:\경로\frontend\src\data\generated"` 처럼 폴더를 지정합니다.
 - 게임을 지정하지 않은 '전체 뉴스'는 대표 게임 12개(`news_games`)의 공식 소식을 보여줍니다.
 - 스팀 공개 주소만 쓰므로 별도 키가 필요 없고, 응답은 서버 메모리에 잠깐 보관됩니다(서버를 다시 켜면 비워짐).
 
