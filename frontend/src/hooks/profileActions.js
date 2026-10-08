@@ -1,6 +1,4 @@
 import {toggleFeedback} from '../services/feedbackService';
-import * as account from '../services/accountService';
-import {normalizeState} from '../utils/storage';
 export function profileActions(c){const form=id=>c.forms.current[id],valid=id=>form(id)?.reportValidity(),data=id=>new FormData(form(id));return {
  'mode':({value})=>c.patch({mode:value}), 'dismiss-banner':()=>c.patch({bannerDismissed:true}),
  'save':({id})=>{c.dispatch({type:'save-game',id});c.toast(c.state.saved.includes(id)?'찜한 게임에서 뺐어요.':'찜한 게임에 담았어요.');},
@@ -21,10 +19,12 @@ export function profileActions(c){const form=id=>c.forms.current[id],valid=id=>f
  'profile-banner':({id})=>c.setUI({dialogDraft:{...c.dialogDraft,banner:id}}),
  'save-profile':()=>{if(!valid('profile-form'))return;const f=data('profile-form'),name=String(f.get('name')).trim();if(!name)return;c.patch({profile:{...c.dialogDraft,name,bio:String(f.get('bio')).trim()}});c.closeDialog();c.toast('프로필을 저장했어요.');},
  'write-review':({id})=>{c.setUI({reviewGame:id});c.showDialog('reviewForm',{id});},
- 'save-review':()=>{if(!valid('review-form'))return;const f=data('review-form'),text=String(f.get('text')).trim();if(text.length<10)return c.toast('플레이 경험을 10자 이상 입력해주세요.');const id=f.get('game');c.patch({reviews:[{id:crypto.randomUUID(),game:id,rating:Number(f.get('rating')),text,name:c.state.profile.name},...c.state.reviews]});c.goto('game/'+id+'/reviews');c.toast('내 평가를 저장했어요.');},
+ 'save-review':()=>{if(!valid('review-form'))return;const f=data('review-form'),text=String(f.get('text')).trim();if(text.length<10)return c.toast('플레이 경험을 10자 이상 입력해주세요.');const id=f.get('game');c.patch({reviews:[{id:crypto.randomUUID(),game:id,rating:Number(f.get('rating')),createdAt:new Date().toISOString(),text,name:c.state.profile.name},...c.state.reviews]});c.goto('game/'+id+'/reviews');c.toast('내 평가를 저장했어요.');},
  'restart-onboarding':()=>c.showDialog('restartDialog'),
  'account-login':()=>c.showDialog('accountDialog',{signup:false}),
  'account-signup':()=>c.showDialog('accountDialog',{signup:true}),
- 'account-submit':async()=>{if(!valid('account-form'))return;try{const result=await account[c.dialog.params.signup?'signup':'login'](Object.fromEntries(data('account-form')));c.setUI({accountUser:result.user});c.dispatch({type:'replace',state:normalizeState(result.state||c.state)});c.goto('home');}catch(e){c.toast(e.message)}},
- 'account-logout':async()=>{try{await account.saveAccountState(c.state);await account.logout();c.setUI({accountUser:null});c.dispatch({type:'replace',state:normalizeState(null)});c.goto('welcome');}catch(e){c.toast(e.message)}}
+ 'account-submit':async()=>{if(!valid('account-form'))return;try{if(await c.authenticate(c.dialog.params.signup,Object.fromEntries(data('account-form')))){c.setUI({forceOnboarding:false});c.goto('home');c.toast('계정으로 연결되었습니다.');}}catch(e){c.toast(e.message)}},
+ 'account-recover-local':()=>{c.recoverLocal();c.toast('이 기기의 미전송 변경을 복구했어요.');},
+ 'account-retry-save':async()=>{try{await c.retrySave();}catch(e){c.toast(e.message)}},
+ 'account-logout':async()=>{try{if(await c.logout()){c.setUI({forceOnboarding:true,guidedChat:null});c.goto('welcome');}}catch(e){c.toast(e.message)}}
  };}

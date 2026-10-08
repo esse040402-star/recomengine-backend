@@ -78,8 +78,7 @@ app.include_router(sessions.router)
 app.include_router(ai.router)
 app.include_router(market.router)
 
-# 프로토타입 HTML은 /api/... 상대경로를 쓰므로 같은 서버에서 서빙하는 게 가장 간단하다.
-# backend/frontend/index.html 로 넣어두면 http://localhost:8000/ 에서 열린다.
-FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
+# React 빌드 산출물만 서비스합니다. 개발용 index.html(JSX)은 Vite가 처리합니다.
+FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend" / "dist"
 if (FRONTEND_DIR / "index.html").exists():
     app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")

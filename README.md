@@ -1,3 +1,5 @@
+> **2026-10-08 프론트 연결 수정본:** React 실행은 [frontend/README.md](frontend/README.md)를 먼저 참고하세요. 아래의 기존 HTML 패치 방식 대신 React 소스를 Vite로 실행하거나 `npm run build` 후 FastAPI로 제공합니다. 변경 내용과 DB 준비 자료는 [docs/DB연결_변경내역.md](docs/DB연결_변경내역.md)에 정리했습니다. 기존 API 경로는 유지합니다.
+
 # RecomEngine 백엔드 (FastAPI + Supabase + Ollama + RAWG/IGDB)
 
 ## 팀원용 빠른 확인 가이드 (받기 → 실행 → 확인)
