@@ -60,12 +60,15 @@ def sanitize(blueprint: list[dict], payload: Any) -> tuple[list[dict], int]:
     raw = payload.get("questions") if isinstance(payload, dict) else None
     by_id = {x.get("id"): x for x in raw if isinstance(x, dict)} if isinstance(raw, list) else {}
     used: set[str] = set()
+    originals = {q["title"] for q in blueprint}
     out, rewritten = [], 0
     for q in blueprint:
         cand = by_id.get(q["id"])
         title = q["title"]
         options = [{"id": o["id"], "label": o["label"]} for o in q["options"]]
-        if _valid(q, cand, used):
+        # AI 가 만든 제목이 '다른 문항의 원래 제목'과 같으면 쓰지 않는다. 그 문항이 원문을 유지하게 되면 제목이 겹쳐서
+        # 프론트 applyAI(제목 중복 금지)가 28문항 전체를 버리기 때문이다.
+        if _valid(q, cand, used | (originals - {q["title"]})):
             title = cand["title"].strip()
             options = [{"id": o["id"], "label": o["label"].strip()} for o in cand["options"]]
             rewritten += 1

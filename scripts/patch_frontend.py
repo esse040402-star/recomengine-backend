@@ -1,13 +1,18 @@
-"""프로토타입 HTML의 /api/survey/generate 요청(2곳)에 blueprint 를 추가해 backend/frontend/index.html 로 저장한다.
-서버가 28문항 구조를 알아야 AI가 문장을 다듬을 수 있는데, 프론트가 보내주는 E.publicBlueprint() 결과가 유일한 출처다.
-(프론트 담당자가 직접 고친다면 아래 한 줄만 추가하면 된다:  blueprint:E.publicBlueprint(<track>,<answers>),  )
+"""[사용 중단 · 2026-10-09] 예전 '단일 HTML 프로토타입'용 스크립트입니다.
 
-실행 (backend 폴더에서):
-  python -m scripts.patch_frontend "C:\\경로\\화면_프로토타입_진.html"
+React 프론트(frontend/)는 /api/survey/generate 에 blueprint 를 이미 보내므로 패치가 필요 없고,
+이 스크립트는 결과를 frontend/index.html 에 저장하기 때문에 **실행하면 React 진입 파일(index.html)을 덮어씁니다.**
+그래서 실행하면 바로 멈추도록 막아 두었습니다. 화면을 보는 방법은 README.md 의 '6단계' 를 참고하세요.
+
+(참고용 설명) 프로토타입 HTML의 /api/survey/generate 요청(2곳)에 blueprint 를 추가해 backend/frontend/index.html 로 저장하던 코드입니다.
+서버가 28문항 구조를 알아야 AI가 문장을 다듬을 수 있는데, 프론트가 보내주는 E.publicBlueprint() 결과가 유일한 출처다.
 """
 import re
 import sys
 from pathlib import Path
+
+sys.exit("이 스크립트는 더 이상 쓰지 않습니다. React 프론트는 blueprint 를 이미 보내고, 실행하면 frontend/index.html 을 덮어씁니다. "
+         "화면 실행 방법은 README.md 의 '6단계' 를 보세요.")
 
 # body:JSON.stringify({track:<식>,answers:<식>   ->   body:JSON.stringify({blueprint:E.publicBlueprint(<식>,<식>),track:<식>,answers:<식>
 PATTERN = re.compile(r"body:JSON\.stringify\(\{track:([\w.]+),answers:([\w.()]+)")

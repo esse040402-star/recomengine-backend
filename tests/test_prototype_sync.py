@@ -88,6 +88,24 @@ def test_survey_sanitize_on_real_blueprints():
         assert len({q["title"] for q in out}) == 28  # 프론트 applyAI: 제목 중복 금지
 
 
+def test_survey_sanitize_never_returns_duplicate_titles():
+    """AI 가 어떤 문항 제목을 '다른 문항의 원래 제목'으로 바꿔도, 그 문항이 원문을 유지할 때 겹치지 않아야 한다.
+    (겹치면 프론트 applyAI 가 28문항 전체를 버려서 화면은 항상 'AI 연결 없이'로 나온다. 2026-10-09 실제 화면에서 발견)"""
+    for track in ("gamer", "nongamer"):
+        bp = FIXTURE[track]["blueprint"]
+        bad = _fake_rewrite(bp)
+        bad["questions"][2]["title"] = bp[20]["title"]    # 3번 문항을 21번 문항의 원래 제목으로
+        bad["questions"][20]["title"] = "짧다"            # 그런데 21번 문항 자신은 검증에 실패해 원문으로 돌아간다
+        bad["questions"][9]["title"] = bp[27]["title"]    # 10번 문항을 28번 문항의 원래 제목으로
+        bad["questions"][27]["options"].pop()             # 28번 문항도 선택지 개수가 달라 원문으로 돌아간다
+        out, n = survey_ai.sanitize(bp, bad)
+        titles = [q["title"] for q in out]
+        assert len(set(titles)) == 28
+        assert out[2]["title"] == bp[2]["title"] and out[9]["title"] == bp[9]["title"]  # 충돌한 쪽은 원문 유지
+        assert out[20]["title"] == bp[20]["title"] and out[27]["title"] == bp[27]["title"]
+        assert n == 24  # 28문항 중 위 4문항을 뺀 나머지는 계속 AI 문장
+
+
 def test_survey_sanitize_partial_and_garbage():
     bp = FIXTURE["gamer"]["blueprint"]
     bad = _fake_rewrite(bp)
