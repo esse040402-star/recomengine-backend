@@ -16,7 +16,7 @@ def session_secret() -> str:
     configured = get_settings().session_secret
     if configured:
         return configured
-    if _fallback_secret is None:
+    if _fallback_secret is None:  # 가짜 DB 모드에서만 여기까지 온다 (실제 DB 모드는 config.py 가 시작 시 막음)
         _fallback_secret = secrets.token_urlsafe(32)
         log.warning("SESSION_SECRET 이 없어 임시 키를 만들었어요. 서버를 재시작하면 모두 로그아웃됩니다.")
     return _fallback_secret

@@ -58,10 +58,16 @@ class StateIn(BaseModel):
     state: dict[str, Any] = Field(description="저장할 화면 상태 전체 (JSON, 1MB 이하)")
 
 
+def _public(user: dict) -> dict:
+    """프론트에 돌려줄 사용자 정보. 프로필 화면이 accountUser.email 을 보여준다."""
+    return {"id": user["id"], "name": user.get("name") or "사용자", "email": user.get("email") or ""}
+
+
 def _start_session(response: Response, user: dict) -> None:
     s = get_settings()
     ttl = s.session_days * 86400
-    token = session_cookie.sign({"uid": user["id"], "name": user["name"]}, session_secret(), ttl)
+    # 이메일도 쿠키에 담아 새로고침(GET /session) 때 DB 조회 없이 돌려준다. 예전 쿠키에는 없어서 빈 글자가 된다
+    token = session_cookie.sign({"uid": user["id"], "name": user["name"], "email": user.get("email", "")}, session_secret(), ttl)
     response.set_cookie(session_cookie.COOKIE_NAME, token, max_age=ttl, httponly=True,
                         samesite="lax", secure=s.cookie_secure, path="/")
 
@@ -84,26 +90,36 @@ async def get_session(request: Request):
     user = session_user(request)
     if not user:
         return {"user": None}
-    out: dict = {"user": {"id": user["uid"], "name": user.get("name") or "사용자"}}
+    out: dict = {"user": _public({**user, "id": user["uid"]})}
     state = await _load_state(user["uid"])
     if state:
         out["state"] = state
     return out
 
 
+def _client_ip(request: Request) -> str:
+    return request.client.host if request.client else "?"
+
+
 @router.post("/signup", status_code=201, **docs.doc("account_signup"))
-async def signup(body: SignupIn, response: Response):
+async def signup(body: SignupIn, request: Request, response: Response):
+    key = f"signup|{_client_ip(request)}"
+    try:
+        throttle.check(key, limit=throttle.SIGNUP_MAX, window=throttle.SIGNUP_WINDOW_SECONDS)
+    except throttle.TooManyAttempts:
+        raise HTTPException(429, "가입 시도가 너무 많아요. 잠시 후 다시 시도해 주세요.")
+    throttle.fail(key)  # 성공·실패와 관계없이 시도 횟수로 센다
     try:
         user = await accounts.create_account(body.name, body.email, body.password)
     except accounts.AccountError as exc:
         raise _fail(exc)
     _start_session(response, user)
-    return {"user": {"id": user["id"], "name": user["name"]}}  # state 없음 -> 프론트가 현재 게스트 상태를 그대로 사용
+    return {"user": _public(user)}  # state 없음 -> 프론트가 현재 게스트 상태를 그대로 사용
 
 
 @router.post("/login", **docs.doc("account_login"))
 async def login(body: LoginIn, request: Request, response: Response):
-    key = f"{request.client.host if request.client else '?'}|{body.email}"
+    key = f"{_client_ip(request)}|{body.email}"
     try:
         throttle.check(key)
     except throttle.TooManyAttempts:
@@ -116,7 +132,7 @@ async def login(body: LoginIn, request: Request, response: Response):
         raise _fail(exc)
     throttle.clear(key)
     _start_session(response, user)
-    out: dict = {"user": {"id": user["id"], "name": user["name"]}}
+    out: dict = {"user": _public(user)}
     state = await _load_state(user["id"])
     if state:
         out["state"] = state

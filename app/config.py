@@ -46,6 +46,13 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def _check_session_secret(self):
+        # 키가 없으면 프로세스마다 임시 키를 만들어서(app/auth.py) 재시작·워커 여러 개일 때 로그인이 풀린다.
+        # 가짜 DB 모드(개발·테스트)에서만 그걸 허용한다.
+        if not self.use_mock_db and not self.session_secret:
+            raise ValueError(
+                "실제 DB 모드(USE_MOCK_DB=false)에서는 SESSION_SECRET 이 필요합니다. "
+                'python -c "import secrets;print(secrets.token_urlsafe(32))" 로 만든 값을 .env 에 넣으세요.'
+            )
         if self.session_secret and len(self.session_secret) < 16:
             raise ValueError("SESSION_SECRET 은 16자 이상이어야 합니다.")
         return self

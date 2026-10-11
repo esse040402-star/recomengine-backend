@@ -121,7 +121,7 @@ IGDB는 Twitch 계정으로 키를 받습니다.
 ```powershell
 python -c "import secrets;print(secrets.token_urlsafe(32))"
 ```
-나온 값을 `ADMIN_TOKEN=` 뒤에 붙입니다. 비워 두면 관리자 API 가 꺼집니다. `SESSION_SECRET` 도 같은 방법으로 만들어 채울 수 있습니다.
+나온 값을 `ADMIN_TOKEN=` 뒤에 붙입니다. 비워 두면 관리자 API 가 꺼집니다. `SESSION_SECRET` 도 같은 방법으로 만들어 채웁니다 (**`USE_MOCK_DB=false` 면 필수**, 비우면 서버가 시작되지 않음).
 
 **잘 들어갔는지 확인**
 | 확인 | 방법 | 정상이면 |
@@ -242,15 +242,15 @@ python -c "import secrets;print(secrets.token_urlsafe(32))"
 ### 계정 API 규격 (프론트가 호출하는 형태 그대로)
 | 메서드 | 경로 | 요청 | 응답 |
 |---|---|---|---|
-| GET | `/api/account/session` | - | `{user: {id,name}\|null, state?}` |
+| GET | `/api/account/session` | - | `{user: {id,name,email}\|null, state?}` (`email` 은 프로필 화면에 표시) |
 | POST | `/api/account/signup` | `{name,email,password(8자+)}` | `201 {user}` (+쿠키). state 없음 → 프론트가 현재 게스트 상태 사용 |
 | POST | `/api/account/login` | `{email,password}` | `{user, state?}` (+쿠키) |
 | POST | `/api/account/logout` | - | `{ok:true}` (쿠키 삭제) |
 | PUT | `/api/account/state` | `{state:{...}}` (1MB 이하) | `{ok:true}` (로그인 필요) |
 
 - **같은 주소에서 서빙해야 쿠키가 동작합니다.** `frontend/` 를 빌드(`npm run build`)한 뒤 `http://localhost:8000` 으로 여세요 (위 '6단계'). 개발 중에는 Vite(`http://localhost:5173`)가 `/api` 를 8000번으로 넘겨 주므로 같은 방식으로 동작합니다. 프론트 `VITE_API_BASE_URL` 로 다른 주소의 서버를 가리키려면 `.env` 의 `CORS_ORIGINS` 에 프론트 주소(예: `http://localhost:5173`)를 추가해야 합니다.
-- 로그인 8회 연속 실패하면 15분간 429 (프로세스 메모리 기준). 로그아웃은 쿠키를 지우는 방식이라, 쿠키가 유출됐다면 만료(`SESSION_DAYS`)까지 유효합니다.
-- `.env` 에 `SESSION_SECRET` 을 꼭 채우세요(없으면 재시작할 때마다 전원 로그아웃). HTTPS로 배포하면 `COOKIE_SECURE=true`.
+- 로그인 8회 연속 실패하면 15분간 429, 회원가입은 같은 IP에서 10분에 10번 넘게 시도하면 429 (프로세스 메모리 기준). 로그아웃은 쿠키를 지우는 방식이라, 쿠키가 유출됐다면 만료(`SESSION_DAYS`)까지 유효합니다.
+- `SESSION_SECRET` 은 **실제 DB 모드(`USE_MOCK_DB=false`)에서 필수**입니다. 비어 있으면 서버가 시작되지 않고 만드는 방법을 알려 줍니다. 가짜 DB 모드에서는 비워 둬도 되지만, 그때는 재시작할 때마다 전원 로그아웃됩니다. HTTPS로 배포하면 `COOKIE_SECURE=true`.
 - 실제 Supabase 모드에서는 `SUPABASE_ANON_KEY` 도 필요하고, **`sql/002_user_states.sql`(새 테이블 1개)을 DB 담당자와 합의 후 실행**해야 합니다. 가입 때 이메일 인증 없이 바로 활성화됩니다(`email_confirm=true`).
 ### 프론트 담당자에게 전달할 것
 프론트가 서버에 맞추는 데 필요한 수정은 이미 반영돼 있습니다(`blueprint` 전송, 계정 API 경로 등). 남은 확인·수정 요청은 **[docs/프론트엔드_수정_요청서_20261009.md](docs/프론트엔드_수정_요청서_20261009.md)** 에 정리했습니다. 가장 중요한 것은 아래입니다.

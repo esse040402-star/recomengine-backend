@@ -25,6 +25,14 @@ FastAPI 백엔드 골격과 AI(Ollama) 기능, RAWG/IGDB 게임 수집, 회원/�
 - Ollama 심화 설문 생성이 50초 제한을 넘기면 프론트가 기본 문항으로 대체함 (모델/PC 성능에 따라). 2026-10-09 측정에서는 15~22초였습니다 (qwen2.5:7b, 이 PC 기준)
 - AI 가 바꾼 설문 제목이 다른 문항의 원래 제목과 겹쳐서 프론트가 응답 전체를 버리던 문제를 2026-10-09 에 고쳤습니다 (`survey_ai.sanitize`). 재현 테스트는 `tests/test_prototype_sync.py`
 
+## 2026-10-11 프론트 대조 후 수정
+프론트(`frontend/src/services/`)가 실제로 부르는 API는 10개입니다(account 5개, `survey/generate`, `status`, `market`, `steam/reviews`, `steam/details`). 진단 세션(`/api/sessions`)·AI 기능(`/api/ai/*`)·게임 목록(`/api/games`)은 프론트가 쓰지 않고 Swagger 시험용입니다 (설문 채점·추천은 프론트 `preferenceEngine.js` 가 직접 계산).
+- 계정 응답 `user` 에 `email` 추가: 프로필 화면이 `accountUser.email` 을 보여주는데 서버가 안 줘서 빈칸이었음. 로그인 쿠키에도 담아 새로고침 후에도 유지 (예전 쿠키는 빈 글자 → 다시 로그인하면 채워짐)
+- 실제 DB 모드(`USE_MOCK_DB=false`)에서 `SESSION_SECRET` 이 비어 있으면 서버가 시작되지 않음 (임시 키 때문에 재시작·워커 여러 개일 때 로그인이 풀리던 문제 방지)
+- 회원가입 횟수 제한: 같은 IP에서 10분에 10번 초과 시 429 (`throttle.SIGNUP_MAX`)
+- `/api/status` 의 Ollama 확인을 전체 1초 안으로 제한: 프론트는 2.5초만 기다리고, 넘기면 `feeds` 를 못 받아 스팀 실시간 기능이 꺼졌음
+- `python -m pytest` 94개 통과 (가짜 DB)
+
 ## DB 담당자에게 (합의 필요)
 백엔드는 서비스 키로 DB에 접속합니다 (`SUPABASE_SERVICE_KEY`, 서버 전용 · 프론트에 주지 말 것).
 
