@@ -17,13 +17,22 @@ def _semaphore() -> asyncio.Semaphore:
     return _sem
 
 
+# 프론트는 /api/status 를 2.5초만 기다린다. 넘기면 feeds 까지 못 받아 스팀 실시간 기능이 꺼지므로 전체를 이 안에 끝낸다
+LIST_MODELS_TIMEOUT = 1.0
+
+
+async def _fetch_models() -> list[str]:
+    async with httpx.AsyncClient(timeout=LIST_MODELS_TIMEOUT) as client:
+        r = await client.get(f"{get_settings().ollama_base_url}/api/tags")
+        r.raise_for_status()
+        return [m["name"] for m in r.json().get("models", [])]
+
+
 async def list_models() -> list[str] | None:
-    """설치된 모델 이름 목록. Ollama가 꺼져 있으면 None."""
+    """설치된 모델 이름 목록. Ollama가 꺼져 있거나 LIST_MODELS_TIMEOUT 안에 답하지 않으면 None.
+    httpx timeout 은 연결·읽기 단계마다 따로 걸려서, 전체 시간은 wait_for 로 한 번 더 묶는다."""
     try:
-        async with httpx.AsyncClient(timeout=1.5) as client:
-            r = await client.get(f"{get_settings().ollama_base_url}/api/tags")
-            r.raise_for_status()
-            return [m["name"] for m in r.json().get("models", [])]
+        return await asyncio.wait_for(_fetch_models(), timeout=LIST_MODELS_TIMEOUT)
     except Exception:
         return None
 

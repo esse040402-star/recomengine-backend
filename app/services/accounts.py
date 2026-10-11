@@ -27,7 +27,7 @@ def _is_invalid_credentials(exc: Exception) -> bool:
 def user_dict(u) -> dict:
     meta = getattr(u, "user_metadata", None) or {}
     email = getattr(u, "email", "") or ""
-    return {"id": str(u.id), "name": meta.get("name") or email.split("@")[0] or "사용자"}
+    return {"id": str(u.id), "name": meta.get("name") or email.split("@")[0] or "사용자", "email": email}
 
 
 def _login_client():

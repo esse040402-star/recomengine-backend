@@ -28,11 +28,13 @@ def test_signup_session_state_logout_flow(client):
 
     r = client.post("/api/account/signup", json=SIGNUP)
     assert r.status_code == 201 and r.json()["user"]["name"] == "지헌" and "state" not in r.json()
+    assert r.json()["user"]["email"] == "jiheon@example.com"  # 프로필 화면이 accountUser.email 을 보여준다
     cookie = r.headers["set-cookie"].lower()
     assert "httponly" in cookie and "samesite=lax" in cookie and "password" not in r.text
 
     me = client.get("/api/account/session").json()
     assert me["user"]["name"] == "지헌" and "state" not in me
+    assert me["user"]["email"] == "jiheon@example.com"  # 새로고침 뒤에도 이메일 유지 (쿠키에 담김)
 
     saved = {"track": "gamer", "quick": {"completed": True, "answers": {"q1": ["0"]}}, "liked": ["elden"]}
     assert client.put("/api/account/state", json={"state": saved}).json() == {"ok": True}
@@ -45,6 +47,34 @@ def test_signup_session_state_logout_flow(client):
     # 같은 이메일(대소문자 무관)로 다시 로그인하면 저장한 상태가 돌아온다
     r = client.post("/api/account/login", json={"email": "jiheon@example.com", "password": "pw-12345678"})
     assert r.status_code == 200 and r.json()["state"] == saved
+    assert r.json()["user"]["email"] == "jiheon@example.com"
+
+
+def test_old_cookie_without_email_still_works(client):
+    """이메일을 넣기 전에 발급된 쿠키도 로그인 상태로 인정하고, 이메일은 빈 글자로 돌려준다."""
+    from app import session_cookie
+    from app.auth import session_secret
+    client.cookies.set(session_cookie.COOKIE_NAME, session_cookie.sign({"uid": "old-user", "name": "예전"}, session_secret(), 600))
+    me = client.get("/api/account/session").json()
+    assert me["user"] == {"id": "old-user", "name": "예전", "email": ""}
+
+
+def test_signup_throttle(client):
+    codes = [client.post("/api/account/signup", json={**SIGNUP, "email": f"spam{i}@example.com"}).status_code
+             for i in range(throttle.SIGNUP_MAX + 1)]
+    assert set(codes[:-1]) == {201} and codes[-1] == 429
+    assert "가입 시도" in client.post("/api/account/signup", json={**SIGNUP, "email": "late@example.com"}).json()["error"]
+
+
+def test_real_db_mode_requires_session_secret():
+    """실제 DB 모드에서 SESSION_SECRET 이 없으면 서버가 시작되지 않아야 한다 (임시 키로 로그인이 풀리는 것 방지)."""
+    from pydantic import ValidationError
+    from app.config import Settings
+    real = {"_env_file": None, "use_mock_db": False, "supabase_url": "https://example.supabase.co", "supabase_service_key": "k"}
+    with pytest.raises(ValidationError, match="SESSION_SECRET"):
+        Settings(**real, session_secret="")
+    assert Settings(**real, session_secret="x" * 32).session_secret
+    assert Settings(_env_file=None, use_mock_db=True, session_secret="").use_mock_db  # 가짜 DB 모드는 임시 키 허용
 
 
 def test_error_shape_is_error_key(client):
@@ -114,3 +144,17 @@ def test_status_reports_mock_and_ai(client, monkeypatch):
     monkeypatch.setattr(ollama, "list_models", none)
     body = client.get("/api/status").json()
     assert body["ai"] is False and body["ollama"]["up"] is False and body["mock_db"] is True
+
+
+def test_status_fast_when_ollama_hangs(client, monkeypatch):
+    """Ollama가 멈춰 응답이 없어도 /api/status 는 프론트 제한(2.5초) 안에 feeds=true 를 돌려줘야 한다."""
+    import asyncio
+    import time
+
+    async def hang():
+        await asyncio.sleep(10)
+    monkeypatch.setattr(ollama, "_fetch_models", hang)
+    started = time.monotonic()
+    body = client.get("/api/status").json()
+    assert time.monotonic() - started < 2.0
+    assert body["feeds"] is True and body["ai"] is False

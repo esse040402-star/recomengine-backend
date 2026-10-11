@@ -115,9 +115,10 @@ DOCS: dict[str, dict] = {
         """
 쿠키를 보고 지금 로그인되어 있는지 알려줍니다. 프론트는 페이지를 열 때 호출합니다.
 - 로그인 안 됨: `{"user": null}`
-- 로그인 됨: `user`(id, 닉네임)와, 이전에 저장해 둔 화면 상태가 있으면 `state` 도 함께 돌려줍니다.
+- 로그인 됨: `user`(id, 닉네임, 이메일)와, 이전에 저장해 둔 화면 상태가 있으면 `state` 도 함께 돌려줍니다.
+  (이메일 기능 추가 전에 발급된 쿠키면 `email` 은 빈 글자입니다. 다시 로그인하면 채워집니다)
         """,
-        {"user": {"id": UID, "name": "지헌"}, "state": {"track": "gamer", "quick": {"completed": True}}},
+        {"user": {"id": UID, "name": "지헌", "email": "user@example.com"}, "state": {"track": "gamer", "quick": {"completed": True}}},
         ok_text="로그인 상태 (로그인 안 됐으면 user 가 null)",
     ),
     "account_signup": spec(
@@ -126,8 +127,9 @@ DOCS: dict[str, dict] = {
 닉네임·이메일·비밀번호(8자 이상)로 가입하고 **바로 로그인 상태**가 됩니다(쿠키 발급).
 비밀번호는 Supabase가 암호화해서 보관하며 이 서버는 저장하지 않습니다.
 이미 가입된 이메일이면 409를 돌려줍니다. 이메일 인증 없이 바로 사용할 수 있습니다.
+- **같은 IP에서 10분 동안 10번 넘게 시도하면 429** 로 막습니다 (가짜 계정 대량 생성 방지)
         """,
-        {"user": {"id": UID, "name": "지헌"}}, ok_code=201, ok_text="가입 완료 (자동 로그인)", errors=(409, 422, 502),
+        {"user": {"id": UID, "name": "지헌", "email": "user@example.com"}}, ok_code=201, ok_text="가입 완료 (자동 로그인)", errors=(409, 422, 429, 502),
     ),
     "account_login": spec(
         "Login (로그인)",
@@ -136,7 +138,7 @@ DOCS: dict[str, dict] = {
 - 이메일 또는 비밀번호가 틀리면 401 (어느 쪽이 틀렸는지는 알려주지 않습니다)
 - **8번 연속 실패하면 15분 동안 429** 로 막습니다 (올바른 비밀번호도 거부)
         """,
-        {"user": {"id": UID, "name": "지헌"}, "state": {"track": "gamer"}}, ok_text="로그인 성공", errors=(401, 422, 429, 502, 503),
+        {"user": {"id": UID, "name": "지헌", "email": "user@example.com"}, "state": {"track": "gamer"}}, ok_text="로그인 성공", errors=(401, 422, 429, 502, 503),
     ),
     "account_logout": spec(
         "Logout (로그아웃)", "로그인 쿠키를 지웁니다. 로그인 상태가 아니어도 성공으로 처리합니다.", {"ok": True}, ok_text="로그아웃 완료",
