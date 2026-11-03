@@ -1,11 +1,8 @@
-name: 기존프로젝트 자동 검증
+name: 프로젝트 자동 검증
 
 on:
   push:
-    branches:
-      - main
-      - 'chore/**'
-      - 'integration/**'
+    branches: [main, 'feature/**', 'chore/**', 'integration/**']
   pull_request:
   workflow_dispatch:
 
@@ -14,7 +11,6 @@ permissions:
 
 jobs:
   backend:
-    name: FastAPI / mock tests
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -26,19 +22,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Check relocated relative paths
+      - run: python -m pip install -r requirements.txt
+      - name: 기존 경로 검사
         run: |
-          python -c "from pathlib import Path; from app.main import FRONTEND_DIR; assert FRONTEND_DIR == Path('frontend/dist').resolve(), FRONTEND_DIR"
-          python -c "from app.services.market import CATALOG_FILE; assert CATALOG_FILE.exists(), CATALOG_FILE"
-          python -c "from app.mock_db import SEED_FILE; assert SEED_FILE.exists(), SEED_FILE"
-          python -c "from scripts.export_catalog import DEFAULT_SOURCE; assert (DEFAULT_SOURCE / 'catalog.json').exists(), DEFAULT_SOURCE"
-      - name: Test backend (no real database)
-        run: python -m pytest -q
+          python -c "from pathlib import Path; from app.main import FRONTEND_DIR; assert FRONTEND_DIR == Path('frontend/dist').resolve()"
+          python -c "from app.services.market import CATALOG_FILE; assert CATALOG_FILE.exists()"
+          python -c "from app.mock_db import SEED_FILE; assert SEED_FILE.exists()"
+          python -c "from scripts.export_catalog import DEFAULT_SOURCE; assert (DEFAULT_SOURCE / 'catalog.json').exists()"
+      - run: python -m pytest -q
 
   frontend:
-    name: React / tests & build
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -50,9 +43,21 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: 기존프로젝트/frontend/package-lock.json
-      - name: Install dependencies
-        run: npm ci
-      - name: Test frontend
-        run: npm test
-      - name: Build frontend
-        run: npm run build
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+
+  first7:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 새작업물/첫7문항
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+      - name: 설문 HTML 및 이미지 파일 검사
+        run: |
+          python -c "from pathlib import Path; import re; h=Path('frontend/화면_최종.html').read_text(encoding='utf-8'); fs=re.findall(r'/미리보기/(미리보기_[0-9]+[.]js)',h); assert len(fs)==20 and all((Path('frontend/미리보기')/f).is_file() for f in fs)"

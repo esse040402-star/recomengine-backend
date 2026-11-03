@@ -1,0 +1,675 @@
+{
+  "gamer": [
+    {
+      "id": "q1",
+      "field": "platform",
+      "title": "주력 플레이 플랫폼",
+      "max": 1,
+      "options": [
+        {
+          "label": "PC (Steam / Epic Games 등)",
+          "values": {},
+          "prefs": {
+            "platforms": [
+              "pc"
+            ]
+          },
+          "id": "0"
+        },
+        {
+          "label": "콘솔 (PS / Nintendo Switch / Xbox)",
+          "values": {},
+          "prefs": {
+            "platforms": [
+              "console"
+            ]
+          },
+          "id": "1"
+        },
+        {
+          "label": "모바일 (iOS / Android)",
+          "values": {},
+          "prefs": {
+            "platforms": [
+              "mobile"
+            ]
+          },
+          "id": "2"
+        },
+        {
+          "label": "UMPC (Steam Deck / ROG Ally 등)",
+          "values": {},
+          "prefs": {
+            "platforms": [
+              "umpc"
+            ]
+          },
+          "id": "3"
+        },
+        {
+          "label": "상관 없음",
+          "values": {},
+          "prefs": {
+            "platforms": []
+          },
+          "id": "4"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "field": "session",
+      "title": "플레이 호흡 및 세션 구조",
+      "max": 1,
+      "options": [
+        {
+          "label": "[초단판 숏폼 (5~15분)] — 10분 내외로 빠르게 한 판 끝내고 끌 수 있는 숏폼 세션 (클래시 로얄, 칼바람, 브롤스타즈 등)",
+          "values": {
+            "4": 70
+          },
+          "prefs": {
+            "session": "short"
+          },
+          "id": "0"
+        },
+        {
+          "label": "[중형 세션 (20~40분)] — 한 판당 30분 안팎으로 매칭/진행되는 중형 세션 (LoL 협곡, 배틀그라운드, 오버워치, 잇 테이크 투 등)",
+          "values": {},
+          "prefs": {
+            "session": "medium"
+          },
+          "id": "1"
+        },
+        {
+          "label": "[장시간 롱폼 (1시간 이상)] — 한 번 잡으면 1시간 이상 진득하게 몰입하는 세션 (오픈월드, 스토리지향 RPG, 4X 전략 등)",
+          "values": {
+            "3": 75
+          },
+          "prefs": {
+            "session": "long"
+          },
+          "id": "2"
+        },
+        {
+          "label": "\"세션 길이 상관없음 / 상황 따라 다 좋아함\"",
+          "values": {},
+          "prefs": {},
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "field": "purpose",
+      "title": "핵심 재미 드라이버",
+      "max": 5,
+      "options": [
+        {
+          "label": "[손맛/전투] 피지컬, 타격감, 실시간 전투, 액션 쾌감",
+          "values": {
+            "0": 95,
+            "4": 15
+          },
+          "prefs": {
+            "purpose": "전투의 손맛"
+          },
+          "id": "0"
+        },
+        {
+          "label": "[전략/두뇌] 빌드 연구, 수싸움, 턴제, 시뮬레이션, 퍼즐",
+          "values": {
+            "1": 95
+          },
+          "prefs": {
+            "purpose": "전략과 문제 해결"
+          },
+          "id": "1"
+        },
+        {
+          "label": "[서사/몰입] 스토리, 세계관, 연출, 캐릭터 중심",
+          "values": {
+            "3": 95
+          },
+          "prefs": {
+            "purpose": "이야기에 몰입하기"
+          },
+          "id": "2"
+        },
+        {
+          "label": "[탐험/자유도] 오픈월드, 수집, 다회차 요소, 높은 자유도",
+          "values": {
+            "2": 95
+          },
+          "prefs": {
+            "purpose": "새로운 발견"
+          },
+          "id": "3"
+        },
+        {
+          "label": "[경영/빌딩] 하우징, 경영 시뮬레이션, 정돈, 아늑한 성취감",
+          "values": {
+            "2": 75,
+            "4": 95
+          },
+          "prefs": {
+            "purpose": "휴식과 꾸미기"
+          },
+          "id": "4"
+        },
+        {
+          "label": "상관 없음",
+          "values": {},
+          "prefs": {
+            "none": true
+          },
+          "id": "5"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "field": "social",
+      "title": "멀티플레이 및 스트레스 수용도",
+      "max": 1,
+      "options": [
+        {
+          "label": "순수 싱글 플레이 (Solo Only) — 타인의 개입 없이 혼자 몰입",
+          "values": {
+            "4": 75,
+            "5": 10
+          },
+          "prefs": {
+            "social": "solo"
+          },
+          "id": "0"
+        },
+        {
+          "label": "PvE / 협동 플레이 (Co-op) — 다른 유저/친구와 협력하여 목표 달성",
+          "values": {
+            "4": 65,
+            "5": 35
+          },
+          "prefs": {
+            "social": "coop"
+          },
+          "id": "1"
+        },
+        {
+          "label": "PvP / 경쟁 플레이 (Ranked / Competitive) — 랭크전, 승패 및 실력 겨루기",
+          "values": {
+            "5": 95
+          },
+          "prefs": {
+            "social": "pvp"
+          },
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "field": "mechanics",
+      "title": "메카닉 요구도 및 조작 방식",
+      "max": 1,
+      "options": [
+        {
+          "label": "실시간 피지컬 조작 (3D 자유 시점, 피하기/스킬 연계, 반응속도 중시)",
+          "values": {
+            "0": 90,
+            "1": 35
+          },
+          "prefs": {},
+          "id": "0"
+        },
+        {
+          "label": "턴제 / Command / 커서 조작 (포인트 앤 클릭, 덱빌딩 카드, 커맨드 선택)",
+          "values": {
+            "0": 15,
+            "1": 90
+          },
+          "prefs": {},
+          "id": "1"
+        },
+        {
+          "label": "조작 방식 무관",
+          "values": {},
+          "prefs": {},
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "field": "avoid",
+      "title": "이탈 요인 (Anti-Match Trigger / 복수 선택)",
+      "max": 5,
+      "options": [
+        {
+          "label": "🚫 3D 시점 멀미 및 눈의 피로",
+          "values": {},
+          "prefs": {
+            "avoid": [
+              "motion"
+            ]
+          },
+          "id": "0"
+        },
+        {
+          "label": "🚫 과도한 무한 반복 파밍 / 노가다 요구 (Grinding)",
+          "values": {},
+          "prefs": {
+            "avoid": [
+              "grind"
+            ]
+          },
+          "id": "1"
+        },
+        {
+          "label": "🚫 P2W 및 과도한 BM(가챠/현질) 유도",
+          "values": {},
+          "prefs": {
+            "avoid": [
+              "monetization"
+            ]
+          },
+          "id": "2"
+        },
+        {
+          "label": "🚫 진입장벽이 과도한 뇌지컬 공부 / 머리 아픈 퍼즐 (공부 피로)",
+          "values": {},
+          "prefs": {
+            "avoid": [
+              "complex"
+            ]
+          },
+          "id": "3"
+        },
+        {
+          "label": "🚫 1:1 / 대전 승패에서 오는 억까 및 스트레스",
+          "values": {},
+          "prefs": {
+            "avoid": [
+              "pvp"
+            ]
+          },
+          "id": "4"
+        },
+        {
+          "label": "🟢 특별히 피하는 요소 없음",
+          "values": {},
+          "prefs": {
+            "none": true
+          },
+          "id": "5"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "field": "visual",
+      "title": "비주얼 아트 스타일",
+      "max": 1,
+      "options": [
+        {
+          "label": "고퀄리티 실사 3D Graphics",
+          "values": {},
+          "prefs": {
+            "visual": "realistic"
+          },
+          "id": "0"
+        },
+        {
+          "label": "서브컬처 / 2D 애니메이션 풍",
+          "values": {},
+          "prefs": {
+            "visual": "anime"
+          },
+          "id": "1"
+        },
+        {
+          "label": "도트 / 픽셀 아트 / 레트로 감성",
+          "values": {},
+          "prefs": {
+            "visual": "pixel"
+          },
+          "id": "2"
+        },
+        {
+          "label": "캐주얼 / 동화풍 Graphics",
+          "values": {},
+          "prefs": {
+            "visual": "casual"
+          },
+          "id": "3"
+        },
+        {
+          "label": "아트 스타일 무관",
+          "values": {},
+          "prefs": {},
+          "id": "4"
+        }
+      ]
+    }
+  ],
+  "nongamer": [
+    {
+      "id": "q1",
+      "field": "platform",
+      "title": "보유 기기 및 환경",
+      "max": 1,
+      "options": [
+        {
+          "label": "스마트폰 / 태블릿",
+          "values": {},
+          "prefs": {
+            "platforms": [
+              "mobile"
+            ]
+          },
+          "id": "0"
+        },
+        {
+          "label": "일반 사무용 컴퓨터 / 노트북 (사양 낮은 가벼운 게임)",
+          "values": {},
+          "prefs": {
+            "platforms": [
+              "pc"
+            ],
+            "lowSpec": true
+          },
+          "id": "1"
+        },
+        {
+          "label": "고사양 PC 또는 전용 게임기 (PS5, 닌텐도 스위치, 고성능 PC 등)",
+          "values": {},
+          "prefs": {
+            "platforms": [
+              "pc",
+              "console"
+            ]
+          },
+          "id": "2"
+        },
+        {
+          "label": "상관없음 (필요하다면 기기 구매/이용 의향 있음)",
+          "values": {},
+          "prefs": {
+            "platforms": []
+          },
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "field": "session",
+      "title": "플레이 호흡 및 진행 구조",
+      "max": 1,
+      "options": [
+        {
+          "label": "[초단판 숏폼 (5~15분)] — 손가락 몇 번 튕기거나 가볍게 한 두 판 하고 바로 끌 수 있는 게임",
+          "values": {
+            "4": 70
+          },
+          "prefs": {
+            "session": "short"
+          },
+          "id": "0"
+        },
+        {
+          "label": "[중형 세션 (20~40분)] — 한 판을 할 때 30분 안팎으로 집중해서 플레이하는 게임",
+          "values": {},
+          "prefs": {
+            "session": "medium"
+          },
+          "id": "1"
+        },
+        {
+          "label": "[장시간 몰입 (1시간 이상)] — 영화 한 편 보듯 진득하게 세상을 탐험하고 스토리를 이어가는 게임",
+          "values": {
+            "3": 75
+          },
+          "prefs": {
+            "session": "long"
+          },
+          "id": "2"
+        },
+        {
+          "label": "\"상황 따라 다 좋음 / 시간 제약 없음\"",
+          "values": {},
+          "prefs": {},
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "field": "purpose",
+      "title": "핵심 플레이 동기",
+      "max": 4,
+      "options": [
+        {
+          "label": "[액션/통쾌함] 손끝으로 전해지는 흥미진진한 움직임과 긴장감",
+          "values": {
+            "0": 90
+          },
+          "prefs": {
+            "purpose": "전투의 손맛"
+          },
+          "id": "0"
+        },
+        {
+          "label": "[서사/영화] 영화나 드라마처럼 흥미진진한 이야기 속에 몰입하기",
+          "values": {
+            "3": 95
+          },
+          "prefs": {
+            "purpose": "이야기에 몰입하기"
+          },
+          "id": "1"
+        },
+        {
+          "label": "[탐험/자유] 광활하고 신비로운 세계를 자유롭게 구경하고 누비기",
+          "values": {
+            "2": 95
+          },
+          "prefs": {
+            "purpose": "새로운 발견"
+          },
+          "id": "2"
+        },
+        {
+          "label": "[성장/성취] 무언가를 차근차근 모으고, 가꾸고, 발전시키는 아늑한 재미",
+          "values": {
+            "2": 75,
+            "4": 95
+          },
+          "prefs": {
+            "purpose": "휴식과 꾸미기"
+          },
+          "id": "3"
+        },
+        {
+          "label": "\"특별히 선호하는 것 없음 / 재미만 있다면 다 OK\"",
+          "values": {},
+          "prefs": {
+            "none": true
+          },
+          "id": "4"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "field": "social",
+      "title": "타인 노출 및 경쟁 스트레스",
+      "max": 1,
+      "options": [
+        {
+          "label": "\"남 눈치 보거나 약속 잡는 거 싫음, 무조건 100% 혼자 할래요\" (순수 싱글)",
+          "values": {
+            "4": 75,
+            "5": 10
+          },
+          "prefs": {
+            "social": "solo"
+          },
+          "id": "0"
+        },
+        {
+          "label": "\"경쟁은 싫지만, 다른 사람과 협동하거나 시끌벅적 구경하는 건 괜찮아요\" (PvE/가벼운 멀티)",
+          "values": {
+            "4": 65,
+            "5": 35
+          },
+          "prefs": {
+            "social": "coop"
+          },
+          "id": "1"
+        },
+        {
+          "label": "\"다른 유저와 실력을 겨루거나 승패를 가르는 플레이도 좋아요\" (PvP/경쟁)",
+          "values": {
+            "5": 95
+          },
+          "prefs": {
+            "social": "pvp"
+          },
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "field": "mechanics",
+      "title": "조작 방식 및 피지컬 부담",
+      "max": 1,
+      "options": [
+        {
+          "label": "\"3D 화면 속 캐릭터를 직접 자유롭게 움직이며 누비기\" (직관 이동)",
+          "values": {
+            "0": 75
+          },
+          "prefs": {},
+          "id": "0"
+        },
+        {
+          "label": "\"마우스나 손가락으로 화면의 물건/버튼을 콕콕 집어 편하게 조작하기\" (포인트&클릭)",
+          "values": {
+            "0": 15,
+            "4": 80
+          },
+          "prefs": {},
+          "id": "1"
+        },
+        {
+          "label": "\"조작 방식은 상관없으나, 손이 너무 바쁘거나 반응속도를 강요하지만 않으면 됨\"",
+          "values": {
+            "0": 20,
+            "4": 80
+          },
+          "prefs": {
+            "avoid": [
+              "difficulty"
+            ]
+          },
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "field": "avoid",
+      "title": "절대 불호 소거 필터",
+      "max": 4,
+      "options": [
+        {
+          "label": "🚫 [공부/추리 피로] \"공부하듯 복잡한 시스템을 외우거나, 머리 싸매고 퀴즈/퍼즐을 풀어야 하는 게임\" (단순 스토리 대화는 제외!)",
+          "values": {},
+          "prefs": {
+            "avoid": [
+              "complex"
+            ]
+          },
+          "id": "0"
+        },
+        {
+          "label": "🚫 [피지컬/재시작 피로] \"조작이 너무 어렵거나, 자꾸 죽어서 처음부터 다시 해야 하는 게임\"",
+          "values": {},
+          "prefs": {
+            "avoid": [
+              "difficulty"
+            ]
+          },
+          "id": "1"
+        },
+        {
+          "label": "🚫 [과금/광고 피로] \"중간에 자꾸 현금 결제를 유도하거나 광고가 튀어나오는 게임\"",
+          "values": {},
+          "prefs": {
+            "avoid": [
+              "monetization"
+            ]
+          },
+          "id": "2"
+        },
+        {
+          "label": "🚫 [3D 멀미 피로] \"화면이 획획 돌아가서 어지럽거나 눈이 피로한 게임\"",
+          "values": {},
+          "prefs": {
+            "avoid": [
+              "motion"
+            ]
+          },
+          "id": "3"
+        },
+        {
+          "label": "🟢 \"특별히 피하고 싶은 거 없음 / 다 괜찮음\"",
+          "values": {},
+          "prefs": {
+            "none": true
+          },
+          "id": "4"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "field": "visual",
+      "title": "비주얼 그래픽 감성",
+      "max": 1,
+      "options": [
+        {
+          "label": "\"실제 영화나 현실처럼 그래픽이 화려하고 입체적인 3D 화면\"",
+          "values": {},
+          "prefs": {
+            "visual": "realistic"
+          },
+          "id": "0"
+        },
+        {
+          "label": "\"웹툰이나 애니메이션처럼 깔끔하고 감성적인 그림체 화면\"",
+          "values": {},
+          "prefs": {
+            "visual": "anime"
+          },
+          "id": "1"
+        },
+        {
+          "label": "\"귀엽고 아기자기한 레트로/도트 화면\"",
+          "values": {},
+          "prefs": {
+            "visual": "pixel"
+          },
+          "id": "2"
+        },
+        {
+          "label": "\"화면 스타일은 상관없음\"",
+          "values": {},
+          "prefs": {},
+          "id": "3"
+        }
+      ]
+    }
+  ]
+}
