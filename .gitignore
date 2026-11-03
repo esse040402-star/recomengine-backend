@@ -1,6 +1,23 @@
-.venv/
+# Secrets
 .env
-__pycache__/
-*.pyc
 .env.*
 !.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+
+# Node & build
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.local
+
+# OS & editor
+.DS_Store
+Thumbs.db
