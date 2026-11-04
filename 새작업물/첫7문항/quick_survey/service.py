@@ -14,4 +14,6 @@ def evaluate(payload: dict) -> dict:
         if not isinstance(key,str) or not isinstance(values,list) or not all(isinstance(v,str) for v in values):
             raise ValueError('답변은 질문 ID별 선택지 ID 문자열 배열이어야 합니다.')
     result=calculate(track,answers)
+    from .steam import recommend
+    result["recommendation"]=recommend(result["weights"],result["constraints"])
     return {'survey_id':payload['survey_id'],'version':VERSION,'answers':{k:list(v) for k,v in answers.items()},**result}

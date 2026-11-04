@@ -70,5 +70,4 @@ def calculate(track, answers):
     top=sorted(range(6),key=lambda i:-axes[i])[:2]
     summary={'axes':axes,'coverage':[c>0 for c in counts],'top':top,'title':TITLES[top[0]],'prefs':prefs,'evidence':evidence,'stage':'quick','count':7}
     return {'weights':dict(sorted(scores.items())), 'summary':summary,
-            'constraints':{'platforms':prefs['platforms'],'avoid':prefs['avoid'],'budget':None,'hardware_spec':None,'low_spec_preferred':bool(prefs.get('lowSpec'))},
-            'recommendation':{'status':'awaiting_steam_adapter','games':[]}, 'rules_version':VERSION}
+            'constraints':{'platforms':prefs['platforms'],'avoid':prefs['avoid'],'budget':None,'hardware_spec':None,'low_spec_preferred':bool(prefs.get('lowSpec'))}, 'rules_version':VERSION}

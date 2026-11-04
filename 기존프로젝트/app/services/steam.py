@@ -215,6 +215,8 @@ async def fetch_app_details(app_id: int, cc: str = "kr") -> dict | None:
     platforms = d.get("platforms") or {}
     pc = d.get("pc_requirements") if isinstance(d.get("pc_requirements"), dict) else {}
     details = {
+        "genres": [x["description"] for x in d.get("genres") or [] if x.get("description")],
+        "categoryIds": [x["id"] for x in d.get("categories") or [] if isinstance(x.get("id"), int)],
         "developers": d.get("developers") or [],
         "publishers": d.get("publishers") or [],
         "releaseDate": (d.get("release_date") or {}).get("date") or "",

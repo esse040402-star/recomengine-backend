@@ -57,7 +57,7 @@ def main(argv=None):
         print('\n성향 요약:',result['summary']['title'])
         print('최종 가중치:')
         for feature,score in result['weights'].items():print(f'  {feature}: {score:+g}')
-        print('Steam 게임 매칭: 연결 전 (실제 추천 없음)')
+        print('추천 게임:', ', '.join(g['title'] for g in result['recommendation']['games']) or '조건에 맞는 게임 없음')
         print('결과 파일:',Path(args.output).resolve())
         return 0
     except (OSError,ValueError,EOFError) as exc:
