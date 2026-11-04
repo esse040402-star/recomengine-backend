@@ -1,0 +1,92 @@
+import E from '../services/preferenceEngine';
+import { generateSurvey } from '../services/recommendationService';
+import { saveDiagnosisToBackend } from '../services/recommendationService';
+export function chooseOption(question, answers, id) { let selected = [...(answers[question.id] || [])]; const option = question.options.find(o => o.id === id); if (!option) return answers; if (question.max === 1) selected = [id]; else if (selected.includes(id)) selected = selected.filter(x => x !== id); else if (option.prefs?.none) selected = [id]; else { selected = selected.filter(x => !question.options.find(o => o.id === x)?.prefs?.none); if (selected.length >= question.max) return answers; selected.push(id); } return { ...answers, [question.id]: selected }; }
+export function surveyActions(c) {
+    const patch = c.patch;
+    const start = (kind, reset = false, track = c.state.track) => { if (!track) { c.showDialog('profile-track'); return; } if (kind === 'deep' && !c.state.drafts.deep && !reset) { c.goto('deep-intro'); return; } const d = reset ? null : c.state.drafts[kind]; patch({ track, drafts: { ...c.state.drafts, [kind]: d || { runId: crypto.randomUUID(), origin: 'PAGE', answers: {}, index: 0, startedAt: new Date().toISOString(), ...(kind === 'quick' ? { schema: 2 } : {}), ...(kind === 'preference' ? { track, questions: E.profileQuestions(track) } : {}) } } }); c.goto('survey/' + kind); };
+    return {
+        'track': ({ value }) => start('quick', true, value), 'profile-track': ({ value }) => { c.closeDialog(); start('preference', true, value); },
+        'start': ({ kind }) => start(kind), 'resume': ({ kind }) => c.goto('survey/' + kind),
+        'answer': ({ kind, id }) => { const d = c.state.drafts[kind], q = c.questions(kind)[d.index]; patch({ drafts: { ...c.state.drafts, [kind]: { ...d, answers: chooseOption(q, d.answers, id) } } }); },
+        'previous': ({ kind }) => { const d = c.state.drafts[kind]; patch({ drafts: { ...c.state.drafts, [kind]: { ...d, index: Math.max(0, d.index - 1) } } }); c.setUI({ surveyDirection: -1 }); },
+        'next': ({ kind }) => {
+            const d = c.state.drafts[kind];
+            const qs = c.questions(kind);
+
+            if (!d.answers[qs[d.index].id]?.length) return;
+
+            if (d.index < qs.length - 1) {
+                patch({
+                    drafts: {
+                        ...c.state.drafts,
+                        [kind]: { ...d, index: d.index + 1 },
+                    },
+                });
+                c.setUI({ surveyDirection: 1 });
+                window.scrollTo(0, 0);
+                return;
+            }
+
+            if (!E.validAnswers(qs, d.answers)) {
+                c.toast('답변하지 않은 질문을 확인해주세요.');
+                return;
+            }
+
+            const drafts = { ...c.state.drafts };
+            delete drafts[kind];
+
+            const completedSurvey = {
+                runId: d.runId || crypto.randomUUID(),
+                origin: 'PAGE',
+                startedAt: d.startedAt,
+                completed: true,
+                answers: structuredClone(d.answers),
+                questions: qs,
+                track: d.track || c.state.track,
+                source: d.source,
+                ...(kind === 'quick' ? { schema: 2 } : {}),
+                completedAt: new Date().toISOString(),
+            };
+
+            const nextState = {
+                ...c.state,
+                [kind]: completedSurvey,
+                drafts,
+                filters: {},
+                bannerDismissed: false,
+            };
+
+            patch({
+                [kind]: completedSurvey,
+                drafts,
+                filters: {},
+                bannerDismissed: false,
+            });
+
+            c.setUI({ forceOnboarding: false });
+            c.goto(kind === 'quick' ? 'result' : 'report');
+
+            c.toast(
+                kind === 'quick'
+                    ? '첫 추천이 준비됐어요.'
+                    : '분석 결과를 추천과 내 취향 랭킹에 반영했어요.'
+            );
+
+            // Supabase 저장은 화면 이동을 막지 않고 백그라운드에서 진행
+            saveDiagnosisToBackend(nextState)
+                .then((result) => {
+                    if (result) c.toast('진단 결과와 추천 게임을 서버에 저장했어요.');
+                })
+                .catch((error) => {
+                    console.error('진단 결과 저장 실패:', error);
+                    c.toast('추천은 표시되었지만 서버 저장에 실패했어요. 다시 확인이 필요합니다.');
+                });
+        },
+        'pause': () => { c.goto('home'); c.toast('답변을 저장했어요. 이어서 진행할 수 있습니다.'); },
+        'retake': ({ kind }) => c.showDialog('retake', { kind }),
+        'confirm-retake': ({ kind }) => { c.closeDialog(); if (kind === 'deep') { const drafts = { ...c.state.drafts }; delete drafts.deep; patch({ drafts }); c.goto('deep-intro'); } else start(kind, true); },
+        'generate': async () => { if (!c.state.quick?.completed) { c.goto('home'); return; } if (c.generationBusy) return; c.setUI({ generationBusy: true }); const token = ++c.requestEpoch.current; const generated = await generateSurvey(c.state); if (token !== c.requestEpoch.current) { c.setUI({ generationBusy: false }); return; } patch({ drafts: { ...c.state.drafts, deep: { ...generated, runId: crypto.randomUUID(), origin: 'PAGE', startedAt: new Date().toISOString(), track: c.state.track, answers: {}, index: 0 } } }); c.setUI({ generationBusy: false }); c.goto('survey/deep'); if (generated.source === 'adaptive') c.toast('AI 연결 대신 응답 기반 맞춤 질문으로 진행합니다.'); },
+        'confirm-restart': () => { patch({ track: null, quick: null, deep: null, preference: null, drafts: {}, filters: {}, bannerDismissed: false }); c.requestEpoch.current++; c.setUI({ guidedChat: null, forceOnboarding: true }); c.closeDialog(); c.goto('welcome'); c.toast('첫 7문항부터 다시 시작할 수 있어요.'); }
+    };
+}
