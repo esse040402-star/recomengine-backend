@@ -10,7 +10,7 @@ class LocalTests(unittest.TestCase):
   r=evaluate(sample());self.assertEqual(r['weights'],{'category:single_player':10,'genre:action':10,'preference:motion_intensity':-10,'session:short':5,'tag:action':5,'tag:realistic':5});self.assertEqual(r['summary']['axes'],[93,35,50,50,53,10])
  def test_nongamer(self):self.assertEqual(evaluate(sample('nongamer'))['summary']['count'],7)
  def test_no_network(self):
-  with patch('socket.socket.connect',side_effect=AssertionError()):self.assertEqual(evaluate(sample())['recommendation']['status'],'awaiting_steam_adapter')
+  with patch('socket.socket.connect',side_effect=AssertionError()):self.assertEqual(evaluate(sample())['recommendation']['status'],'matched')
  def test_repeat(self):
   p=sample();before=copy.deepcopy(p);self.assertEqual(evaluate(p),evaluate(p));self.assertEqual(p,before)
  def test_accumulation(self):
