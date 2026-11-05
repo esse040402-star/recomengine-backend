@@ -192,3 +192,4 @@ async def save_state(body: StateIn, request: Request):
         log.warning("계정 상태 저장 실패: %s", type(exc).__name__)
         raise HTTPException(503, "계정 저장소에 저장하지 못했어요.")
     return {"ok": True}
+
