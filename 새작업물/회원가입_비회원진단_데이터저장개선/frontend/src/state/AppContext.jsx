@@ -147,3 +147,4 @@ export function AppProvider({ children }) {
   return <AppContext.Provider value={{ state, dispatch, analysis, storageError, auth, authenticate, logout, retrySave, recoverLocal }}>{children}</AppContext.Provider>;
 }
 export const useApp = () => useContext(AppContext);
+
