@@ -56,8 +56,11 @@ export default function App() {
       query.get('token_hash') ||
       query.get('code');
 
+    // Supabase PKCE 이메일 인증은 ?code=... 형태로 돌아올 수 있다.
+    // 이 경우 type=signup이 없어도 인증 완료 안내 화면을 표시한다.
     return (
       (type === 'signup' && !!token) ||
+      !!query.get('code') ||
       errorCode === 'otp_expired'
     );
   });
