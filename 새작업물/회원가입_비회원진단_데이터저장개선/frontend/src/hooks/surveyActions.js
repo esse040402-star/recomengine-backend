@@ -90,3 +90,4 @@ export function surveyActions(c) {
         'confirm-restart': () => { patch({ track: null, quick: null, deep: null, preference: null, drafts: {}, filters: {}, bannerDismissed: false }); c.requestEpoch.current++; c.setUI({ guidedChat: null, forceOnboarding: true }); c.closeDialog(); c.goto('welcome'); c.toast('첫 7문항부터 다시 시작할 수 있어요.'); }
     };
 }
+
