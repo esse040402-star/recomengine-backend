@@ -51,3 +51,4 @@ async def get_questions(track: str, stage: str):
         )
     )
     return {"questions": result.data}
+

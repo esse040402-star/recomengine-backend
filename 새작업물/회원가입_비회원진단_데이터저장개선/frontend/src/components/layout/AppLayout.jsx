@@ -117,7 +117,7 @@ export default function AppLayout({ children, emailVerified = false }) {
   // 이메일 인증 완료 화면에서는 로고와 문구만 표시
   if (emailVerified) {
     return (
-      <div style={{
+      <div className="email-verified-layout" style={{
         minHeight: '100vh',
         padding: '28px 32px',
         boxSizing: 'border-box'

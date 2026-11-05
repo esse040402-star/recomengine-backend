@@ -1,5 +1,7 @@
+
 const pages = new Set([
   'welcome',
+  'track-select',
   'home',
   'result',
   'deep-intro',
@@ -18,7 +20,7 @@ export function resolveRoute(
   // 비회원도 빠른 진단을 완료하면 전체 기능 이용 가능
   const canEnter = Boolean(state.quick?.completed || user);
 
-  if (!canEnter && route !== 'welcome' && route !== 'survey/quick') {
+  if (!canEnter && !['welcome', 'track-select', 'survey/quick'].includes(route)) {
     return 'welcome';
   }
 

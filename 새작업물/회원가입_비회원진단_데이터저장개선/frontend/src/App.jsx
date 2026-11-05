@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { ViewContext } from './state/ViewContext';
 import usePageController from './hooks/usePageController';
@@ -10,6 +11,7 @@ function Page({ c }) {
 
   const pages = {
     welcome: 'welcome',
+    'track-select': 'trackSelect',
     home: 'home',
     result: 'quickResult',
     'deep-intro': 'deepIntro',

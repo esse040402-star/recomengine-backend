@@ -57,9 +57,17 @@ export function profileActions(c) {
                 }
 
                 if (result) {
-                    c.setUI({ forceOnboarding: false });
-                    c.goto('home');
-                    c.toast('계정으로 연결되었습니다.');
+                    if (isSignup) {
+                        // 회원가입 완료 후에는 게스트와 동일한 이용 경험 선택 화면으로 이동
+                        c.setUI({ forceOnboarding: true });
+                        c.goto('track-select');
+                        c.toast('회원가입이 완료되었습니다. 게임 이용 경험을 선택해 주세요.');
+                    } else {
+                        // 로그인은 기존처럼 메인 화면으로 이동
+                        c.setUI({ forceOnboarding: false });
+                        c.goto('home');
+                        c.toast('로그인되었습니다.');
+                    }
                 }
             } catch (e) {
                 c.toast(e.message);
