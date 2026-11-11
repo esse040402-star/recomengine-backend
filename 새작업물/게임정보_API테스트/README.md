@@ -59,3 +59,19 @@ uvicorn main:app --host 127.0.0.1 --port 8000
 - https://partner.steamgames.com/doc/webapi/IStoreService
 - https://api-docs.igdb.com/
 - https://render.com/docs/deploy-fastapi
+
+## 배포 주소
+
+- [게임정보 API 테스트 화면](https://recomengine-game-api.onrender.com/)
+- [API 문서 · 호출 테스트](https://recomengine-game-api.onrender.com/docs)
+
+게임정보 조회용 API 서버입니다. 로그인·설문·로컬 AI를 포함한 전체 프로젝트 통합본 배포는 아닙니다.
+
+팀원은 각자 작성한 백엔드에서 위 서버를 호출해 JSON 데이터를 사용할 수 있습니다. Steam API 키를 별도로 전달받을 필요는 없습니다.
+
+- 기본 주소: `https://recomengine-game-api.onrender.com`
+- 검색 예시: [게임 검색](https://recomengine-game-api.onrender.com/api/games?q=elden&page=1)
+- 상세 예시: [레데리2 · AppID 1174180](https://recomengine-game-api.onrender.com/api/games/1174180)
+- 상태 확인: [API 상태](https://recomengine-game-api.onrender.com/api/status)
+
+응답에서 Steam·태그·리뷰·IGDB 각 항목의 조회 성공 여부를 확인해 사용하세요. 키 등록 여부만으로 해당 데이터의 조회 성공을 보장하지 않습니다.
