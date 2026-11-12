@@ -1,0 +1,8 @@
+
+.profile-cover{min-height:360px;isolation:isolate;overflow:hidden;border-radius:24px;padding:40px;display:flex;align-items:flex-end;background:linear-gradient(130deg,#1766bb,#6743bc)}
+.profile-cover>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:50% var(--cover-y,50%)!important;transform:none!important;filter:none!important;opacity:1!important;z-index:-2}
+.profile-cover:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,calc(var(--cover-shade,.45) * .2));z-index:-1;pointer-events:none}
+.profile-cover .profile-identity{position:relative;z-index:1;color:#fff;text-shadow:0 2px 8px #0008}.profile-cover .profile-identity p{color:#f1f5ff}.profile-cover .cover-edit{z-index:2;background:#ffffffed;color:#23314b}.profile-cover .chip{margin-top:12px;background:#ffffffdf;color:#23314b;text-shadow:none}
+.profile-cover-mini{height:180px;border-radius:16px;background-size:cover;background-color:#334b87;display:flex;align-items:flex-end;padding:20px;color:white;margin-top:20px;box-shadow:inset 0 0 0 1000px #0001}.theme-choice img{object-fit:cover;width:100%;height:110px}.player-profile-hub .games-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.player-profile-hub article{padding:24px}.player-profile-hub article h3{margin:16px 0 10px}@media(max-width:640px){.profile-cover{min-height:300px;padding:24px}.profile-cover .cover-edit{top:16px;right:16px}}
+
+.profile-cover:before{content:none}
