@@ -157,6 +157,27 @@ def tags(appid):
             'source': 'Steam 상점 HTML의 사용자 태그 (공식 Web API가 아님)'}
 
 
+def steam_reviews(appid):
+    # Steam은 기존 store.steampowered.com/appreviews 경로 대신
+    # IUserReviewsService/GetAppReviews API를 사용합니다.
+    params = {'input_json': json.dumps({
+        'appid': appid,
+        'filter': 1,
+        'languages': ['all'],
+        'purchase_type': 1,
+        'num_per_page': 5,
+    })}
+    raw = as_json(request(
+        'GET',
+        'https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/',
+        params=params,
+    ))
+    result = raw.get('response')
+    if not isinstance(result, dict):
+        raise HTTPException(502, 'Steam 리뷰 응답 형식이 올바르지 않습니다.')
+    return result
+
+
 def safe_part(fn):
     try:
         return fn()
@@ -211,8 +232,7 @@ def detail(appid: int):
         data = item['data']
         with ThreadPoolExecutor(max_workers=3) as pool:
             tag_job = pool.submit(safe_part, lambda: tags(appid))
-            review_job = pool.submit(safe_part, lambda: as_json(request('GET',
-                f'https://store.steampowered.com/appreviews/{appid}', params={'json': 1, 'language': 'all', 'num_per_page': 5})))
+            review_job = pool.submit(safe_part, lambda: steam_reviews(appid))
             igdb_job = pool.submit(safe_part, lambda: igdb_detail(appid))
             return {'appid': appid, 'steam': data, 'steam_tags': tag_job.result(),
                     'reviews': review_job.result(), 'igdb': igdb_job.result(),
