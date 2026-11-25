@@ -21,3 +21,6 @@
 # OS & editor
 .DS_Store
 Thumbs.db
+
+# 게임정보 수집 원본 캐시
+**/data/collected/.cache/
