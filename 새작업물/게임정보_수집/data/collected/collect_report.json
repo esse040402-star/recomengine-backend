@@ -1,0 +1,85 @@
+{
+  "collected_at": "2026-11-20T10:50:50+00:00",
+  "count": 1284,
+  "sources": {
+    "steam": "store.steampowered.com/api/appdetails (l=english, l=koreana), api.steampowered.com/IUserReviewsService/GetAppReviews",
+    "igdb": "api.igdb.com/v4 external_games, games",
+    "target_list": "frontend catalog + SteamSpy popular"
+  },
+  "failed": [],
+  "igdb_not_linked": [
+    {
+      "steam_app_id": 1938090,
+      "name": "Call of Duty®"
+    },
+    {
+      "steam_app_id": 5235150,
+      "name": "Green Hat Battle"
+    },
+    {
+      "steam_app_id": 5187710,
+      "name": "Lost Liminal:Prologue"
+    },
+    {
+      "steam_app_id": 4020370,
+      "name": "Boxcutter"
+    },
+    {
+      "steam_app_id": 4376740,
+      "name": "Fruit Fetish"
+    },
+    {
+      "steam_app_id": 5051720,
+      "name": "CRAFTLANDER"
+    },
+    {
+      "steam_app_id": 4612540,
+      "name": "Lone Mining Engineer "
+    },
+    {
+      "steam_app_id": 5179030,
+      "name": "The Long Graze"
+    }
+  ],
+  "not_a_game_excluded": [],
+  "empty_fields": {
+    "steam_app_id": 0,
+    "igdb_id": 8,
+    "steam_name": 0,
+    "steam_name_ko": 1129,
+    "igdb_name": 8,
+    "steam_header_image": 0,
+    "steam_capsule_image": 0,
+    "igdb_cover_image": 8,
+    "igdb_artwork_image": 34,
+    "steam_short_description": 0,
+    "steam_description": 8,
+    "igdb_summary": 8,
+    "igdb_storyline": 610,
+    "steam_genres": 5,
+    "igdb_genres": 8,
+    "igdb_themes": 97,
+    "igdb_keywords": 151,
+    "igdb_player_perspectives": 115,
+    "steam_categories": 0,
+    "igdb_game_modes": 8,
+    "igdb_multiplayer_modes": 963,
+    "steam_platforms": 0,
+    "igdb_platforms": 9,
+    "excluded_mobile_platforms": 985,
+    "steam_release_date": 1,
+    "steam_release_date_text": 0,
+    "steam_coming_soon": 0,
+    "igdb_first_release_date": 11,
+    "steam_developers": 0,
+    "steam_publishers": 4,
+    "igdb_developers": 40,
+    "igdb_publishers": 50,
+    "steam_positive": 0,
+    "steam_negative": 0,
+    "steam_review_total": 0,
+    "steam_is_free": 0,
+    "steam_type": 0,
+    "steam_url": 0
+  }
+}

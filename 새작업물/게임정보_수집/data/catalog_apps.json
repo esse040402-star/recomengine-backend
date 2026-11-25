@@ -1,0 +1,566 @@
+{
+ "news_games": [
+  "portal",
+  "apex",
+  "cs2",
+  "slay",
+  "terraria",
+  "dota",
+  "baba",
+  "dorfromantik",
+  "elden",
+  "hades",
+  "cyber",
+  "unpacking"
+ ],
+ "games": {
+  "elden": {
+   "app": 1245620,
+   "title": "ELDEN RING"
+  },
+  "cyber": {
+   "app": 1091500,
+   "title": "Cyberpunk 2077"
+  },
+  "stardew": {
+   "app": 413150,
+   "title": "Stardew Valley"
+  },
+  "baldur": {
+   "app": 1086940,
+   "title": "Baldur's Gate 3"
+  },
+  "baba": {
+   "app": 736260,
+   "title": "Baba Is You"
+  },
+  "portal": {
+   "app": 620,
+   "title": "Portal 2"
+  },
+  "terraria": {
+   "app": 105600,
+   "title": "Terraria"
+  },
+  "hades": {
+   "app": 1145360,
+   "title": "Hades"
+  },
+  "dorfromantik": {
+   "app": 1455840,
+   "title": "Dorfromantik"
+  },
+  "unpacking": {
+   "app": 1135690,
+   "title": "Unpacking 언패킹"
+  },
+  "slay": {
+   "app": 646570,
+   "title": "Slay the Spire"
+  },
+  "celeste": {
+   "app": 504230,
+   "title": "Celeste"
+  },
+  "cs2": {
+   "app": 730,
+   "title": "Counter-Strike 2"
+  },
+  "dota": {
+   "app": 570,
+   "title": "Dota 2"
+  },
+  "apex": {
+   "app": 1172470,
+   "title": "Apex 레전드™"
+  },
+  "steam-292030": {
+   "app": 292030,
+   "title": "The Witcher 3: Wild Hunt — Remastered"
+  },
+  "steam-570940": {
+   "app": 570940,
+   "title": "DARK SOULS™: REMASTERED"
+  },
+  "steam-374320": {
+   "app": 374320,
+   "title": "DARK SOULS™ III"
+  },
+  "steam-814380": {
+   "app": 814380,
+   "title": "Sekiro™: Shadows Die Twice - GOTY Edition"
+  },
+  "steam-1174180": {
+   "app": 1174180,
+   "title": "Red Dead Redemption 2"
+  },
+  "steam-271590": {
+   "app": 271590,
+   "title": "Grand Theft Auto V 레거시"
+  },
+  "steam-990080": {
+   "app": 990080,
+   "title": "호그와트 레거시"
+  },
+  "steam-1151640": {
+   "app": 1151640,
+   "title": "Horizon Zero Dawn™ Complete Edition"
+  },
+  "steam-1240440": {
+   "app": 1240440,
+   "title": "Halo Infinite"
+  },
+  "steam-553850": {
+   "app": 553850,
+   "title": "HELLDIVERS™ 2"
+  },
+  "steam-578080": {
+   "app": 578080,
+   "title": "PUBG: BATTLEGROUNDS"
+  },
+  "steam-359550": {
+   "app": 359550,
+   "title": "톰 클랜시의 레인보우식스 시즈"
+  },
+  "steam-440": {
+   "app": 440,
+   "title": "Team Fortress 2"
+  },
+  "steam-230410": {
+   "app": 230410,
+   "title": "Warframe"
+  },
+  "steam-1085660": {
+   "app": 1085660,
+   "title": "데스티니 가디언즈"
+  },
+  "steam-252490": {
+   "app": 252490,
+   "title": "Rust"
+  },
+  "steam-346110": {
+   "app": 346110,
+   "title": "ARK: Survival Evolved"
+  },
+  "steam-2399830": {
+   "app": 2399830,
+   "title": "ARK: Survival Ascended"
+  },
+  "steam-1623730": {
+   "app": 1623730,
+   "title": "Palworld / 팰월드"
+  },
+  "steam-892970": {
+   "app": 892970,
+   "title": "Valheim"
+  },
+  "steam-275850": {
+   "app": 275850,
+   "title": "No Man's Sky"
+  },
+  "steam-261550": {
+   "app": 261550,
+   "title": "Mount & Blade II: Bannerlord"
+  },
+  "steam-108600": {
+   "app": 108600,
+   "title": "Project Zomboid"
+  },
+  "steam-1145350": {
+   "app": 1145350,
+   "title": "Hades II"
+  },
+  "steam-367520": {
+   "app": 367520,
+   "title": "Hollow Knight"
+  },
+  "steam-1030300": {
+   "app": 1030300,
+   "title": "Hollow Knight: Silksong"
+  },
+  "steam-588650": {
+   "app": 588650,
+   "title": "Dead Cells"
+  },
+  "steam-1868140": {
+   "app": 1868140,
+   "title": "데이브 더 다이버"
+  },
+  "steam-250900": {
+   "app": 250900,
+   "title": "The Binding of Isaac: Rebirth"
+  },
+  "steam-2379780": {
+   "app": 2379780,
+   "title": "Balatro"
+  },
+  "steam-1794680": {
+   "app": 1794680,
+   "title": "Vampire Survivors"
+  },
+  "steam-1942280": {
+   "app": 1942280,
+   "title": "Brotato"
+  },
+  "steam-632360": {
+   "app": 632360,
+   "title": "Risk of Rain 2"
+  },
+  "steam-322500": {
+   "app": 322500,
+   "title": "SUPERHOT"
+  },
+  "steam-268910": {
+   "app": 268910,
+   "title": "Cuphead"
+  },
+  "steam-1057090": {
+   "app": 1057090,
+   "title": "Ori and the Will of the Wisps"
+  },
+  "steam-387290": {
+   "app": 387290,
+   "title": "Ori and the Blind Forest: Definitive Edition"
+  },
+  "steam-1150690": {
+   "app": 1150690,
+   "title": "OMORI"
+  },
+  "steam-356570": {
+   "app": 356570,
+   "title": "Party Hard"
+  },
+  "steam-1158310": {
+   "app": 1158310,
+   "title": "Crusader Kings III"
+  },
+  "steam-294100": {
+   "app": 294100,
+   "title": "RimWorld"
+  },
+  "steam-427520": {
+   "app": 427520,
+   "title": "Factorio"
+  },
+  "steam-526870": {
+   "app": 526870,
+   "title": "Satisfactory"
+  },
+  "steam-1084160": {
+   "app": 1084160,
+   "title": "Jagged Alliance 3"
+  },
+  "steam-289070": {
+   "app": 289070,
+   "title": "Sid Meier’s Civilization® VI"
+  },
+  "steam-8930": {
+   "app": 8930,
+   "title": "Sid Meier's Civilization® V"
+  },
+  "steam-1244460": {
+   "app": 1244460,
+   "title": "쥬라기 월드 에볼루션 2"
+  },
+  "steam-255710": {
+   "app": 255710,
+   "title": "Cities: Skylines"
+  },
+  "steam-949230": {
+   "app": 949230,
+   "title": "Cities: Skylines II"
+  },
+  "steam-219150": {
+   "app": 219150,
+   "title": "Hotline Miami"
+  },
+  "steam-391540": {
+   "app": 391540,
+   "title": "Undertale"
+  },
+  "steam-400": {
+   "app": 400,
+   "title": "Portal"
+  },
+  "steam-4000": {
+   "app": 4000,
+   "title": "Garry's Mod"
+  },
+  "steam-22380": {
+   "app": 22380,
+   "title": "Fallout: New Vegas"
+  },
+  "steam-377160": {
+   "app": 377160,
+   "title": "Fallout 4"
+  },
+  "steam-489830": {
+   "app": 489830,
+   "title": "The Elder Scrolls V: Skyrim Special Edition"
+  },
+  "steam-524220": {
+   "app": 524220,
+   "title": "NieR:Automata™"
+  },
+  "steam-582010": {
+   "app": 582010,
+   "title": "Monster Hunter: World"
+  },
+  "steam-2246340": {
+   "app": 2246340,
+   "title": "Monster Hunter Wilds"
+  },
+  "steam-1446780": {
+   "app": 1446780,
+   "title": "MONSTER HUNTER RISE"
+  },
+  "steam-582160": {
+   "app": 582160,
+   "title": "어쌔신 크리드 오리진"
+  },
+  "steam-812140": {
+   "app": 812140,
+   "title": "Assassin's Creed® Odyssey"
+  },
+  "steam-1172380": {
+   "app": 1172380,
+   "title": "스타워즈 제다이: 오더의 몰락™"
+  },
+  "steam-1593500": {
+   "app": 1593500,
+   "title": "God of War"
+  },
+  "steam-1659040": {
+   "app": 1659040,
+   "title": "HITMAN World of Assassination"
+  },
+  "steam-1817190": {
+   "app": 1817190,
+   "title": "Marvel’s Spider-Man: Miles Morales"
+  },
+  "steam-1817070": {
+   "app": 1817070,
+   "title": "Marvel’s Spider-Man Remastered"
+  },
+  "steam-1063730": {
+   "app": 1063730,
+   "title": "New World: Aeternum"
+  },
+  "steam-1466860": {
+   "app": 1466860,
+   "title": "Age of Empires IV: Anniversary Edition"
+  },
+  "steam-1938090": {
+   "app": 1938090,
+   "title": "콜 오브 듀티®"
+  },
+  "steam-1203630": {
+   "app": 1203630,
+   "title": "로도스도 전기 - 디드리트 인 원더 라비린스"
+  },
+  "steam-1290000": {
+   "app": 1290000,
+   "title": "PowerWash Simulator"
+  },
+  "steam-648800": {
+   "app": 648800,
+   "title": "Raft"
+  },
+  "steam-47890": {
+   "app": 47890,
+   "title": "The Sims™ 3"
+  },
+  "steam-1222670": {
+   "app": 1222670,
+   "title": "The Sims™ 4"
+  },
+  "steam-1401590": {
+   "app": 1401590,
+   "title": "Disney Dreamlight Valley"
+  },
+  "steam-1151340": {
+   "app": 1151340,
+   "title": "Fallout 76"
+  },
+  "steam-240720": {
+   "app": 240720,
+   "title": "Getting Over It with Bennett Foddy"
+  },
+  "steam-3431040": {
+   "app": 3431040,
+   "title": "That's not my Neighbor"
+  },
+  "steam-1055540": {
+   "app": 1055540,
+   "title": "A Short Hike"
+  },
+  "steam-42700": {
+   "app": 42700,
+   "title": "Call of Duty®: Black Ops"
+  },
+  "steam-291550": {
+   "app": 291550,
+   "title": "Brawlhalla"
+  },
+  "steam-945360": {
+   "app": 945360,
+   "title": "Among Us"
+  },
+  "steam-1222700": {
+   "app": 1222700,
+   "title": "A Way Out"
+  },
+  "steam-381210": {
+   "app": 381210,
+   "title": "Dead by Daylight"
+  },
+  "steam-1599600": {
+   "app": 1599600,
+   "title": "플레이트업!"
+  },
+  "steam-221100": {
+   "app": 221100,
+   "title": "DayZ"
+  },
+  "steam-322330": {
+   "app": 322330,
+   "title": "Don't Starve Together"
+  },
+  "steam-242760": {
+   "app": 242760,
+   "title": "The Forest"
+  },
+  "steam-1326470": {
+   "app": 1326470,
+   "title": "Sons Of The Forest"
+  },
+  "steam-550": {
+   "app": 550,
+   "title": "Left 4 Dead 2"
+  },
+  "steam-220": {
+   "app": 220,
+   "title": "Half-Life 2"
+  },
+  "steam-1867240": {
+   "app": 1867240,
+   "title": "WARDOGS"
+  },
+  "steam-1422450": {
+   "app": 1422450,
+   "title": "Deadlock"
+  },
+  "steam-2868840": {
+   "app": 2868840,
+   "title": "Slay the Spire 2"
+  },
+  "steam-4126040": {
+   "app": 4126040,
+   "title": "애니모"
+  },
+  "steam-2767030": {
+   "app": 2767030,
+   "title": "마블 라이벌즈"
+  },
+  "steam-236390": {
+   "app": 236390,
+   "title": "War Thunder"
+  },
+  "steam-322170": {
+   "app": 322170,
+   "title": "Geometry Dash"
+  },
+  "steam-2507950": {
+   "app": 2507950,
+   "title": "Delta Force"
+  },
+  "steam-1973530": {
+   "app": 1973530,
+   "title": "Limbus Company"
+  },
+  "steam-3240220": {
+   "app": 3240220,
+   "title": "Grand Theft Auto V 인핸스드"
+  },
+  "steam-1142710": {
+   "app": 1142710,
+   "title": "토탈워: 워해머 3"
+  },
+  "steam-4001890": {
+   "app": 4001890,
+   "title": "낚시 방법"
+  },
+  "steam-2807960": {
+   "app": 2807960,
+   "title": "Battlefield™ 6"
+  },
+  "steam-3493540": {
+   "app": 3493540,
+   "title": "Transport Fever 3"
+  },
+  "steam-5235150": {
+   "app": 5235150,
+   "title": "초록 모자 대전"
+  },
+  "steam-2429930": {
+   "app": 2429930,
+   "title": "전력망"
+  },
+  "steam-4869180": {
+   "app": 4869180,
+   "title": "GoatCart"
+  },
+  "steam-5187710": {
+   "app": 5187710,
+   "title": "Lost Liminal:Prologue"
+  },
+  "steam-4020370": {
+   "app": 4020370,
+   "title": "Boxcutter"
+  },
+  "steam-4376740": {
+   "app": 4376740,
+   "title": "Fruit Fetish"
+  },
+  "steam-4301910": {
+   "app": 4301910,
+   "title": "The War Disorder Hexa"
+  },
+  "steam-5051720": {
+   "app": 5051720,
+   "title": "CRAFTLANDER"
+  },
+  "steam-4612540": {
+   "app": 4612540,
+   "title": "君は本当に家に帰りたいと思った事があるか"
+  },
+  "steam-5179030": {
+   "app": 5179030,
+   "title": "The Long Graze"
+  },
+  "steam-3582120": {
+   "app": 3582120,
+   "title": "코헨 1939"
+  },
+  "steam-1488490": {
+   "app": 1488490,
+   "title": "니발리스 나이트 Nivalis Nights"
+  },
+  "steam-1687950": {
+   "app": 1687950,
+   "title": "페르소나 5 더 로열"
+  },
+  "steam-2161700": {
+   "app": 2161700,
+   "title": "페르소나3 리로드"
+  },
+  "steam-2531310": {
+   "app": 2531310,
+   "title": "The Last of Us™ Part II Remastered"
+  },
+  "steam-1771300": {
+   "app": 1771300,
+   "title": "Kingdom Come: Deliverance II"
+  }
+ }
+}
