@@ -66,8 +66,25 @@ def test_mock_auth():
     try:
         db.auth.get_user("real-jwt")
     except ValueError:
-        return
-    raise AssertionError("mock 토큰이 아니면 실패해야 함")
+        pass
+    else:
+        raise AssertionError("mock 토큰이 아니면 실패해야 함")
+
+    pending = db.auth.sign_up({
+        "email": "pending@example.com",
+        "password": "password123",
+        "options": {"data": {"name": "Pending"}},
+    })
+    assert pending.session is None
+    try:
+        db.auth.sign_in_with_password({"email": "pending@example.com", "password": "password123"})
+    except ValueError as exc:
+        assert "Email not confirmed" in str(exc)
+    else:
+        raise AssertionError("인증 전 계정은 로그인할 수 없어야 함")
+
+    db.auth.verify_email(pending.user.mock_verification_token)
+    assert db.auth.sign_in_with_password({"email": "pending@example.com", "password": "password123"}).user.email == "pending@example.com"
 
 
 if __name__ == "__main__":
