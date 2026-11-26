@@ -55,7 +55,7 @@ fastapi dev app/main.py
 | 스팀 인기 순위 | `GET /api/market` → section=`rankings` | 순위 10개 (인터넷 필요) |
 | 게임 소식·할인 | `GET /api/market` → section=`news` | `news`, `newReleases`, `sales` 가 채워짐 |
 | 스팀 리뷰·정보 | `GET /api/steam/reviews`, `GET /api/steam/details` → game=`elden` | 리뷰 12개 / 개발사·가격 |
-| 회원가입·로그인 | `POST /api/account/signup` → `login` | 가짜 DB 안에서 동작 (서버를 끄면 사라짐) |
+| 회원가입·로그인 | `POST /api/account/signup` → 시연용 이메일 인증 → `login` | 인증 전 로그인 차단, 인증 완료 후 로그인 (서버를 끄면 계정도 사라짐) |
 | 오류 형식 | `GET /api/market` → game=`없는게임`, section=`news` | 404 와 `{"error": "한국어 메시지"}` |
 
 ### 6단계 (선택). 프론트 화면까지 보기
@@ -148,6 +148,7 @@ python -c "import secrets;print(secrets.token_urlsafe(32))"
 ## 0. Mock 모드로 먼저 돌려보기 (Supabase·프론트 없이)
 `.env` 에 `USE_MOCK_DB=true` 가 있으면 메모리 내 가짜 DB(샘플 게임 19개 포함)로 동작합니다.
 - 서버를 끄면 데이터가 사라집니다. 이 모드에서는 `supabase` 패키지가 설치되지 않아도 됩니다.
+- Mock DB 회원가입은 **이메일 인증 대기 상태**로 생성됩니다. 실제 메일은 발송되지 않으며, 프론트의 **'인증 완료 (시연용)'** 버튼으로 인증 단계를 재현한 뒤 로그인할 수 있습니다. 이 테스트 인증 API는 Mock DB에서만 열립니다.
 - `fastapi dev app/main.py` 후 http://localhost:8000/docs 에서 API를 직접 눌러 테스트하세요.
 - 로그인 흉내: `Authorization: Bearer mock-<이름>` 헤더 (예: `Bearer mock-alice`)
 - 자동 테스트: `python -m tests.test_mock_db`, `python -m tests.test_ai_features`, `python -m tests.test_prototype_sync`, `python -m tests.test_docs_coverage`, `python -m tests.test_search_quality`, `python -m tests.test_swagger_korean`, `python -m tests.test_game_clean` (Ollama 불필요) / `python -m pytest` (API 전체, 가짜 Ollama 사용)
@@ -246,13 +247,14 @@ python -c "import secrets;print(secrets.token_urlsafe(32))"
 | GET | `/api/account/session` | - | `{user: {id,name,email}\|null, state?}` (`email` 은 프로필 화면에 표시) |
 | POST | `/api/account/signup` | `{name,email,password(8자+)}` | `201 {user}` (+쿠키). state 없음 → 프론트가 현재 게스트 상태 사용 |
 | POST | `/api/account/login` | `{email,password}` | `{user, state?}` (+쿠키) |
+| POST | `/api/account/mock-email-verify` | `{token}` | `{verified:true}` (Mock DB 시연용 이메일 인증만) |
 | POST | `/api/account/logout` | - | `{ok:true}` (쿠키 삭제) |
 | PUT | `/api/account/state` | `{state:{...}}` (1MB 이하) | `{ok:true}` (로그인 필요) |
 
 - **같은 주소에서 서빙해야 쿠키가 동작합니다.** `frontend/` 를 빌드(`npm run build`)한 뒤 `http://localhost:8000` 으로 여세요 (위 '6단계'). 개발 중에는 Vite(`http://localhost:5173`)가 `/api` 를 8000번으로 넘겨 주므로 같은 방식으로 동작합니다. 프론트 `VITE_API_BASE_URL` 로 다른 주소의 서버를 가리키려면 `.env` 의 `CORS_ORIGINS` 에 프론트 주소(예: `http://localhost:5173`)를 추가해야 합니다.
 - 로그인 8회 연속 실패하면 15분간 429, 회원가입은 같은 IP에서 10분에 10번 넘게 시도하면 429 (프로세스 메모리 기준). 로그아웃은 쿠키를 지우는 방식이라, 쿠키가 유출됐다면 만료(`SESSION_DAYS`)까지 유효합니다.
 - `SESSION_SECRET` 은 **실제 DB 모드(`USE_MOCK_DB=false`)에서 필수**입니다. 비어 있으면 서버가 시작되지 않고 만드는 방법을 알려 줍니다. 가짜 DB 모드에서는 비워 둬도 되지만, 그때는 재시작할 때마다 전원 로그아웃됩니다. HTTPS로 배포하면 `COOKIE_SECURE=true`.
-- 실제 Supabase 모드에서는 `SUPABASE_ANON_KEY` 도 필요하고, **`sql/002_user_states.sql`(새 테이블 1개)을 DB 담당자와 합의 후 실행**해야 합니다. 가입 때 이메일 인증 없이 바로 활성화됩니다(`email_confirm=true`).
+- 실제 Supabase 모드에서는 `SUPABASE_ANON_KEY` 도 필요하고, **`sql/002_user_states.sql`(새 테이블 1개)을 DB 담당자와 합의 후 실행**해야 합니다. 회원가입 후 이메일 인증 여부는 Supabase Auth의 이메일 확인 설정을 따릅니다. 인증이 필요한 설정이면 인증 메일을 확인한 뒤 로그인해야 합니다.
 ### 프론트 담당자에게 전달할 것
 프론트가 서버에 맞추는 데 필요한 수정은 이미 반영돼 있습니다(`blueprint` 전송, 계정 API 경로 등). 남은 확인·수정 요청은 **[docs/프론트엔드_수정_요청서_20261009.md](docs/프론트엔드_수정_요청서_20261009.md)** 에 정리했습니다. 가장 중요한 것은 아래입니다.
 - 저사양·과금 피로 등 **제외 요소를 고르면 추천이 0건**이 됩니다. 카탈로그에 `lowSpec: true` 게임이 0개이고, `riskCoverage` 에 `monetization` 이 있는 게임이 0개이며, 그 밖의 제외 요소도 Steam 파생 게임 121개가 모두 빠져 큐레이션 15개만 남습니다 (코드와 데이터로 계산한 값).
