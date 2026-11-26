@@ -1,0 +1,3 @@
+-- Historical migration marker recovered from the linked Supabase migration ledger.
+-- Original SQL was not present in recomengine_update_02.zip.
+-- The complete current public schema is reconstructed by 20261117000000_rebuild_current_public_schema.sql.

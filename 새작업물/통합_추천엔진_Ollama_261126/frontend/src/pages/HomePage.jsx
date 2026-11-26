@@ -1,0 +1,9 @@
+import React from 'react';
+import { ActionButton, GameImage, Field, FieldArea, Form, Select, Anchor } from '../components/common/Elements.jsx';
+export function home(ctx) {
+  const r = ctx.report(),
+    items = r.recommendations,
+    g = items[ctx.heroIndex % Math.max(1, items.length)],
+    pending = ctx.draft('preference');
+  return <>{ctx.recommendationChat()}{g ? ctx.heroCarousel(g, items) : ctx.noMatches()}{!ctx.state.preference?.completed && !ctx.state.bannerDismissed ? <div className={"feature-banner"}><div className={"banner-title"}>{ctx.icon('Sparkles')}<div><strong>{pending ? '답하던 설문을 이어가세요.' : '추천에 내 플레이 조건까지.'}</strong><p>{pending ? `${Object.keys(pending.answers).length} / 30문항 저장됨` : '30문항으로 내 플레이 성향과 추천 기준을 더 세밀하게.'}</p></div></div><div className={"row"}><>{pending ? ctx.btn('프로필 설문 이어서', 'resume', 'btn primary', 'data-kind="preference"') : ctx.btn('플레이 성향 프로필 만들기', 'start', 'btn primary', 'data-kind="preference"')}{ctx.btn('나중에', 'dismiss-banner', 'btn ghost')}</></div></div> : <div className={"feature-banner"}><div className={"banner-title"}>{ctx.icon('Fingerprint')}<strong>{r.title}</strong></div>{ctx.routeBtn(<>{'플레이 성향 프로필 보기'}{ctx.icon('ArrowRight')}</>, 'report', 'text-btn')}</div>}{g && items.length > 1 ? <section className={"section"}><div className={"section-head"}><h2>{"또 다른 취향의 발견"}</h2>{ctx.routeBtn(<>{'전체 게임 탐색'}{ctx.icon('ArrowRight')}</>, 'explore', 'text-btn')}</div><div className={"games-grid"} id={"home-discovery"}>{React.Children.toArray(items.slice(1, 4).map((g, itemIndex) => ctx.card(g)))}</div></section> : ''}{r.prefs.deviceUnknown ? <p className={"catalog-note"}>{"사용할 기기가 정해지지 않았어요. 추천 조건에서 기기를 선택하면 후보가 달라집니다."}</p> : ''}</>;
+}

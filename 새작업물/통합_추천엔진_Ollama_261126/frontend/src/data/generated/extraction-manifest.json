@@ -1,0 +1,2121 @@
+{
+  "sourceHtml": "/workspace/scratch/743ff0116d89/upload/화면_최종(1).html",
+  "sourceBytes": 32857356,
+  "windowAssignmentsFound": [
+    "ASSETS",
+    "CATALOG",
+    "GAME_DETAILS",
+    "LOGO",
+    "MARKET_SNAPSHOT",
+    "PROFILE_SOURCE",
+    "RANKINGS",
+    "RANKING_META",
+    "STEAM_REVIEWS"
+  ],
+  "windowAssignmentErrors": {},
+  "gameAssetEntries": 137,
+  "assetItems": 274,
+  "logoCopiedTo": "/workspace/scratch/743ff0116d89/frontend/src/assets/brand/recomengine-logo.png",
+  "assets": [
+    {
+      "gameId": "elden",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 32689,
+      "sha256": "d46402528e357350bdb31a00be57a7896238515e6dc8afc0669aa54573307c02",
+      "output": "/assets/games/elden-card.jpg"
+    },
+    {
+      "gameId": "elden",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 203966,
+      "sha256": "45cb3b1f7a0542b494466dac2b40f05250ec4ce633c26752d3f4ef0b9ec2ce03",
+      "output": "/assets/games/elden-hero.jpg"
+    },
+    {
+      "gameId": "cyber",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 34342,
+      "sha256": "068fb873c89d18b5b1bffa148722957f6446a8b6d080335e4595c08ec0685988",
+      "output": "/assets/games/cyber-card.jpg"
+    },
+    {
+      "gameId": "cyber",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 222935,
+      "sha256": "44c73149490ecf4e211e1d7698e457a9694999d5f9b6ffec136a87c2b720b98b",
+      "output": "/assets/games/cyber-hero.jpg"
+    },
+    {
+      "gameId": "stardew",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 58853,
+      "sha256": "6f173dfb051a350dffdc1668b466b30b884ee2d080725c995fdbc89bcfd4565b",
+      "output": "/assets/games/stardew-card.jpg"
+    },
+    {
+      "gameId": "stardew",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 249959,
+      "sha256": "a2fbe21c4563660f29db2120c3f96b13aaf84ecfa056af1f8812169b035be23e",
+      "output": "/assets/games/stardew-hero.jpg"
+    },
+    {
+      "gameId": "baldur",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 56973,
+      "sha256": "21f284ffed18a97faecae5345ba7b1c75ce70c9bc9b0de4cdbf0af85a5865c06",
+      "output": "/assets/games/baldur-card.jpg"
+    },
+    {
+      "gameId": "baldur",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 342486,
+      "sha256": "6418dba310c79992fbde924a54319effb3a8890db0c75bfa353a45a203867dc7",
+      "output": "/assets/games/baldur-hero.jpg"
+    },
+    {
+      "gameId": "baba",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 48574,
+      "sha256": "a64bbb217078a076ccb237aa7e1cfbcec4c51eadfe346130b644e7bf00727948",
+      "output": "/assets/games/baba-card.jpg"
+    },
+    {
+      "gameId": "baba",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 58379,
+      "sha256": "e34faf50d7f722f6f5de60af38353926293db55fa8b1f6a558a933dbcb7ac960",
+      "output": "/assets/games/baba-hero.jpg"
+    },
+    {
+      "gameId": "portal",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 44683,
+      "sha256": "41d535fcc9663ba118cd808a9637547c3458869a52f0b541a211b60113c86faa",
+      "output": "/assets/games/portal-card.jpg"
+    },
+    {
+      "gameId": "portal",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 252292,
+      "sha256": "553cfc3ae693fb971c4e355890347697c535274bb232e1d72126a97a202aa9b4",
+      "output": "/assets/games/portal-hero.jpg"
+    },
+    {
+      "gameId": "terraria",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 62177,
+      "sha256": "866a45d030cf6af1fe06fd311a57cb472cb12411b2cdfe78391fd8b8ce4ab4bd",
+      "output": "/assets/games/terraria-card.jpg"
+    },
+    {
+      "gameId": "terraria",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 225301,
+      "sha256": "0714ca0d60efdbef47a2e9e79f7dc6ea0ef642906adb7d0adc322c95a15f5246",
+      "output": "/assets/games/terraria-hero.jpg"
+    },
+    {
+      "gameId": "hades",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 56368,
+      "sha256": "5014ec1d84ae967cf4226826824628d44963655fa8ac5f6575ca53a759b5cb3f",
+      "output": "/assets/games/hades-card.jpg"
+    },
+    {
+      "gameId": "hades",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 474286,
+      "sha256": "17a9996dd0835f0e3fed220b002deb918b33efcea2addc69e193ffc3e8e5a36b",
+      "output": "/assets/games/hades-hero.jpg"
+    },
+    {
+      "gameId": "dorfromantik",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 37704,
+      "sha256": "37c77d2bf03bce56171a586cbf97c96376a1cbe31aa3eaa3efd7b981e7d8c78c",
+      "output": "/assets/games/dorfromantik-card.jpg"
+    },
+    {
+      "gameId": "dorfromantik",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 565443,
+      "sha256": "ff4e246900ef810419412e1737541bddc9cf44c274b1d47d7fb8597ee257538b",
+      "output": "/assets/games/dorfromantik-hero.jpg"
+    },
+    {
+      "gameId": "unpacking",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 44618,
+      "sha256": "792b386e58502b9bf856ea9b85049f971b7b6f3868429723f9ab3459a9e65140",
+      "output": "/assets/games/unpacking-card.jpg"
+    },
+    {
+      "gameId": "unpacking",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 195411,
+      "sha256": "172d83aed56ff6228e8882a2e55e577e52495bb7dcce2ce62e1424fe0545fdac",
+      "output": "/assets/games/unpacking-hero.jpg"
+    },
+    {
+      "gameId": "slay",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 44133,
+      "sha256": "80257d5e69941643400646506e49eb555d8de28ec6f2c87e9774776c90d4e85a",
+      "output": "/assets/games/slay-card.jpg"
+    },
+    {
+      "gameId": "slay",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 308211,
+      "sha256": "643f2ab0b9a09e5f7d5cf69242cbd4ce3a1d9ba104ea4b73f68c27af3c799245",
+      "output": "/assets/games/slay-hero.jpg"
+    },
+    {
+      "gameId": "celeste",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 44591,
+      "sha256": "a0469dca08cbdc24fc10bd27ce6fe95350cde85b8441e37175356e6021365a64",
+      "output": "/assets/games/celeste-card.jpg"
+    },
+    {
+      "gameId": "celeste",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 348451,
+      "sha256": "fe311399362063f82b157fc66b0ed1816b57b91c667fb05af5fa41b6bfa60da3",
+      "output": "/assets/games/celeste-hero.jpg"
+    },
+    {
+      "gameId": "cs2",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 34296,
+      "sha256": "3d60645c8fdddc4bfe8a9e55dc1b4650311b2e8220f221908c8ef1cd94f067fa",
+      "output": "/assets/games/cs2-card.jpg"
+    },
+    {
+      "gameId": "cs2",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 247991,
+      "sha256": "b2dce00d292c217af9e207ad3622279a0affe47ac26ad053dfeaff5d4ad65425",
+      "output": "/assets/games/cs2-hero.jpg"
+    },
+    {
+      "gameId": "dota",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 37878,
+      "sha256": "ade5aebca98e763ae1d930f1fcc55a5d89b48a90f738ffd67bf118fc50c8272a",
+      "output": "/assets/games/dota-card.jpg"
+    },
+    {
+      "gameId": "dota",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 413710,
+      "sha256": "54f3fc6e2954983d2cd450cef4276c68699a664526acc0d2d230c376496e730a",
+      "output": "/assets/games/dota-hero.jpg"
+    },
+    {
+      "gameId": "apex",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 55418,
+      "sha256": "94c5682dbb2c6d61eab0ad833c154576b0685ed0298fc428e8f1b1145a162e19",
+      "output": "/assets/games/apex-card.jpg"
+    },
+    {
+      "gameId": "apex",
+      "kind": "hero",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 396800,
+      "sha256": "fd78eb5ea9677ab72fd3e058f926b1a6d303c50ea6d9bf5850017abe2fcbc9c6",
+      "output": "/assets/games/apex-hero.jpg"
+    },
+    {
+      "gameId": "steam-1174180",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 51987,
+      "sha256": "27aa89c336b381083a1b3e8de84ffbcb842219dabca97aabfcf707b1dd8c135c",
+      "output": "/assets/games/steam-1174180-card.jpg"
+    },
+    {
+      "gameId": "steam-1174180",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1174180/ss_66b553f4c209476d3e4ce25fa4714002cc914c4f.1920x1080.jpg?t=1759502961"
+    },
+    {
+      "gameId": "steam-271590",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 63566,
+      "sha256": "e1ee8ed03ef2926d224e331a1bc61711822bbe7261cf847624089c1e95207a9a",
+      "output": "/assets/games/steam-271590-card.jpg"
+    },
+    {
+      "gameId": "steam-271590",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271590/ss_32aa18ab3175e3002217862dd5917646d298ab6b.1920x1080.jpg?t=1765387725"
+    },
+    {
+      "gameId": "steam-374320",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 43735,
+      "sha256": "27220371fbd76f7d1012b3ac91757435b0e532ae6fdf983d22a59586581fdbc3",
+      "output": "/assets/games/steam-374320-card.jpg"
+    },
+    {
+      "gameId": "steam-374320",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/374320/ss_5efd318b85a3917d1c6e717f4cb813b47547cd6f.1920x1080.jpg?t=1748630784"
+    },
+    {
+      "gameId": "steam-570940",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 44838,
+      "sha256": "e55c522e06dd31f4d98e6b669b7d067367e8f0791f79cd9510f343c48d5953a8",
+      "output": "/assets/games/steam-570940-card.jpg"
+    },
+    {
+      "gameId": "steam-570940",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570940/ss_3a71463e4ccaf28c5c27f6cf8d32a3a125f45404.1920x1080.jpg?t=1778518110"
+    },
+    {
+      "gameId": "steam-814380",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 39009,
+      "sha256": "1a7309b8cef162b7bd4ed33ebddbc70b15734ac0250492110535a4d22eb88b5b",
+      "output": "/assets/games/steam-814380-card.jpg"
+    },
+    {
+      "gameId": "steam-814380",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/ss_0f7b0f8ed9ffc49aba26f9328caa9a1d59ad60f0.1920x1080.jpg?t=1762888662"
+    },
+    {
+      "gameId": "steam-292030",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 42750,
+      "sha256": "7c7cf0c8dacc7bb56190827df54cdf489dde71df98e184ac8280c5cf5abf81ab",
+      "output": "/assets/games/steam-292030-card.jpg"
+    },
+    {
+      "gameId": "steam-292030",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/f7f564ecedd09b3e503b071a637aeefdedbeedd8/ss_f7f564ecedd09b3e503b071a637aeefdedbeedd8.1920x1080.jpg?t=1790693338"
+    },
+    {
+      "gameId": "steam-578080",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 37274,
+      "sha256": "acd549290767b2fc76a7efb7d7881e73530ab5432061b14e6d1095b5c5bd0892",
+      "output": "/assets/games/steam-578080-card.jpg"
+    },
+    {
+      "gameId": "steam-578080",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/578080/c16e2f2d122cae77a1cbaca19263df0f2d2214fa/ss_c16e2f2d122cae77a1cbaca19263df0f2d2214fa.1920x1080.jpg?t=1786493086"
+    },
+    {
+      "gameId": "steam-553850",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 45880,
+      "sha256": "943fc35d8af3c5c9945f3ae7fb292a119c87142a618d33dcc2d3a7367ae1aff4",
+      "output": "/assets/games/steam-553850-card.jpg"
+    },
+    {
+      "gameId": "steam-553850",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/aed08979e15f54798f287dd8820fb5838476b5fa/ss_aed08979e15f54798f287dd8820fb5838476b5fa.1920x1080.jpg?t=1789585784"
+    },
+    {
+      "gameId": "steam-1151640",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 54076,
+      "sha256": "95971139817f59677278b82584523cf15d0ce57e1d3382e8753dd889e2d31334",
+      "output": "/assets/games/steam-1151640-card.jpg"
+    },
+    {
+      "gameId": "steam-1151640",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1151640/ss_d09106060fb7de8bf342c23df18b14debc8a15a3.1920x1080.jpg?t=1776465788"
+    },
+    {
+      "gameId": "steam-990080",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 34362,
+      "sha256": "5d406f44f7725e2249ddb63a40c15d05531bbf504837c4374bb2586fe3c07b79",
+      "output": "/assets/games/steam-990080-card.jpg"
+    },
+    {
+      "gameId": "steam-990080",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/990080/ss_725bf58485beb4aa37a3a69c1e2baa69bf3e4653.1920x1080.jpg?t=1790708992"
+    },
+    {
+      "gameId": "steam-359550",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 52831,
+      "sha256": "4a4fa51301a1e87bc2af0e65922ab90ca0f3e42f76dc7e6e672a88ba66359c0a",
+      "output": "/assets/games/steam-359550-card.jpg"
+    },
+    {
+      "gameId": "steam-359550",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/359550/2efed3587d876f560cbf3f25d9a72fbd387b74e6/ss_2efed3587d876f560cbf3f25d9a72fbd387b74e6.1920x1080.jpg?t=1790108602"
+    },
+    {
+      "gameId": "steam-1085660",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 21424,
+      "sha256": "06a826158213dc45b89e7b3a192b657f0e9ea859178c3a513de4ac412654c57c",
+      "output": "/assets/games/steam-1085660-card.jpg"
+    },
+    {
+      "gameId": "steam-1085660",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/d7038cee22b9de60003e7bbc07d65069ad6044ab/ss_d7038cee22b9de60003e7bbc07d65069ad6044ab.1920x1080.jpg?t=1781815889"
+    },
+    {
+      "gameId": "steam-1240440",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 58691,
+      "sha256": "2d6facea204bf4058960cc61c15c175e0183d1eb9b267b229e05fb6c61c1f63b",
+      "output": "/assets/games/steam-1240440-card.jpg"
+    },
+    {
+      "gameId": "steam-1240440",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1240440/8f26ccb1035f6244fa8207a95435666d57e9c77f/ss_8f26ccb1035f6244fa8207a95435666d57e9c77f.1920x1080.jpg?t=1774464322"
+    },
+    {
+      "gameId": "steam-440",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 55689,
+      "sha256": "8c083e63fc67fe905dfe5ad8840b877d10c6241a66fba49474246a815f550764",
+      "output": "/assets/games/steam-440-card.jpg"
+    },
+    {
+      "gameId": "steam-440",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440/ss_ea21f7bbf4f79bada4554df5108d04b6889d3453.1920x1080.jpg?t=1757348372"
+    },
+    {
+      "gameId": "steam-230410",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 52589,
+      "sha256": "74710ffe93a041e26b47446480909ccff17687d29aed4bf033ba630810e4f771",
+      "output": "/assets/games/steam-230410-card.jpg"
+    },
+    {
+      "gameId": "steam-230410",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/230410/ss_2e4077f215eccde84171a4b8e0f2bc8a3264c776.1920x1080.jpg?t=1790176468"
+    },
+    {
+      "gameId": "steam-252490",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 16537,
+      "sha256": "a5807b6f2f4265ee4a588de7a8c777b149a1cdc92cf1afca38a3099bfbeabcd3",
+      "output": "/assets/games/steam-252490-card.jpg"
+    },
+    {
+      "gameId": "steam-252490",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/252490/ss_271feae67943bdc141c1249aba116349397e9ba9.1920x1080.jpg?t=1781536981"
+    },
+    {
+      "gameId": "steam-2399830",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 57261,
+      "sha256": "2d3e2acb766a1943bbae373d72a02462c9dca07074058814a0a4a9ded5bd90f6",
+      "output": "/assets/games/steam-2399830-card.jpg"
+    },
+    {
+      "gameId": "steam-2399830",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2399830/ss_44f74e86ebd6620a4f0a1f3f8ea97f73dc215e69.1920x1080.jpg?t=1779293241"
+    },
+    {
+      "gameId": "steam-346110",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 133659,
+      "sha256": "306494f377f3e2b5163f5eab00e41605399a47c5b9f5d292c42b689d5bea20e5",
+      "output": "/assets/games/steam-346110-card.jpg"
+    },
+    {
+      "gameId": "steam-346110",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/346110/ss_2fd997a2f7151cb2187043a1f41589cc6a9ebf3a.1920x1080.jpg?t=1765677889"
+    },
+    {
+      "gameId": "steam-261550",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 47666,
+      "sha256": "b69ce852327fc9f6d707fc05cafe0c8a80b8009a60a59b1d797082c103c89330",
+      "output": "/assets/games/steam-261550-card.jpg"
+    },
+    {
+      "gameId": "steam-261550",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/261550/ss_569257e92fd31d58a6fe08053de637071b4518d3.1920x1080.jpg?t=1764252300"
+    },
+    {
+      "gameId": "steam-892970",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 47691,
+      "sha256": "b9eb18682f909462ead3b79156d429a026bdb31a9ec594f3632945dc72294238",
+      "output": "/assets/games/steam-892970-card.jpg"
+    },
+    {
+      "gameId": "steam-892970",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/892970/5a31353178f635b67f0c8720ebb8a1a95b637276/ss_5a31353178f635b67f0c8720ebb8a1a95b637276.1920x1080.jpg?t=1790220314"
+    },
+    {
+      "gameId": "steam-108600",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 49384,
+      "sha256": "97389b62f2b248da5caba27c353d5c79d29766b706a51db826d861cc029be08a",
+      "output": "/assets/games/steam-108600-card.jpg"
+    },
+    {
+      "gameId": "steam-108600",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/108600/e0dd37d69051f7da85896d11027ab018d23893fa/ss_e0dd37d69051f7da85896d11027ab018d23893fa.1920x1080.jpg?t=1787740093"
+    },
+    {
+      "gameId": "steam-1623730",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 69631,
+      "sha256": "d12dab06e7e5f0a518293a38e630416fb51fb0a296c5f49a3f9c2e406b04fbfb",
+      "output": "/assets/games/steam-1623730-card.jpg"
+    },
+    {
+      "gameId": "steam-1623730",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1623730/ss_f81b7c4f20be3b99f76a1415c4cdb9b444c99b97.1920x1080.jpg?t=1790336367"
+    },
+    {
+      "gameId": "steam-275850",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 46933,
+      "sha256": "87dbb89a5bca22fde00ead8b438fb43a52ee482db6f65e9064ad8ddae8b23111",
+      "output": "/assets/games/steam-275850-card.jpg"
+    },
+    {
+      "gameId": "steam-275850",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/275850/6c2ddcffe192b0e155a69aa2a1dd3f33b863033d/ss_6c2ddcffe192b0e155a69aa2a1dd3f33b863033d.1920x1080.jpg?t=1789479023"
+    },
+    {
+      "gameId": "steam-1145350",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 53376,
+      "sha256": "9dde3b52db16a73d52d83352a5353fc145eba58e5a466977755e733ee8977efe",
+      "output": "/assets/games/steam-1145350-card.jpg"
+    },
+    {
+      "gameId": "steam-1145350",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1145350/ss_ef0f63061d0a0a9a7e46f3b84f125d25330e8f19.1920x1080.jpg?t=1779901265"
+    },
+    {
+      "gameId": "steam-1030300",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 47955,
+      "sha256": "28eafbb11718c4905cb6a253471dcb5f909bbec1fd7589725bb903a9c1406918",
+      "output": "/assets/games/steam-1030300-card.jpg"
+    },
+    {
+      "gameId": "steam-1030300",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1030300/26950369fe4b03c2268620eb9815c8a246aa0b06/ss_26950369fe4b03c2268620eb9815c8a246aa0b06.1920x1080.jpg?t=1776125736"
+    },
+    {
+      "gameId": "steam-367520",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 57481,
+      "sha256": "8886d642286de5411b216173b078d9d95f97cb5343e8d8042970ca4ba40d5d7d",
+      "output": "/assets/games/steam-367520-card.jpg"
+    },
+    {
+      "gameId": "steam-367520",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/367520/ss_5384f9f8b96a0b9934b2bc35a4058376211636d2.1920x1080.jpg?t=1776125684"
+    },
+    {
+      "gameId": "steam-1868140",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 28741,
+      "sha256": "6c11a97c1bb96360db2607e00822229a47ab54d018789225eeb6f503d7cb1830",
+      "output": "/assets/games/steam-1868140-card.jpg"
+    },
+    {
+      "gameId": "steam-1868140",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1868140/ss_7c86a17d545b6260ecdcfdd62622e49dcc9011bd.1920x1080.jpg?t=1789456375"
+    },
+    {
+      "gameId": "steam-250900",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 29810,
+      "sha256": "1a3cf05dc48e9fe81072d3b45ab246f60779d0cb91087df3110dba570409d714",
+      "output": "/assets/games/steam-250900-card.jpg"
+    },
+    {
+      "gameId": "steam-250900",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/250900/ss_25a4a446a433218d41a7e87e35b60c297e68e7a4.1920x1080.jpg?t=1731977365"
+    },
+    {
+      "gameId": "steam-2379780",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 46709,
+      "sha256": "42103ce1a28589de7167b5e010028c17bf53b60b393b19d70bc9da5ed10a7d3b",
+      "output": "/assets/games/steam-2379780-card.jpg"
+    },
+    {
+      "gameId": "steam-2379780",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/96208723dbedef49d71bf1b0a74aee1689018c50/ss_96208723dbedef49d71bf1b0a74aee1689018c50.1920x1080.jpg?t=1790693638"
+    },
+    {
+      "gameId": "steam-1794680",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 59378,
+      "sha256": "9e9b632800b5615328c326cb152ad8505390dc5dc85ba276767a6a2744a3883c",
+      "output": "/assets/games/steam-1794680-card.jpg"
+    },
+    {
+      "gameId": "steam-1794680",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1794680/ss_6c55afe36be2a7784bf18cb9b3218321ae2d10e5.1920x1080.jpg?t=1787911678"
+    },
+    {
+      "gameId": "steam-1942280",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 31763,
+      "sha256": "9e08e9a6dd5ca1fbc6443dfbb11a2088f57b059e59319ee90e67798df140f2a4",
+      "output": "/assets/games/steam-1942280-card.jpg"
+    },
+    {
+      "gameId": "steam-1942280",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1942280/ss_79be0eea0299da76bc50cef160fb669509f74e0b.1920x1080.jpg?t=1789029155"
+    },
+    {
+      "gameId": "steam-632360",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 33887,
+      "sha256": "7aa775c3a740ec1ac015b2199b1613b92650d45a952f37938bf8ffec9bcbd34e",
+      "output": "/assets/games/steam-632360-card.jpg"
+    },
+    {
+      "gameId": "steam-632360",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632360/ss_2bb49071317f7b241a527cf6e7aabd2cb6af055b.1920x1080.jpg?t=1783621122"
+    },
+    {
+      "gameId": "steam-322500",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 29982,
+      "sha256": "479867967be04e9586b1d0a67f25cffc7aa6c384b91edf3edf483f77c3462c4d",
+      "output": "/assets/games/steam-322500-card.jpg"
+    },
+    {
+      "gameId": "steam-322500",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/322500/ss_ae4a994de7b15e3cec3e56ae714cf7a44c7188cf.1920x1080.jpg?t=1726509130"
+    },
+    {
+      "gameId": "steam-268910",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 46289,
+      "sha256": "71a819a38b706ad2a8934ae63c95cedbdf9bde27d8ef75b01fa8df52d8b101f6",
+      "output": "/assets/games/steam-268910-card.jpg"
+    },
+    {
+      "gameId": "steam-268910",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/268910/ss_e3096a5555cb77d88db165c83d5ef3a24af1354a.1920x1080.jpg?t=1709068852"
+    },
+    {
+      "gameId": "steam-1057090",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 53154,
+      "sha256": "ff5ec1a41fc83352d7383a49502444f20a6e8bb7b5b7e6b4c5daf8f0d51f05ef",
+      "output": "/assets/games/steam-1057090-card.jpg"
+    },
+    {
+      "gameId": "steam-1057090",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1057090/ss_0cf0ec6681ae5771173790dbc99ddb3bf3b886ad.1920x1080.jpg?t=1759530749"
+    },
+    {
+      "gameId": "steam-588650",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 113671,
+      "sha256": "6a6f141f761ad88c31691c1ab5134fd9d69c5bb41fe4a6e6e90b2913bd1b4e02",
+      "output": "/assets/games/steam-588650-card.jpg"
+    },
+    {
+      "gameId": "steam-588650",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588650/ss_ac28000ade40cc2fe5c128f32ac98ba33c008a7a.1920x1080.jpg?t=1779086887"
+    },
+    {
+      "gameId": "steam-387290",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 46037,
+      "sha256": "a2e922d8acbd2736af29680e7b00d115d5c92bd7a028f82a3ed0f798ef889f72",
+      "output": "/assets/games/steam-387290-card.jpg"
+    },
+    {
+      "gameId": "steam-387290",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/387290/ss_304ededbbfd607cb37e708cd83e7160c7d840863.1920x1080.jpg?t=1701967651"
+    },
+    {
+      "gameId": "steam-1150690",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 10035,
+      "sha256": "35edf5e27af9eaf564a7fd2c9d4e9bf99b46851e65b8da43fa61599263d41f6c",
+      "output": "/assets/games/steam-1150690-card.jpg"
+    },
+    {
+      "gameId": "steam-1150690",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1150690/ss_219463835487a7205f0af93fb02d2c84855c667b.1920x1080.jpg?t=1671584768"
+    },
+    {
+      "gameId": "steam-294100",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 26375,
+      "sha256": "eea316c80a6b15009b640381ab794533cde63dd88b9b113e601cd7fc0844a34f",
+      "output": "/assets/games/steam-294100-card.jpg"
+    },
+    {
+      "gameId": "steam-294100",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/294100/80e383ef19353058791efe17a6485849246c9c17/ss_80e383ef19353058791efe17a6485849246c9c17.1920x1080.jpg?t=1782756789"
+    },
+    {
+      "gameId": "steam-1158310",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 37575,
+      "sha256": "02ebe2eb4754a58ac0d448db8814ea1335142b6371c025d92a1c14045f74f356",
+      "output": "/assets/games/steam-1158310-card.jpg"
+    },
+    {
+      "gameId": "steam-1158310",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1158310/addd6bec0b1afb02a24be1ed08991d79ea8fe86a/ss_addd6bec0b1afb02a24be1ed08991d79ea8fe86a.1920x1080.jpg?t=1785862913"
+    },
+    {
+      "gameId": "steam-356570",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 43913,
+      "sha256": "68d93bf00f4dbd6a6132d0f9ad0d6c7b91a2b6308b97b80ff34e3388e25b8a02",
+      "output": "/assets/games/steam-356570-card.jpg"
+    },
+    {
+      "gameId": "steam-356570",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/356570/ss_02f33a562d16465b7b23e4c50076a98a3027da56.1920x1080.jpg?t=1785515724"
+    },
+    {
+      "gameId": "steam-427520",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 77139,
+      "sha256": "c7427396114aeaba593593cb31167e750aaf86486664127688533ab38a74cdec",
+      "output": "/assets/games/steam-427520-card.jpg"
+    },
+    {
+      "gameId": "steam-427520",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427520/ss_36e4d8e5540805f5ed492d24d784ed9ba661752b.1920x1080.jpg?t=1787348817"
+    },
+    {
+      "gameId": "steam-255710",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 43699,
+      "sha256": "1ca0807961f79eb80a24213446ce7b6230580b18dc9869469dcebd1e647c9a0e",
+      "output": "/assets/games/steam-255710-card.jpg"
+    },
+    {
+      "gameId": "steam-255710",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/255710/ss_0754001c88ad4dbfff92faf9a97e8d87cf3f8840.1920x1080.jpg?t=1789394186"
+    },
+    {
+      "gameId": "steam-1244460",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 56051,
+      "sha256": "07f7cd7c21fef38fad527bf4247968635be598a4386abe598e15c982ebb9a70b",
+      "output": "/assets/games/steam-1244460-card.jpg"
+    },
+    {
+      "gameId": "steam-1244460",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1244460/ss_e2043f89661bf4da80628e6ab1e97b0a67f1c7ed.1920x1080.jpg?t=1750957701"
+    },
+    {
+      "gameId": "steam-1084160",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 53003,
+      "sha256": "8179b0260093e85e7f62275294bd92a3a758e47a43362e2febe382e99fcceb4d",
+      "output": "/assets/games/steam-1084160-card.jpg"
+    },
+    {
+      "gameId": "steam-1084160",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1084160/ss_0edc29526ad201a59357234cd77a34a5ba507208.1920x1080.jpg?t=1725000793"
+    },
+    {
+      "gameId": "steam-289070",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 23042,
+      "sha256": "fbebadfe4def4a064d339d075f05e4f7a9d598af3ad6df6dd5e4c0509c3a5b61",
+      "output": "/assets/games/steam-289070-card.jpg"
+    },
+    {
+      "gameId": "steam-289070",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/289070/ss_12cc6e1f4084de5bc0f66bfdbe3aaf3e59388b53.1920x1080.jpg?t=1784651829"
+    },
+    {
+      "gameId": "steam-8930",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 115411,
+      "sha256": "992285102decbb7782a9fbccd8b9943879da2d5c5373a4459efb808ebe9cfdc8",
+      "output": "/assets/games/steam-8930-card.jpg"
+    },
+    {
+      "gameId": "steam-8930",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8930/ss_7082faf1b0941ddbc4ba9dab5807a9b5e77d72f9.1920x1080.jpg?t=1724341158"
+    },
+    {
+      "gameId": "steam-526870",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 41695,
+      "sha256": "985486dc8d67506f48c97406bcba656cfc1a421642572e9810b1963af1d3e04e",
+      "output": "/assets/games/steam-526870-card.jpg"
+    },
+    {
+      "gameId": "steam-526870",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/526870/ss_9083ccf8fbb22c4068a6e233e3de343f815f9dc1.1920x1080.jpg?t=1788349095"
+    },
+    {
+      "gameId": "steam-949230",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 44665,
+      "sha256": "fdd0d7e584165fd34b221fa3e196f26cddb22dff4f29fd2d9056cf47b17b4ffe",
+      "output": "/assets/games/steam-949230-card.jpg"
+    },
+    {
+      "gameId": "steam-949230",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/949230/fcc6a62a3b53c6f76ae1a7ce0cc5a4b8a0e1f022/ss_fcc6a62a3b53c6f76ae1a7ce0cc5a4b8a0e1f022.1920x1080.jpg?t=1789487974"
+    },
+    {
+      "gameId": "steam-219150",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 45027,
+      "sha256": "9e73042dd49cef9f6d43fa5bf795bd2a6a385ca38a1d13be980cc3d8e4e65598",
+      "output": "/assets/games/steam-219150-card.jpg"
+    },
+    {
+      "gameId": "steam-219150",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/219150/ss_263387d83df0626c58a484baa8f78f9394074b76.1920x1080.jpg?t=1785434922"
+    },
+    {
+      "gameId": "steam-391540",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 4992,
+      "sha256": "924469d6bce07a5faa3ab8461b320def4029fd320ecad9400854c75e3f36a872",
+      "output": "/assets/games/steam-391540-card.jpg"
+    },
+    {
+      "gameId": "steam-391540",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391540/ss_6ded97a2c98473ac1e8a2b3c1419d93fb31b1186.1920x1080.jpg?t=1757349115"
+    },
+    {
+      "gameId": "steam-400",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 15147,
+      "sha256": "ca947b99dea2df2f53e61d6f76db7f459e39c6fc468042d9f3d002d682eab027",
+      "output": "/assets/games/steam-400-card.jpg"
+    },
+    {
+      "gameId": "steam-400",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/0000002582.1920x1080.jpg?t=1745368554"
+    },
+    {
+      "gameId": "steam-4000",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 25326,
+      "sha256": "3bf48fda9e01918e33db94a39e487f011f12592fc0819c1773f7eba0590099be",
+      "output": "/assets/games/steam-4000-card.jpg"
+    },
+    {
+      "gameId": "steam-4000",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4000/ss_af060d0a9aeb6598e154c9704ce250b0e63b2266.1920x1080.jpg?t=1776868682"
+    },
+    {
+      "gameId": "steam-22380",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 42964,
+      "sha256": "827a01cff5d4acfed480cdc89af447b64aeddb81e5eb23e482e96cf361993f55",
+      "output": "/assets/games/steam-22380-card.jpg"
+    },
+    {
+      "gameId": "steam-22380",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22380/ss_62f8d0b006935ff6de7fe276f713e7d15e579bc9.1920x1080.jpg?t=1765992876"
+    },
+    {
+      "gameId": "steam-582010",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 52609,
+      "sha256": "9785188f54aaf5b991d11fd9fb292df6d7ea78a3629c41d13290e2b5967714d7",
+      "output": "/assets/games/steam-582010-card.jpg"
+    },
+    {
+      "gameId": "steam-582010",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/ss_a262c53b8629de7c6547933dc0b49d31f4e1b1f1.1920x1080.jpg?t=1773328926"
+    },
+    {
+      "gameId": "steam-2246340",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 46506,
+      "sha256": "426e2badf49d59700faa57e6612cfe8b430553476f94d768dcdb329e481b1bd3",
+      "output": "/assets/games/steam-2246340-card.jpg"
+    },
+    {
+      "gameId": "steam-2246340",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2246340/ss_31b5597fecf2d9a2904bc9bbf8011aacb18143db.1920x1080.jpg?t=1787549555"
+    },
+    {
+      "gameId": "steam-489830",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 32023,
+      "sha256": "160aaf40eddb413b83b1da78c846b4d66b5123eee1d7e43e287bcfa0bf3584d9",
+      "output": "/assets/games/steam-489830-card.jpg"
+    },
+    {
+      "gameId": "steam-489830",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/ss_73c1a0bb7e1720c8a1847186c3ddd837d3ca7a8d.1920x1080.jpg?t=1786648247"
+    },
+    {
+      "gameId": "steam-377160",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 37114,
+      "sha256": "1d90e4bffb552583c8183095756edfa784e10cc2b79e552e31371de0eb83ab42",
+      "output": "/assets/games/steam-377160-card.jpg"
+    },
+    {
+      "gameId": "steam-377160",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/377160/ss_f7861bd71e6c0c218d8ff69fb1c626aec0d187cf.1920x1080.jpg?t=1786648137"
+    },
+    {
+      "gameId": "steam-1446780",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 52226,
+      "sha256": "a1bcdaa13db06aa88e63d1ddb6fc6f4e6d5e4b97b86130996292f8efe10727c6",
+      "output": "/assets/games/steam-1446780-card.jpg"
+    },
+    {
+      "gameId": "steam-1446780",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1446780/ss_f8249da14987e3c2d10fd4024736f28774c713da.1920x1080.jpg?t=1768870444"
+    },
+    {
+      "gameId": "steam-524220",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 50937,
+      "sha256": "c154a39268eea027f9b578e82d5303351f09f49418ed43a9a60d452869378878",
+      "output": "/assets/games/steam-524220-card.jpg"
+    },
+    {
+      "gameId": "steam-524220",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/ss_d0314b4c134329a483b5e43af951f60274abc66b.1920x1080.jpg?t=1785182957"
+    },
+    {
+      "gameId": "steam-582160",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 47056,
+      "sha256": "73eb6caf5f7b154104ef1570a86571cb9fb5dba908df54add909a7fae4739717",
+      "output": "/assets/games/steam-582160-card.jpg"
+    },
+    {
+      "gameId": "steam-582160",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582160/ss_1a0ab42e93e51c48ad9a6bda7f408958e09a43b0.1920x1080.jpg?t=1786633036"
+    },
+    {
+      "gameId": "steam-812140",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 52459,
+      "sha256": "df7ef39f8bd2c05fa7aaeb8c8316929fa6b349ba02616899319261f0343eca9b",
+      "output": "/assets/games/steam-812140-card.jpg"
+    },
+    {
+      "gameId": "steam-812140",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/812140/ss_0ef33c0f230da6ebac94f5959f0e0a8bbc48cf8a.1920x1080.jpg?t=1786633104"
+    },
+    {
+      "gameId": "steam-1172380",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 42373,
+      "sha256": "4f0c576d244b2a48d04e179aebefb4c4562da85685297f5079aab34704a5f464",
+      "output": "/assets/games/steam-1172380-card.jpg"
+    },
+    {
+      "gameId": "steam-1172380",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172380/ss_695a5724e306269d81ca0118d86308a170c9e913.1920x1080.jpg?t=1788256986"
+    },
+    {
+      "gameId": "steam-1593500",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 37714,
+      "sha256": "cef450471bbaf6058991c841c30539069f436a92ba5e91994bf12d12657e3b80",
+      "output": "/assets/games/steam-1593500-card.jpg"
+    },
+    {
+      "gameId": "steam-1593500",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1593500/ss_6eccc970b5de2943546d93d319be1b5c0618f21b.1920x1080.jpg?t=1763059412"
+    },
+    {
+      "gameId": "steam-1659040",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 22398,
+      "sha256": "1e58c1fa87d4e24b52d2acab5c3077a4c9e7333dbf6b77b68171b8e24b909512",
+      "output": "/assets/games/steam-1659040-card.jpg"
+    },
+    {
+      "gameId": "steam-1659040",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1659040/e36f6fef05b5dc74f32fcfa2b7e80637d88becbb/ss_e36f6fef05b5dc74f32fcfa2b7e80637d88becbb.1920x1080.jpg?t=1790674941"
+    },
+    {
+      "gameId": "steam-1817190",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 28196,
+      "sha256": "a5d7caa2ec02c532d4f8d173f15bbc142c16e11cfbba03bb5d03b3149d32c08c",
+      "output": "/assets/games/steam-1817190-card.jpg"
+    },
+    {
+      "gameId": "steam-1817190",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1817190/ss_a240e0c6f37569493ed749d9317718d8ce9f5d18.1920x1080.jpg?t=1787838710"
+    },
+    {
+      "gameId": "steam-1817070",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 35271,
+      "sha256": "84417fb73690f07c8f24852f63f220fcc0d422a580cd8fdfd0e62d554bfaff78",
+      "output": "/assets/games/steam-1817070-card.jpg"
+    },
+    {
+      "gameId": "steam-1817070",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1817070/ss_dfe778bf6d66e952e4acd4e1f926f7615b609ddf.1920x1080.jpg?t=1787838689"
+    },
+    {
+      "gameId": "steam-1063730",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 53042,
+      "sha256": "cbcf92bada761b4cce6e1f9fb74dbaf33299aa82a6529745ef1a840bf8bfe18b",
+      "output": "/assets/games/steam-1063730-card.jpg"
+    },
+    {
+      "gameId": "steam-1063730",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1063730/d2e9eeed4fdbd0e3a3e837f8cfaa0f9edbfc587f/ss_d2e9eeed4fdbd0e3a3e837f8cfaa0f9edbfc587f.1920x1080.jpg?t=1768500124"
+    },
+    {
+      "gameId": "steam-1466860",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 57864,
+      "sha256": "84354f2f8933afd8582b996437b5ac9c2678dd6ef2af1a379204440ede8f4909",
+      "output": "/assets/games/steam-1466860-card.jpg"
+    },
+    {
+      "gameId": "steam-1466860",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1466860/ss_2ae5b5a2a779c31e3acae486ec359b0d9087bc8c.1920x1080.jpg?t=1780854334"
+    },
+    {
+      "gameId": "steam-1290000",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 48204,
+      "sha256": "69943fc2ba29e53a0471723532948f388df1b724ab097c5e6b0328f2630526fa",
+      "output": "/assets/games/steam-1290000-card.jpg"
+    },
+    {
+      "gameId": "steam-1290000",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1290000/ss_8782c713c59761ebaacabb214672655a1599ce79.1920x1080.jpg?t=1780392261"
+    },
+    {
+      "gameId": "steam-1938090",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 28149,
+      "sha256": "f067d4a8fa4f50eef8f12eaa5dbf2150ce7c7626b197d3768e73908769a9f384",
+      "output": "/assets/games/steam-1938090-card.jpg"
+    },
+    {
+      "gameId": "steam-1938090",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1938090/ee5f6b6aebe4dc9e86b49c4e309d361b132df308/ss_ee5f6b6aebe4dc9e86b49c4e309d361b132df308.1920x1080.jpg?t=1790698535"
+    },
+    {
+      "gameId": "steam-1203630",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 42872,
+      "sha256": "c0dd8d84cd96e23ade8e2cc999404cf7ad82b36fba87a6a3adecf23a555f1a52",
+      "output": "/assets/games/steam-1203630-card.jpg"
+    },
+    {
+      "gameId": "steam-1203630",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203630/ss_bea5cdb7cbda410e1f2e4da2f487e81459d47f68.1920x1080.jpg?t=1774922378"
+    },
+    {
+      "gameId": "steam-47890",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 51695,
+      "sha256": "818c6dd6a16ca453254bbf31a6adc6576ed21cf892b92fa3ff0d3af8e55c5533",
+      "output": "/assets/games/steam-47890-card.jpg"
+    },
+    {
+      "gameId": "steam-47890",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/47890/ss_88f5012197f111d3eb60dfe2788c1abb13bfcbed.1920x1080.jpg?t=1738703889"
+    },
+    {
+      "gameId": "steam-648800",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 57544,
+      "sha256": "dd7c2f015f27c22dd9f9e2e5e1a5895162e4f0d349ea35f5c7ac6eb3d9c09768",
+      "output": "/assets/games/steam-648800-card.jpg"
+    },
+    {
+      "gameId": "steam-648800",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/648800/ss_c22b2ff5ba5609f74e61b5feaa5b7a1d7fd1dbd3.1920x1080.jpg?t=1727184011"
+    },
+    {
+      "gameId": "steam-1151340",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 42934,
+      "sha256": "f50f55bc46e86c6753e4f4e103b4385aeca0f3f3579ca56992667015b6fc2222",
+      "output": "/assets/games/steam-1151340-card.jpg"
+    },
+    {
+      "gameId": "steam-1151340",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1151340/0d9b8b403d3c5ffebf054d293ea46607b8e249ab/ss_0d9b8b403d3c5ffebf054d293ea46607b8e249ab.1920x1080.jpg?t=1789578046"
+    },
+    {
+      "gameId": "steam-240720",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 41320,
+      "sha256": "2b2377b41dce9fac96278f514262e632e5dad29d626a5f05af9a5c7989e1cd86",
+      "output": "/assets/games/steam-240720-card.jpg"
+    },
+    {
+      "gameId": "steam-240720",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/240720/ss_413828bfd197dae1e356f6b43c4c38a9d3466591.1920x1080.jpg?t=1666987027"
+    },
+    {
+      "gameId": "steam-1222670",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 56483,
+      "sha256": "ef031a9a593d63e9a178d252c71f9efba49dea67839f9df8147553a7eb34f92d",
+      "output": "/assets/games/steam-1222670-card.jpg"
+    },
+    {
+      "gameId": "steam-1222670",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222670/ss_537683e5e29c2d6d02c64aa7321dcb26166f7d82.1920x1080.jpg?t=1790028362"
+    },
+    {
+      "gameId": "steam-1401590",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 40438,
+      "sha256": "eddf9e794c7b52e088f425d19196d6f1bcd77c8819424ca636344bafc586af1e",
+      "output": "/assets/games/steam-1401590-card.jpg"
+    },
+    {
+      "gameId": "steam-1401590",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1401590/c27dfdeb531337d0084e1894057209cb04fea3ff/ss_c27dfdeb531337d0084e1894057209cb04fea3ff.1920x1080.jpg?t=1790186056"
+    },
+    {
+      "gameId": "steam-3431040",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 38484,
+      "sha256": "0f0b3005c8eb636e4685e31ef72def3c668e28536d28277feba1bfb3ec51e1b7",
+      "output": "/assets/games/steam-3431040-card.jpg"
+    },
+    {
+      "gameId": "steam-3431040",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3431040/ss_460aa8790fc8393619042d49513c45111cf3ff7a.1920x1080.jpg?t=1763509556"
+    },
+    {
+      "gameId": "steam-42700",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 35824,
+      "sha256": "6b8d9549247ab703190b15c9c92ee38960e5129299c194b6f95720bfc24aa9ce",
+      "output": "/assets/games/steam-42700-card.jpg"
+    },
+    {
+      "gameId": "steam-42700",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/42700/ss_f6e1e6377f0b41e34575dc9d73e62784b2395731.1920x1080.jpg?t=1780962720"
+    },
+    {
+      "gameId": "steam-1055540",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 54458,
+      "sha256": "cbf14bb1c6eb51ae89ef6b6a71f991eb5de4c02ad587b5a0b6d4eb8fbf26765e",
+      "output": "/assets/games/steam-1055540-card.jpg"
+    },
+    {
+      "gameId": "steam-1055540",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1055540/ss_f2123fea859e299736a3e99d130238c784d53e75.1920x1080.jpg?t=1777758958"
+    },
+    {
+      "gameId": "steam-291550",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 49500,
+      "sha256": "a1ae3b1df09607d32559ecad4434d1c0791f39788e9ab6a50df65c1f6eb5cbf4",
+      "output": "/assets/games/steam-291550-card.jpg"
+    },
+    {
+      "gameId": "steam-291550",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/291550/48becc7f1e9f13129b26afe5cbcd959a97e88ffa/ss_48becc7f1e9f13129b26afe5cbcd959a97e88ffa.1920x1080.jpg?t=1789564454"
+    },
+    {
+      "gameId": "steam-945360",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 38862,
+      "sha256": "e20a84539d119c404548bcb93a0613982df23133c1b3c0ea69aba433a4608825",
+      "output": "/assets/games/steam-945360-card.jpg"
+    },
+    {
+      "gameId": "steam-945360",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/945360/ss_b7374128e5b786a302a716bca038d604b00ffe46.1920x1080.jpg?t=1787088490"
+    },
+    {
+      "gameId": "steam-1222700",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 42873,
+      "sha256": "55f3532f606d2c81b95ac2152bc5164b39496b0a9a821b82a40b8436d5f29b2b",
+      "output": "/assets/games/steam-1222700-card.jpg"
+    },
+    {
+      "gameId": "steam-1222700",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222700/ss_a7f52388d8d64bf56170baf5bd223fbbb1d9a94a.1920x1080.jpg?t=1777323433"
+    },
+    {
+      "gameId": "steam-381210",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 43506,
+      "sha256": "07c16d378b8a126fc84635d5a1d9de42d90776a3dab1a2f4250f90987301e2fe",
+      "output": "/assets/games/steam-381210-card.jpg"
+    },
+    {
+      "gameId": "steam-381210",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/381210/5355ac410e985cac27f04b877280a984be4d28a6/ss_5355ac410e985cac27f04b877280a984be4d28a6.1920x1080.jpg?t=1787769494"
+    },
+    {
+      "gameId": "steam-221100",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 38138,
+      "sha256": "008e131346fe7c699029633ab3f7f0e0d04ff4a94fa44af08a394c6fc8b840c3",
+      "output": "/assets/games/steam-221100-card.jpg"
+    },
+    {
+      "gameId": "steam-221100",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/221100/ss_bf0e5d5538d95a1cb943a7963489ba4df2782942.1920x1080.jpg?t=1789982846"
+    },
+    {
+      "gameId": "steam-322330",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 52609,
+      "sha256": "8744d056aac925821890cace9fbdc9ae5cb13ab2546f25ccb7f533d71349e795",
+      "output": "/assets/games/steam-322330-card.jpg"
+    },
+    {
+      "gameId": "steam-322330",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/322330/ss_d053a7220a03ab689da9312c6d15fe8211401f55.1920x1080.jpg?t=1790287771"
+    },
+    {
+      "gameId": "steam-1326470",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 27444,
+      "sha256": "a8663074011ef5c21013355274ab369c41eada9012a3c06a21dd4928b101df4b",
+      "output": "/assets/games/steam-1326470-card.jpg"
+    },
+    {
+      "gameId": "steam-1326470",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1326470/ss_e6e3ab1badfb287a77fb6eef7b1589a35371496b.1920x1080.jpg?t=1708624856"
+    },
+    {
+      "gameId": "steam-242760",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 36847,
+      "sha256": "899e69deb5e4bad097b5587bd36e8fe782876e0678f66a670e3e7007bb5c1a55",
+      "output": "/assets/games/steam-242760-card.jpg"
+    },
+    {
+      "gameId": "steam-242760",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/242760/ss_8ccb821c4df3fafdf4161d77f38635441a8157f2.1920x1080.jpg?t=1699381053"
+    },
+    {
+      "gameId": "steam-1599600",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 51989,
+      "sha256": "2bee66277a4f5342aabdeccd80a0476e3ea56e1b967cfad9743a28b19551d0cb",
+      "output": "/assets/games/steam-1599600-card.jpg"
+    },
+    {
+      "gameId": "steam-1599600",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1599600/ss_8c944c593113598b6446b6b5d07962a10fe79ec6.1920x1080.jpg?t=1790150181"
+    },
+    {
+      "gameId": "steam-550",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 39230,
+      "sha256": "c9eb41b26bfc9f849ba5c0408d28cfe81a36616079b2a4d1a191521925d8173a",
+      "output": "/assets/games/steam-550-card.jpg"
+    },
+    {
+      "gameId": "steam-550",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_2eae29fbdfe8e5e8999b96d8bb28c5db70507968.1920x1080.jpg?t=1772742214"
+    },
+    {
+      "gameId": "steam-220",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 26962,
+      "sha256": "a77ca7ee4c1df9ce55e0fd7b8d66568f6195fa0b4ff406ab5157cffdc7f5598c",
+      "output": "/assets/games/steam-220-card.jpg"
+    },
+    {
+      "gameId": "steam-220",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/ss_47b4105b396de408cb8b6b4f358c69e5e2a62dae.1920x1080.jpg?t=1745368545"
+    },
+    {
+      "gameId": "steam-1867240",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 41898,
+      "sha256": "078f1368d3f6b6e515f8561810210557120bd540cae06f0e295784d09aa4f8ab",
+      "output": "/assets/games/steam-1867240-card.jpg"
+    },
+    {
+      "gameId": "steam-1867240",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1867240/13fbc7cb084ec25c20ad031c7e888a9459cd8e77/ss_13fbc7cb084ec25c20ad031c7e888a9459cd8e77.1920x1080.jpg?t=1789503126"
+    },
+    {
+      "gameId": "steam-1422450",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 43871,
+      "sha256": "7dac270d8d8df770b94c0105edb4bacc039c7b3e4e1c03a471262ade3bfe64cb",
+      "output": "/assets/games/steam-1422450-card.jpg"
+    },
+    {
+      "gameId": "steam-1422450",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1422450/fa25560cf85debe669f5d4acd76cf81b0943019b/ss_fa25560cf85debe669f5d4acd76cf81b0943019b.1920x1080.jpg?t=1790716179"
+    },
+    {
+      "gameId": "steam-2868840",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 73470,
+      "sha256": "168223b1450462c8f270c6dc80c5f6d11329a7c7ebf8163da0a52f906febbc53",
+      "output": "/assets/games/steam-2868840-card.jpg"
+    },
+    {
+      "gameId": "steam-2868840",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/1a373a95229aab0cfd97f553ecbe86092364bb9c/ss_1a373a95229aab0cfd97f553ecbe86092364bb9c.1920x1080.jpg?t=1787169309"
+    },
+    {
+      "gameId": "steam-322170",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 49021,
+      "sha256": "542d615aae9ced6112e57849e7531ff597e6fbf59ee3466b3e06e022060d1be7",
+      "output": "/assets/games/steam-322170-card.jpg"
+    },
+    {
+      "gameId": "steam-322170",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/322170/ss_05cb182b93131a5faf0516232a7ad27c83f2c0e8.1920x1080.jpg?t=1775300400"
+    },
+    {
+      "gameId": "steam-4126040",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 41997,
+      "sha256": "7e0f91c5f1e9dafd2fbc7c68053b8f6b1576c0e01cdf86a214845e624bfa69c9",
+      "output": "/assets/games/steam-4126040-card.jpg"
+    },
+    {
+      "gameId": "steam-4126040",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4126040/c6c6dfe1260dd953b538e83298e257c4ca3c2e9a/ss_c6c6dfe1260dd953b538e83298e257c4ca3c2e9a.1920x1080.jpg?t=1790595631"
+    },
+    {
+      "gameId": "steam-236390",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 55583,
+      "sha256": "d7976c3d737481899c813d256aae50c9a6178a2c08953178d6b560f794758810",
+      "output": "/assets/games/steam-236390-card.jpg"
+    },
+    {
+      "gameId": "steam-236390",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/236390/4b2f5a60bb5294b69ac3586a13dac61409a252d6/ss_4b2f5a60bb5294b69ac3586a13dac61409a252d6.1920x1080.jpg?t=1790148671"
+    },
+    {
+      "gameId": "steam-2767030",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 46638,
+      "sha256": "27c9bc6e05e40185c1d3d17e0504a646739b01c68bdad44f82e6baa2c8c5418f",
+      "output": "/assets/games/steam-2767030-card.jpg"
+    },
+    {
+      "gameId": "steam-2767030",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2767030/05c3266777dfa88b7b13742c72088a6431eea474/ss_05c3266777dfa88b7b13742c72088a6431eea474.1920x1080.jpg?t=1789119923"
+    },
+    {
+      "gameId": "steam-1973530",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 37034,
+      "sha256": "bbdddff9077014f01d5ff8814bc3b2d95ce4cb78089407c7a9329d3aafef920a",
+      "output": "/assets/games/steam-1973530-card.jpg"
+    },
+    {
+      "gameId": "steam-1973530",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1973530/2a692ea70cc4226c1b8015c6d29baca30a3fb6b0/ss_2a692ea70cc4226c1b8015c6d29baca30a3fb6b0.1920x1080.jpg?t=1790559030"
+    },
+    {
+      "gameId": "steam-2507950",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 49295,
+      "sha256": "ab3af6e8e05ee54e311e50aa40311273f3fc636c2e599ea9b868fe4ddc146a99",
+      "output": "/assets/games/steam-2507950-card.jpg"
+    },
+    {
+      "gameId": "steam-2507950",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2507950/6f153694ed0c1349d554890c2758050ea629f6f0/ss_6f153694ed0c1349d554890c2758050ea629f6f0.1920x1080.jpg?t=1790238079"
+    },
+    {
+      "gameId": "steam-3240220",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 56187,
+      "sha256": "e1f5506e1c6971d151cc35c34018a3b8ba034be4b736fa4f17cecb8373ae09d1",
+      "output": "/assets/games/steam-3240220-card.jpg"
+    },
+    {
+      "gameId": "steam-3240220",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/d61184a98c1cf2db2b08b2999c04b0519e3615bb/ss_d61184a98c1cf2db2b08b2999c04b0519e3615bb.1920x1080.jpg?t=1781187782"
+    },
+    {
+      "gameId": "steam-1142710",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 46802,
+      "sha256": "164d666ee482d343de8af6ceaf856300b14bdb8e46319cc36ca994ed21bfc16b",
+      "output": "/assets/games/steam-1142710-card.jpg"
+    },
+    {
+      "gameId": "steam-1142710",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1142710/ss_6149b0570c42cda0e40b4de71e6f48bbe5c4c577.1920x1080.jpg?t=1790321531"
+    },
+    {
+      "gameId": "steam-4001890",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 34231,
+      "sha256": "b0b61a51b544d02a364dcd88e139cd164e42549a9faeb880e03ad090f50cd654",
+      "output": "/assets/games/steam-4001890-card.jpg"
+    },
+    {
+      "gameId": "steam-4001890",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4001890/48f6817fe466a7c9666605527558bf1fac48d0d2/ss_48f6817fe466a7c9666605527558bf1fac48d0d2.1920x1080.jpg?t=1788788717"
+    },
+    {
+      "gameId": "steam-2807960",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 39851,
+      "sha256": "ac852ff10b225f8dd88b44b63b1dc3cb3d56f7975aa3bbe4a522e14fc77be04f",
+      "output": "/assets/games/steam-2807960-card.jpg"
+    },
+    {
+      "gameId": "steam-2807960",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2807960/1ecd498c6f29458da24d45e3c005dd7f64025bfe/ss_1ecd498c6f29458da24d45e3c005dd7f64025bfe.1920x1080.jpg?t=1790375732"
+    },
+    {
+      "gameId": "steam-3493540",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 51570,
+      "sha256": "9e2d0b34fc1dd644644ec09772b9c5d6226b362e36ceceaa2a805ff65be189d0",
+      "output": "/assets/games/steam-3493540-card.jpg"
+    },
+    {
+      "gameId": "steam-3493540",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3493540/310d3f73f3df4e20382dab16946a6c93c4f16ed2/ss_310d3f73f3df4e20382dab16946a6c93c4f16ed2.1920x1080.jpg?t=1790697610"
+    },
+    {
+      "gameId": "steam-5235150",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 50839,
+      "sha256": "50989ab8dc0df290554e191a8682d265b839838f267507e22659a603e89f1314",
+      "output": "/assets/games/steam-5235150-card.jpg"
+    },
+    {
+      "gameId": "steam-5235150",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5235150/6ae41ee3ca68d84f8093ed8730d00ae122aef960/ss_6ae41ee3ca68d84f8093ed8730d00ae122aef960.1920x1080.jpg?t=1790752351"
+    },
+    {
+      "gameId": "steam-5187710",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 33259,
+      "sha256": "2991a39a4fe4904d77236e3be088152d42450bae404e494954e302ba7bb6761f",
+      "output": "/assets/games/steam-5187710-card.jpg"
+    },
+    {
+      "gameId": "steam-5187710",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5187710/4520b8bd284e7b3ef521982b3a8215bbd00c4d80/ss_4520b8bd284e7b3ef521982b3a8215bbd00c4d80.1920x1080.jpg?t=1790707124"
+    },
+    {
+      "gameId": "steam-4376740",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 47286,
+      "sha256": "15ab5c349d53aa31b29b278f1488165b413477c171297bf33cec434cb6b36e42",
+      "output": "/assets/games/steam-4376740-card.jpg"
+    },
+    {
+      "gameId": "steam-4376740",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4376740/4ae6f573300d32d23a26a54ab41c5a0f4e267fbe/ss_4ae6f573300d32d23a26a54ab41c5a0f4e267fbe.1920x1080.jpg?t=1790748022"
+    },
+    {
+      "gameId": "steam-4869180",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 30957,
+      "sha256": "aff03e99cb99a7ac6f94c788d1994eeeed5c8ee2c538b4190066c474842f86b3",
+      "output": "/assets/games/steam-4869180-card.jpg"
+    },
+    {
+      "gameId": "steam-4869180",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4869180/1d5ffa1774a75c60412148b8d50b20905669e717/ss_1d5ffa1774a75c60412148b8d50b20905669e717.1920x1080.jpg?t=1790695089"
+    },
+    {
+      "gameId": "steam-2429930",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 50176,
+      "sha256": "4452b63e7e3d03415e34055d7e11ad97f27d34c2fd8e3642067ce05545ccff7c",
+      "output": "/assets/games/steam-2429930-card.jpg"
+    },
+    {
+      "gameId": "steam-2429930",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2429930/88eb1a3b1bc1370a893ee14816cd55639e1b8cab/ss_88eb1a3b1bc1370a893ee14816cd55639e1b8cab.1920x1080.jpg?t=1790752101"
+    },
+    {
+      "gameId": "steam-4301910",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 44404,
+      "sha256": "3cfa73a08eaf6cc2cd3fd673b88694e0e41337dd9c4934fcd3bbabfe49b71d5f",
+      "output": "/assets/games/steam-4301910-card.jpg"
+    },
+    {
+      "gameId": "steam-4301910",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4301910/78c813305d4c4c0c6ed144fb006e9bbfd68ac37b/ss_78c813305d4c4c0c6ed144fb006e9bbfd68ac37b.1920x1080.jpg?t=1790747807"
+    },
+    {
+      "gameId": "steam-4020370",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 52129,
+      "sha256": "8300fe004b8e912e13ecebbf3c0f4a8c497013148d8107edf28059e345400136",
+      "output": "/assets/games/steam-4020370-card.jpg"
+    },
+    {
+      "gameId": "steam-4020370",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4020370/f30c44cb3357cb81724dfd992c5c72e0d185d161/ss_f30c44cb3357cb81724dfd992c5c72e0d185d161.1920x1080.jpg?t=1790748099"
+    },
+    {
+      "gameId": "steam-5051720",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 26235,
+      "sha256": "29ba4fb0910945f8713de77497871a7994b188b5e71a17398409e8da2fac9020",
+      "output": "/assets/games/steam-5051720-card.jpg"
+    },
+    {
+      "gameId": "steam-5051720",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051720/1065bd7d2db8f99cd100b2c2ac4a328ff2bfaccc/ss_1065bd7d2db8f99cd100b2c2ac4a328ff2bfaccc.1920x1080.jpg?t=1790747644"
+    },
+    {
+      "gameId": "steam-4612540",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 35039,
+      "sha256": "47198d269d7d7966cc8a1a5f47ff90e29d63357a421bf98a8026349363969e5a",
+      "output": "/assets/games/steam-4612540-card.jpg"
+    },
+    {
+      "gameId": "steam-4612540",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4612540/bee3af8846607807787d383406e0a2b6ff8f5e83/ss_bee3af8846607807787d383406e0a2b6ff8f5e83.1920x1080.jpg?t=1790742234"
+    },
+    {
+      "gameId": "steam-5179030",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 53220,
+      "sha256": "7384e82df20ea2992b80762a2d03e067f6223b44df45787bef79dc42f28ab84f",
+      "output": "/assets/games/steam-5179030-card.jpg"
+    },
+    {
+      "gameId": "steam-5179030",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5179030/0bb894d9feaa2b323b2689a085ff3641447b3241/ss_0bb894d9feaa2b323b2689a085ff3641447b3241.1920x1080.jpg?t=1790741447"
+    },
+    {
+      "gameId": "steam-3582120",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 53696,
+      "sha256": "6e260cb56a9eb00473f17c3d2217eb5470f706b54f680d9e14117f6bacd45241",
+      "output": "/assets/games/steam-3582120-card.jpg"
+    },
+    {
+      "gameId": "steam-3582120",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3582120/f691dbe8bb99bd6eb9d94b29eeda055bbe2f9900/ss_f691dbe8bb99bd6eb9d94b29eeda055bbe2f9900.1920x1080.jpg?t=1790737209"
+    },
+    {
+      "gameId": "steam-1488490",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 71405,
+      "sha256": "ea7e62df7608eec3926c782aa8f15f5b35e8fb95fb6283654d7a473316ee3e47",
+      "output": "/assets/games/steam-1488490-card.jpg"
+    },
+    {
+      "gameId": "steam-1488490",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1488490/ss_8dd57ce19d1aa916b7b278880234efd1aed9601c.1920x1080.jpg?t=1790694813"
+    },
+    {
+      "gameId": "steam-2161700",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 62160,
+      "sha256": "3de53e4065607641183888e7c291af90c7be8e90ace694f9215c5e567df5b208",
+      "output": "/assets/games/steam-2161700-card.jpg"
+    },
+    {
+      "gameId": "steam-2161700",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2161700/ss_7017244fb8319ba927a0ef414959b95a6164356f.1920x1080.jpg?t=1764776430"
+    },
+    {
+      "gameId": "steam-1771300",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 42111,
+      "sha256": "dde4c2135930817a3fb26508a1a03ac65a06d3c6a92fa1b97510adf2f86dea19",
+      "output": "/assets/games/steam-1771300-card.jpg"
+    },
+    {
+      "gameId": "steam-1771300",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1771300/ss_935ddb59f90bc2c21c706132cb9b446fe7851c19.1920x1080.jpg?t=1777975568"
+    },
+    {
+      "gameId": "steam-2531310",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 36720,
+      "sha256": "70a31088052497546e308715a3e754c6a9abedf6afde98768a2ec64205eace2b",
+      "output": "/assets/games/steam-2531310-card.jpg"
+    },
+    {
+      "gameId": "steam-2531310",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2531310/0597b93e5e3d50cf6bd64bc8814386cd65f03410/ss_0597b93e5e3d50cf6bd64bc8814386cd65f03410.1920x1080.jpg?t=1750959180"
+    },
+    {
+      "gameId": "steam-1687950",
+      "kind": "card",
+      "source": "embedded-base64",
+      "mime": "image/jpeg",
+      "bytes": 57335,
+      "sha256": "64731f155d17729f3b8c3ce3fc9b51f2478e22173e8ad8e2b747691d8037b381",
+      "output": "/assets/games/steam-1687950-card.jpg"
+    },
+    {
+      "gameId": "steam-1687950",
+      "kind": "hero",
+      "source": "external-url",
+      "output": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1687950/ss_663171dc3afce8fe987e57e8659f91b69faa39bc.1920x1080.jpg?t=1783356822"
+    }
+  ]
+}

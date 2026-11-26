@@ -1,0 +1,6 @@
+import React from 'react';
+import { ActionButton, GameImage, Field, FieldArea, Form, Select, Anchor } from '../components/common/Elements.jsx';
+export function quickResult(ctx) {
+  const r = ctx.report();
+  return <div className={"quick-result"}><div className={"result-head"}><span className={"chip"}><>{ctx.icon('Check')}{"7문항 완료"}</></span><h1>{"당신은"}<br /><span className={"gradient-text"}>{r.title}</span></h1><p><>{r.top.map((i, itemIndex) => ctx.E.AXES[i]).join('과 ')}{" 취향을 바탕으로 골랐어요."}</></p></div><>{r.recommendations.length ? <div className={"games-grid"}>{React.Children.toArray(r.recommendations.slice(0, 5).map((g, itemIndex) => ctx.card(g)))}</div> : ctx.noMatches()}{r.prefs.deviceUnknown ? <p className={"catalog-note"}>{"TV만으로 실행할 수 있는 게임은 아닙니다. 연결할 기기는 심층 설문에서 확인해요."}</p> : ''}</><div className={"decision"}><div><h2>{"더 정교화된 설문으로 사용자님의 추천 게임과 플레이 성향을 제시해드릴까요?"}</h2><p>{"기존 30문항으로 나만의 플레이 성향 프로필을 만들어요."}</p></div><div className={"row"}><>{ctx.btn(<>{'내 플레이 성향 프로필 만들기'}{ctx.icon('ArrowRight')}</>, 'start', 'btn primary', 'data-kind="preference"')}{ctx.routeBtn('나중에 · 메인으로', 'home', 'btn ghost')}</></div></div></div>;
+}
