@@ -61,6 +61,10 @@ class StateIn(BaseModel):
     state: dict[str, Any] = Field(description="저장할 화면 상태 전체 (JSON, 1MB 이하)")
 
 
+class MockEmailVerifyIn(BaseModel):
+    token: str = Field(min_length=20, max_length=256, description="Mock DB 회원가입 응답의 시연용 인증 토큰")
+
+
 def _public(user: dict) -> dict:
     """프론트에 돌려줄 사용자 정보. 프로필 화면이 accountUser.email 을 보여준다."""
     return {"id": user["id"], "name": user.get("name") or "사용자", "email": user.get("email") or ""}
@@ -149,11 +153,15 @@ async def signup(body: SignupIn, request: Request, response: Response):
         raise _fail(exc)
 
     if email_confirmation_required:
-        return {
+        out = {
             "user": None,
             "email_confirmation_required": True,
             "message": "인증 메일을 확인해 주세요."
         }
+        if get_settings().use_mock_db and user:
+            out["mock_verification_token"] = user.get("_mock_verification_token")
+            out["mock_verification"] = True
+        return out
 
     claimed_count, claim_failed = await _claim_guest_sessions(user["id"], body.guest_session_ids)
     _start_session(response, user)
@@ -198,6 +206,18 @@ async def login(body: LoginIn, request: Request, response: Response):
     if state:
         out["state"] = state
     return out
+
+
+@router.post("/mock-email-verify", **docs.doc("account_mock_email_verify"))
+async def mock_email_verify(body: MockEmailVerifyIn):
+    # 시연용 인증은 Mock DB에서만 허용한다. 실제 Supabase 인증에는 영향을 주지 않는다.
+    if not get_settings().use_mock_db:
+        raise HTTPException(404, "시연용 이메일 인증은 Mock DB에서만 사용할 수 있어요.")
+    try:
+        await run(lambda: get_supabase().auth.verify_email(body.token))
+    except ValueError:
+        raise HTTPException(400, "인증 링크가 올바르지 않거나 이미 만료되었어요.")
+    return {"verified": True}
 
 
 @router.post("/logout", **docs.doc("account_logout"))
