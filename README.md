@@ -20,6 +20,8 @@
 
 - [첫 7문항·개인취향 30문항 수정표](새작업물/설문_수정핵심/README.md)
 
+- [게임정보 수집 1,284개 · Steam·IGDB 결과](새작업물/게임정보_수집/)
+
 ## 배포 주소
 
 - [게임정보 API 테스트 화면](https://recomengine-game-api.onrender.com/)
