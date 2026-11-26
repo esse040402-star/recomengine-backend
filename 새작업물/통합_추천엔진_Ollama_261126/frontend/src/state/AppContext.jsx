@@ -109,7 +109,10 @@ export function AppProvider({ children }) {
           error: '',
           status: 'email-confirmation'
         }));
-        return 'email-confirmation';
+        return {
+          emailConfirmationRequired: true,
+          mockVerificationToken: result.mock_verification_token || null
+        };
       }
 
       if (!result?.user?.id) {
