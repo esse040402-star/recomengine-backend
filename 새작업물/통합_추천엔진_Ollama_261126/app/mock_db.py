@@ -13,6 +13,7 @@ import hmac
 import json
 import os
 import re
+import secrets
 import threading
 import uuid
 from datetime import datetime, timezone
@@ -216,7 +217,8 @@ class MockAuth:
     - admin.create_user / sign_in_with_password : 회원가입/로그인 (비밀번호는 PBKDF2 해시로만 저장)"""
 
     def __init__(self):
-        self.users: dict[str, dict] = {}  # email -> {id, email, name, salt, hash}
+        self.users: dict[str, dict] = {}  # email -> {id, email, name, salt, hash, confirmed}
+        self.verification_tokens: dict[str, str] = {}
         self.admin = SimpleNamespace(create_user=self._create_user)
 
     @staticmethod
@@ -229,7 +231,8 @@ class MockAuth:
             raise ValueError("A user with this email address has already been registered")
         salt = os.urandom(16)
         user = {"id": str(uuid.uuid4()), "email": email, "salt": salt,
-                "hash": self._hash(attrs["password"], salt), "meta": dict(attrs.get("user_metadata") or {})}
+                "hash": self._hash(attrs["password"], salt), "meta": dict(attrs.get("user_metadata") or {}),
+                "confirmed": bool(attrs.get("email_confirmed", False))}
         self.users[email] = user
         return SimpleNamespace(user=self._public(user))
 
@@ -237,6 +240,8 @@ class MockAuth:
         user = self.users.get(creds["email"].strip().lower())
         if not user or not hmac.compare_digest(user["hash"], self._hash(creds["password"], user["salt"])):
             raise ValueError("Invalid login credentials")
+        if not user.get("confirmed"):
+            raise ValueError("Email not confirmed")
         return SimpleNamespace(user=self._public(user))
 
     def sign_up(self, payload: dict):
@@ -246,8 +251,22 @@ class MockAuth:
             "password": payload["password"],
             "user_metadata": options.get("data") or {},
         }).user
+        token = secrets.token_urlsafe(32)
+        self.verification_tokens[token] = user.email
         user.identities = [SimpleNamespace(id=user.id)]
-        return SimpleNamespace(user=user, session=SimpleNamespace(access_token="mock-session"))
+        user.mock_verification_token = token
+        # Mock DB도 실제 이메일 인증 설정과 같은 대기 상태로 시작한다.
+        return SimpleNamespace(user=user, session=None)
+
+    def verify_email(self, token: str):
+        email = self.verification_tokens.pop(str(token), None)
+        if not email:
+            raise ValueError("Invalid or expired email verification token")
+        user = self.users.get(email)
+        if not user:
+            raise ValueError("Invalid or expired email verification token")
+        user["confirmed"] = True
+        return self._public(user)
 
     @staticmethod
     def _public(user: dict):
