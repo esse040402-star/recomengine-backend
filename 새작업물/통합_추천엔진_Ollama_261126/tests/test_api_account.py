@@ -27,14 +27,28 @@ def test_signup_session_state_logout_flow(client):
     assert client.get("/api/account/session").json() == {"user": None}
 
     r = client.post("/api/account/signup", json=SIGNUP)
-    assert r.status_code == 201 and r.json()["user"]["name"] == "지헌" and "state" not in r.json()
-    assert r.json()["user"]["email"] == "jiheon@example.com"  # 프로필 화면이 accountUser.email 을 보여준다
-    cookie = r.headers["set-cookie"].lower()
-    assert "httponly" in cookie and "samesite=lax" in cookie and "password" not in r.text
+    assert r.status_code == 201
+    assert r.json()["user"] is None and r.json()["email_confirmation_required"] is True
+    assert r.json()["mock_verification"] is True
+    assert "set-cookie" not in r.headers
+    token = r.json()["mock_verification_token"]
+
+    blocked = client.post("/api/account/login", json={"email": SIGNUP["email"], "password": SIGNUP["password"]})
+    assert blocked.status_code == 403 and "이메일 인증" in blocked.json()["error"]
+
+    verified = client.post("/api/account/mock-email-verify", json={"token": token})
+    assert verified.status_code == 200 and verified.json()["verified"] is True
+    assert client.post("/api/account/mock-email-verify", json={"token": token}).status_code == 400
+
+    login = client.post("/api/account/login", json={"email": SIGNUP["email"], "password": SIGNUP["password"]})
+    assert login.status_code == 200 and login.json()["user"]["name"] == "지헌"
+    assert login.json()["user"]["email"] == "jiheon@example.com"
+    cookie = login.headers["set-cookie"].lower()
+    assert "httponly" in cookie and "samesite=lax" in cookie and "password" not in login.text
 
     me = client.get("/api/account/session").json()
     assert me["user"]["name"] == "지헌" and "state" not in me
-    assert me["user"]["email"] == "jiheon@example.com"  # 새로고침 뒤에도 이메일 유지 (쿠키에 담김)
+    assert me["user"]["email"] == "jiheon@example.com"
 
     saved = {"track": "gamer", "quick": {"completed": True, "answers": {"q1": ["0"]}}, "liked": ["elden"]}
     assert client.put("/api/account/state", json={"state": saved}).json() == {"ok": True}
@@ -44,10 +58,9 @@ def test_signup_session_state_logout_flow(client):
     assert client.get("/api/account/session").json() == {"user": None}
     assert client.put("/api/account/state", json={"state": saved}).status_code == 401
 
-    # 같은 이메일(대소문자 무관)로 다시 로그인하면 저장한 상태가 돌아온다
-    r = client.post("/api/account/login", json={"email": "jiheon@example.com", "password": "pw-12345678"})
-    assert r.status_code == 200 and r.json()["state"] == saved
-    assert r.json()["user"]["email"] == "jiheon@example.com"
+    again = client.post("/api/account/login", json={"email": "jiheon@example.com", "password": "pw-12345678"})
+    assert again.status_code == 200 and again.json()["state"] == saved
+    assert again.json()["user"]["email"] == "jiheon@example.com"
 
 
 def test_old_cookie_without_email_still_works(client):
@@ -78,7 +91,8 @@ def test_real_db_mode_requires_session_secret():
 
 
 def test_error_shape_is_error_key(client):
-    client.post("/api/account/signup", json=SIGNUP)
+    created = client.post("/api/account/signup", json=SIGNUP)
+    client.post("/api/account/mock-email-verify", json={"token": created.json()["mock_verification_token"]})
     dup = client.post("/api/account/signup", json={**SIGNUP, "email": "jiheon@example.com"})
     assert dup.status_code == 409 and "이미 가입" in dup.json()["error"]
 
@@ -95,7 +109,8 @@ def test_error_shape_is_error_key(client):
 
 
 def test_login_throttle(client):
-    client.post("/api/account/signup", json=SIGNUP)
+    created = client.post("/api/account/signup", json=SIGNUP)
+    client.post("/api/account/mock-email-verify", json={"token": created.json()["mock_verification_token"]})
     body = {"email": "jiheon@example.com", "password": "wrong-password"}
     codes = [client.post("/api/account/login", json=body).status_code for _ in range(throttle.MAX_FAILURES + 1)]
     assert codes[-1] == 429 and set(codes[:-1]) == {401}
@@ -104,13 +119,17 @@ def test_login_throttle(client):
 
 
 def test_state_size_limit(client):
-    client.post("/api/account/signup", json={**SIGNUP, "email": "big@example.com"})
+    created = client.post("/api/account/signup", json={**SIGNUP, "email": "big@example.com"})
+    client.post("/api/account/mock-email-verify", json={"token": created.json()["mock_verification_token"]})
+    client.post("/api/account/login", json={"email": "big@example.com", "password": SIGNUP["password"]})
     huge = {"blob": "가" * 1_100_000}
     assert client.put("/api/account/state", json={"state": huge}).status_code == 413
 
 
 def test_cookie_login_works_for_diagnosis_session(client):
-    client.post("/api/account/signup", json={**SIGNUP, "email": "own@example.com"})
+    created = client.post("/api/account/signup", json={**SIGNUP, "email": "own@example.com"})
+    client.post("/api/account/mock-email-verify", json={"token": created.json()["mock_verification_token"]})
+    client.post("/api/account/login", json={"email": "own@example.com", "password": SIGNUP["password"]})
     sid = client.post("/api/sessions", json={"track": "gamer"}).json()["id"]
     assert client.get(f"/api/sessions/{sid}/result").status_code == 200
     client.post("/api/account/logout")
@@ -174,11 +193,18 @@ def test_guest_sessions_are_claimed_after_signup_and_idempotent(client):
         "email": "claim@example.com",
         "guest_session_ids": [sid],
     })
-    assert signup.status_code == 201
-    assert signup.json()["guest_sessions_claimed"] == 1
-    assert signup.json()["guest_session_claim_failed"] is False
+    assert signup.status_code == 201 and signup.json()["email_confirmation_required"] is True
+    client.post("/api/account/mock-email-verify", json={"token": signup.json()["mock_verification_token"]})
+    login = client.post("/api/account/login", json={
+        "email": "claim@example.com",
+        "password": SIGNUP["password"],
+        "guest_session_ids": [sid],
+    })
+    assert login.status_code == 200
+    assert login.json()["guest_sessions_claimed"] == 1
+    assert login.json()["guest_session_claim_failed"] is False
 
-    user_id = signup.json()["user"]["id"]
+    user_id = login.json()["user"]["id"]
     row = get_supabase().table("diagnosis_sessions").select("user_id").eq("id", sid).execute().data[0]
     assert row["user_id"] == user_id
 
@@ -203,7 +229,14 @@ def test_guest_session_claim_rejects_in_progress_or_other_users(client):
         "guest_session_ids": [sid],
     })
     assert response.status_code == 201
-    assert response.json()["guest_sessions_claimed"] == 0
-    assert response.json()["guest_session_claim_failed"] is True
+    client.post("/api/account/mock-email-verify", json={"token": response.json()["mock_verification_token"]})
+    login = client.post("/api/account/login", json={
+        "email": "inprogress@example.com",
+        "password": SIGNUP["password"],
+        "guest_session_ids": [sid],
+    })
+    assert login.status_code == 200
+    assert login.json()["guest_sessions_claimed"] == 0
+    assert login.json()["guest_session_claim_failed"] is True
     row = get_supabase().table("diagnosis_sessions").select("user_id,status").eq("id", sid).execute().data[0]
     assert row["user_id"] is None and row["status"] == "in_progress"
