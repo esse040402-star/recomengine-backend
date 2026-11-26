@@ -123,12 +123,19 @@ DOCS: dict[str, dict] = {
     "account_signup": spec(
         "Signup (회원가입)",
         """
-닉네임·이메일·비밀번호(8자 이상)로 가입합니다. Supabase Auth의 이메일 인증 설정에 따라 바로 로그인되거나 인증 메일 확인이 필요합니다.
+닉네임·이메일·비밀번호(8자 이상)로 가입합니다. Supabase Auth의 이메일 인증 설정에 따라 바로 로그인되거나 인증 메일 확인이 필요합니다. Mock DB에서는 실제 메일을 보내지 않고 시연용 인증 단계를 거칩니다.
 비밀번호는 Supabase Auth가 해시 처리해 보관하며 이 서버는 저장하지 않습니다.
 이미 가입된 이메일이면 409를 돌려줍니다. `guest_session_ids` 에 완료된 비회원 진단 세션 ID를 보내면 인증 성공 후 계정에 연결합니다(최대 20개).
 - **같은 IP에서 10분 동안 10번 넘게 시도하면 429** 로 막습니다 (가짜 계정 대량 생성 방지)
         """,
         {"user": {"id": UID, "name": "지헌", "email": "user@example.com"}, "guest_sessions_claimed": 1, "guest_session_claim_failed": False}, ok_code=201, ok_text="가입 완료", errors=(409, 422, 429, 502),
+    ),
+    "account_mock_email_verify": spec(
+        "Mock Email Verify (시연용 이메일 인증)",
+        """
+USE_MOCK_DB=true인 로컬 시연 환경에서만 사용하는 테스트 인증입니다. 회원가입 응답의 mock_verification_token을 보내면 계정의 이메일 인증 상태를 완료로 변경합니다. 실제 이메일은 발송하지 않으며 실제 Supabase 인증에는 영향을 주지 않습니다.
+        """,
+        {"verified": True}, ok_text="시연용 이메일 인증 완료", errors=(400, 404, 422),
     ),
     "account_login": spec(
         "Login (로그인)",
