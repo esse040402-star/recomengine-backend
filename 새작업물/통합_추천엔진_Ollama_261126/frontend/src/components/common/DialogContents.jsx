@@ -43,6 +43,31 @@ export function feedbackDialog(ctx, id) {
   const f = ctx.state.feedback?.[id] || {};
   return ctx.openDialog('이 게임은 어떠셨나요?', <div className={"dialog-body"}><h3>{ctx.esc(g.title)}</h3><div className={"feedback-options"}>{React.Children.toArray([['uninterested', '관심 없음', '비슷한 게임을 덜 추천해요.'], ['disliked', '재미없음', '비슷한 특징의 추천 가중치를 낮춰요.'], ['liked', '재밌음', '비슷한 특징의 게임을 더 추천해요.'], ['played', '이미 플레이함', '이 게임은 추천에서 빼고, 유사 게임은 조금 덜 추천해요.'], ['hidden', '이 게임 추천 안 함', '이 게임만 추천에서 제외해요.']].map(([v, label, sub], itemIndex) => ctx.btn(<><strong>{label}</strong><span>{sub}</span></>, 'feedback-choice', 'feedback-option', `data-id="${id}" data-value="${v}" aria-pressed="${v === 'played' || v === 'hidden' ? !!f[v] : f.sentiment === v}"`)))}</div><p className={"note"}>{"선택 즉시 이 브라우저의 추천 엔진에 저장됩니다. 로고를 눌러 홈으로 돌아가면 갱신된 추천을 볼 수 있어요. 외부 AI 모델로 전송하거나 학습시키지는 않습니다."}</p></div>, <>{ctx.btn('피드백 취소', 'feedback-clear', 'btn ghost', `data-id="${id}"`)}{ctx.btn('완료', 'close', 'btn primary')}</>);
 }
+export function emailConfirmationDialog(ctx) {
+  const { email = '' } = ctx.dialog.params || {};
+  return ctx.openDialog('이메일 인증이 필요해요', <div className={"dialog-body stack"}>
+    <p>{email ? <><strong>{ctx.esc(email)}</strong> 주소로 전송된 인증 메일을 확인해 주세요.</> : '가입할 때 사용한 이메일로 전송된 인증 메일을 확인해 주세요.'}</p>
+    <p className={"note"}>{"인증 링크를 누른 뒤 RecomEngine으로 돌아오면 인증 완료 안내가 표시됩니다."}</p>
+  </div>, <>{ctx.btn('확인', 'close', 'btn primary')}</>);
+}
+
+export function mockEmailVerificationDialog(ctx) {
+  const { email = '' } = ctx.dialog.params || {};
+  return ctx.openDialog('이메일 인증 대기', <div className={"dialog-body stack"}>
+    <p><strong>{ctx.esc(email)}</strong> 계정이 생성됐어요.</p>
+    <p>{"실제 메일은 발송되지 않는 로컬 시연 모드입니다. 아래 버튼으로 이메일 인증 단계를 진행할 수 있어요."}</p>
+    <p className={"note"}>{"시연용 인증을 완료하기 전에는 로그인할 수 없습니다."}</p>
+  </div>, <>{ctx.btn('인증 완료 (시연용)', 'mock-email-verify', 'btn primary')}{ctx.btn('나중에', 'close', 'btn ghost')}</>);
+}
+
+export function mockEmailVerifiedDialog(ctx) {
+  const { email = '' } = ctx.dialog.params || {};
+  return ctx.openDialog('이메일 인증 완료', <div className={"dialog-body stack"}>
+    <p><strong>{ctx.esc(email)}</strong> 이메일 인증이 완료됐어요.</p>
+    <p>{"이제 로그인 화면에서 이메일과 비밀번호를 입력해 주세요."}</p>
+  </div>, <>{ctx.btn('로그인하러 가기', 'mock-email-open-login', 'btn primary')}</>);
+}
+
 export function accountDialog(ctx, signup = false) {
   let prefill = {};
   try {
@@ -53,7 +78,7 @@ export function accountDialog(ctx, signup = false) {
 
   return ctx.openDialog(signup ? '회원가입' : '로그인', <Form id={"account-form"} className={"dialog-body"} data-signup={signup}>
     {signup ? <label className={"field"}><span>{"닉네임"}</span><Field name={"name"} value={signup ? (prefill.name || '') : ''} required={true} maxLength={"24"} autoComplete={"nickname"} /></label> : ''}
-    <label className={"field"}><span>{"이메일"}</span><Field name={"email"} value={signup ? (prefill.email || '') : ''} type={"email"} required={true} maxLength={"254"} autoComplete={"username"} /></label>
+    <label className={"field"}><span>{"이메일"}</span><Field name={"email"} value={prefill.email || ''} type={"email"} required={true} maxLength={"254"} autoComplete={"username"} /></label>
     <label className={"field"}><span>{"비밀번호"}</span><Field name={"password"} type={"password"} required={true} minLength={"8"} maxLength={"128"} autoComplete={signup ? 'new-password' : 'current-password'} /></label>
     {signup ? <label className={"field"}><span>{"비밀번호 확인"}</span><Field name={"passwordConfirm"} type={"password"} required={true} minLength={"8"} maxLength={"128"} autoComplete={"new-password"} /></label> : ''}
     <p className={"note"}>{ctx.apiReady ? '연결된 계정 서버를 통해 로그인합니다.' : '현재 계정 서버가 연결되지 않았습니다. 게스트로 이용할 수 있으며 답변은 이 브라우저에 저장됩니다.'}{signup ? ' 현재 게스트의 답변과 찜한 게임을 새 계정에 저장합니다.' : ''}</p>
