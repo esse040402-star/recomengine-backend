@@ -26,19 +26,34 @@ function Page({ c }) {
   return c[pages[c.route]]();
 }
 
-function EmailVerifiedScreen() {
+function EmailVerifiedScreen({ onReturn }) {
   return (
     <section style={{
       minHeight: '80vh',
       display: 'flex',
+      flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      gap: '20px',
       textAlign: 'center',
       padding: '24px'
     }}>
       <p>
-        인증이 완료되었습니다. 기존 페이지로 돌아가 회원가입을 완료해주세요.
+        이메일 인증이 완료되었습니다. 아래 버튼을 눌러 로그인하면 가입을 마칠 수 있어요.
       </p>
+      <button
+        type="button"
+        onClick={onReturn}
+        style={{
+          border: 0,
+          borderRadius: '10px',
+          padding: '12px 20px',
+          cursor: 'pointer',
+          fontWeight: 700
+        }}
+      >
+        로그인 화면으로 돌아가기
+      </button>
     </section>
   );
 }
@@ -102,7 +117,7 @@ export default function App() {
           <EmailVerifiedScreen
             onReturn={() => {
               setEmailVerified(false);
-              c.showDialog('accountDialog', { signup: true });
+              c.showDialog('accountDialog', { signup: false });
             }}
           />
         ) : target === c.route ? (
