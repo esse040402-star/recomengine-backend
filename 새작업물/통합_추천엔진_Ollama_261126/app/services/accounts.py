@@ -107,7 +107,12 @@ async def create_account(name: str, email: str, password: str) -> tuple[dict | N
             "이미 가입된 이메일이에요. 로그인해 주세요."
         )
 
-    return user_dict(signup_res.user), signup_res.session is None
+    created = user_dict(signup_res.user)
+    mock_token = getattr(signup_res.user, "mock_verification_token", None)
+    if mock_token:
+        # 이 토큰은 USE_MOCK_DB=true 시연 환경에서만 프론트에 전달한다.
+        created["_mock_verification_token"] = mock_token
+    return created, signup_res.session is None
 
 
 async def verify_login(email: str, password: str) -> dict:
