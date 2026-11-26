@@ -1,4 +1,5 @@
 import { toggleFeedback } from '../services/feedbackService';
+import { verifyMockEmail } from '../services/accountService';
 export function profileActions(c) {
     const form = id => c.forms.current[id], valid = id => form(id)?.reportValidity(), data = id => new FormData(form(id)); return {
         'mode': ({ value }) => c.patch({ mode: value }), 'dismiss-banner': () => c.patch({ bannerDismissed: true }),
@@ -51,8 +52,15 @@ export function profileActions(c) {
 
                 const result = await c.authenticate(isSignup, formData);
 
-                if (result === 'email-confirmation') {
-                    c.toast('인증 메일을 보냈어요. 이메일을 확인해 주세요.');
+                if (result?.emailConfirmationRequired) {
+                    c.closeDialog();
+                    c.showDialog(
+                        result.mockVerificationToken ? 'mockEmailVerificationDialog' : 'emailConfirmationDialog',
+                        { email: formData.email, token: result.mockVerificationToken }
+                    );
+                    c.toast(result.mockVerificationToken
+                        ? '시연용 이메일 인증 대기 상태입니다.'
+                        : '인증 메일을 보냈어요. 이메일을 확인해 주세요.');
                     return;
                 }
 
@@ -78,6 +86,22 @@ export function profileActions(c) {
             }
         },
 
+        'mock-email-verify': async () => {
+            const { token, email } = c.dialog?.params || {};
+            try {
+                await verifyMockEmail(token);
+                c.showDialog('mockEmailVerifiedDialog', { email });
+            } catch (error) {
+                c.toast(error.message || '시연용 이메일 인증에 실패했어요.');
+            }
+        },
+        'mock-email-open-login': () => {
+            const { email } = c.dialog?.params || {};
+            try {
+                localStorage.setItem('recomengine-signup-prefill', JSON.stringify({ email }));
+            } catch { }
+            c.showDialog('accountDialog', { signup: false });
+        },
         'account-recover-local': () => { c.recoverLocal(); c.toast('이 기기의 미전송 변경을 복구했어요.'); },
         'account-retry-save': async () => { try { await c.retrySave(); } catch (e) { c.toast(e.message) } },
         'account-logout': async () => { try { if (await c.logout()) { c.setUI({ forceOnboarding: true, guidedChat: null, chatTurns: [], chatBusy: false }); c.goto('welcome'); } } catch (e) { c.toast(e.message) } }
