@@ -1,6 +1,6 @@
 # RecomEngine — Gemma 로컬 AI 환경 구성 및 팀원 테스트
 
-2026-11-27 기준 · Windows · 기존 팀원 공통 테스트본 기반 Context Fix (중간 테스트본)
+2026-11-27 기준 · Windows · Gemma Context Fix · 팀원 공통 테스트본
 
 ## 1. 기존 AI 담당자: 모델만 변경하면 됩니다
 
@@ -21,9 +21,10 @@ Worker가 모델을 고정하지 않고 요청을 전달하는 기존 구조라�
 
 ## 2. 팀원 공통 테스트본
 
-- 파일명: **RecomEngine_Gemma_Team_Test_ContextFix.zip**
-- [GitHub Releases — 공통 ZIP 배포 위치](https://github.com/esse040402-star/recomengine-backend/releases)
-- ZIP 첨부 상태: 아직 업로드 대기. 팀장이 공통 ZIP을 Releases에 첨부하면 해당 파일 하나를 내려받아 사용합니다. 팀원별 별도 빌드나 테스트본 제작은 필요 없습니다.
+- 파일명: **AI.zip**
+- [AI.zip 바로 다운로드](https://github.com/esse040402-star/recomengine-backend/releases/download/gemma-team-context-fix/AI.zip)
+- [GitHub Release — 배포 정보](https://github.com/esse040402-star/recomengine-backend/releases/tag/gemma-team-context-fix)
+- 팀원별 별도 빌드나 테스트본 제작은 필요 없습니다.
 - SHA-256: `b76f6b3e4f8aa5d9bf592964e05d818a15bafb10738a829dad045084db0d5ad1`
 
 > **2026-11-27 수정 사항:** Steam TOP 100 조건부 추천에서 발생한 HTTP 400(프롬프트 길이 초과)을 해결하기 위해 `runtime/app/services/ollama.py`의 `structured_chat`에 전달하는 `num_ctx`를 16384로 변경했습니다. 일반 `natural_chat`과 기존 `chat_json`은 8192를 유지합니다. 이미 환경을 구성한 팀원은 새 ZIP만 받아 실행하면 되며 모델이나 Cloudflare를 다시 설정할 필요가 없습니다. GPU/VRAM/RAM에 따른 성능 차이는 있을 수 있습니다.
@@ -46,7 +47,7 @@ Worker가 모델을 고정하지 않고 요청을 전달하는 기존 구조라�
 | AI_API_KEY | 불필요 | 본인 Worker Secret과 동일 |
 | 공통 ZIP | 동일 | 동일 |
 
-기존 Chat Demo r1은 특정 Worker 주소가 고정되어 있어 각자 로컬 Ollama를 자동으로 사용하지 않았습니다. 이번 공통본은 기존 연결 선택 기능을 유지하며 실시간 추천용 structured_chat의 컨텍스트를 8192에서 16384로 변경했습니다. 일반 자연어 대화·추천 판단·UI는 유지합니다. 테스트 모드는 mock DB를 사용하므로 실제 Supabase에 쓰지 않습니다. Steam/IGDB 등 외부 API 기능은 별도 네트워크 및 필요한 키에 영향을 받을 수 있습니다.
+이번 공통본은 기존 연결 선택 기능을 유지하며 실시간 추천용 structured_chat의 컨텍스트를 8192에서 16384로 변경했습니다. 일반 자연어 대화·추천 판단·UI는 유지합니다. 테스트 모드는 mock DB를 사용하므로 실제 Supabase에 쓰지 않습니다. Steam/IGDB 등 외부 API 기능은 별도 네트워크 및 필요한 키에 영향을 받을 수 있습니다.
 
 ## 3. 처음 구성하는 팀원: Ollama 설치
 
@@ -205,23 +206,12 @@ AI 호스트 PC, Ollama, Tunnel이 계속 작동해야 합니다. Render 환경�
 | Worker 401 | 해당 Worker Secret과 입력 키 일치 여부 |
 | Worker 502 | Ollama 실행, Tunnel Healthy, VPC Service 포트 및 Binding |
 | 느린 응답/시간 초과 | ollama ps, GPU/RAM, 다른 모델/프로그램 사용량 확인 |
-| TOP 100 요청에서 HTTP 400 / 웹 503 | ContextFix ZIP인지 확인. `ollama ps`로 structured_chat 요청 이후 CONTEXT 16384 확인. 긴 요청에서는 컨텍스트 초과가 다시 발생할 수 있음 |
+| TOP 100 요청에서 HTTP 400 / 웹 503 | 최신 AI.zip인지 확인. `ollama ps`로 structured_chat 요청 이후 CONTEXT 16384 확인. 긴 요청에서는 컨텍스트 초과가 다시 발생할 수 있음 |
 | 구버전 화면 | 기존 서버 종료, CMD에 표시된 실제 주소 접속, Ctrl+F5 |
 
 ## 8. 현재 개발 상태
 
 Gemma 자연어 대화 구조는 이전 사용자 테스트에서 개선됨을 확인했습니다. 초기 Natural Chat Test에서 실제 오류 응답 `the prompt is longer than the context length currently available to the model`을 확인했으며, structured_chat의 컨텍스트를 16384로 변경한 뒤 동일한 TOP 100 액션 게임 5개 추천 질문에 응답 및 카드 출력이 성공했습니다. 이번 공통본에도 동일한 수정을 적용했습니다. 관련 자동 테스트(모의 AI/API 포함) 42개 통과, Python 문법 검사 및 ZIP 무결성 검사 통과. 기존 공통본 대비 변경된 파일은 Ollama 통신 코드 1개, 테스트 2개, 안내 문서 1개입니다. 이번 ZIP 자체의 실제 Windows/Gemma/Worker 통신 및 브라우저 UI는 추가 검증이 필요합니다. 긴 요청에 대한 입력량 최적화 및 자동 복구, 실제 랭킹 일치 여부, UI 최종 검증, AI 심층설문 구현은 남아 있습니다.
-
-## 9. 팀장: ZIP 배포 방법
-
-1. [새 GitHub Release 작성](https://github.com/esse040402-star/recomengine-backend/releases/new)으로 이동합니다.
-2. 새 태그 `gemma-team-context-fix`를 선택 또는 생성하고 대상 브랜치를 main으로 설정합니다.
-3. Release title에 `Gemma 팀원 공통 테스트본 — Context Fix`를 입력합니다.
-4. Attach binaries 영역에 `RecomEngine_Gemma_Team_Test_ContextFix.zip`을 첨부합니다.
-5. 테스트 중간본이므로 필요하면 pre-release로 표시하고 Publish release를 누릅니다.
-6. 팀원에게 [Releases 페이지](https://github.com/esse040402-star/recomengine-backend/releases)를 공유합니다.
-
-ZIP 자체는 아직 GitHub에 첨부되지 않았습니다. 인증키 및 Tunnel 토큰은 ZIP이나 Release 설명에 넣지 않습니다. 같은 PC에서 직접 연결하는 1번 모드는 인증키가 필요하지 않습니다.
 
 ## 공식 문서
 

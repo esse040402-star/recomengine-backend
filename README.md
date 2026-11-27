@@ -1,10 +1,15 @@
 # 프로젝트 목록
 
 - [기존프로젝트](기존프로젝트/)
+## 로컬 AI · 팀원 테스트 (최신)
+
+- [Gemma 4 12B 설치 및 Cloudflare 연결 안내](새작업물/Gemma_로컬AI_팀원테스트/README.md)
+- [AI.zip — 공통 테스트 통합본 바로 다운로드](https://github.com/esse040402-star/recomengine-backend/releases/download/gemma-team-context-fix/AI.zip)
+- [배포 페이지 및 변경 내용](https://github.com/esse040402-star/recomengine-backend/releases/tag/gemma-team-context-fix)
+
+기존 Ollama/Cloudflare 환경이 있는 팀원은 Gemma 모델만 설치한 뒤 AI.zip을 압축 해제하고 `START_AI_TEST.cmd`를 실행하면 됩니다. 같은 PC에서 테스트할 경우 1번(로컬 연결)을 선택하세요.
+
 ## 새작업물
-
-- [Gemma 로컬 AI 환경 구성 · 팀원 공통 테스트본](새작업물/Gemma_로컬AI_팀원테스트/README.md)
-
 
 - [새작업물 목록](새작업물/작업목록.md)
 
@@ -17,7 +22,6 @@
 - [Steam·IGDB 통합 및 설문 가중치](새작업물/API통합_설문가중치/)
 
 - [Steam 리뷰 API 수정 · 팀원 적용 안내](새작업물/스팀리뷰_API수정/)
-
 
 - [API 가중치용 분류 통합 — 공통 사전·전체 대응표](새작업물/API가중치_분류통합/)
 
